@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Data package &#8212; DT_DMS 2026 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=686e5160" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
+    <script src="_static/documentation_options.js?v=fc6fd62b"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="DataObserver package" href="DataObserver.html" />
+    <link rel="prev" title="DT_DMS_SineCubicBP module" href="DT_DMS_SineCubicBP.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="data-package">
+<h1>Data package<a class="headerlink" href="#data-package" title="Link to this heading">¶</a></h1>
+<div class="graphviz"><img src="_images/inheritance-91b4abfb705b6c0ba4e5a1608c7ffe727528a3c2.png" alt="Inheritance diagram of Data.DT_Data, Data.DT_Data_SineValues" usemap="#inheritancef5f23ccc09" class="inheritance graphviz" /></div>
+<map id="inheritancef5f23ccc09" name="inheritancef5f23ccc09">
+<area shape="rect" id="node2" href="#Data.DT_Data.DT_Data" target="_top" title="Abstract base class representing a source of data (the &quot;Physical Twin&quot;" alt="" coords="326,5,400,32"/>
+<area shape="rect" id="node3" href="DataObserver.html#DataObserver.ObserverDataManager.ObserverDataManager" target="_top" title="Generic Subject/Publisher interface." alt="" coords="125,31,278,57"/>
+<area shape="rect" id="node4" href="#Data.DT_Data_SineValues.DT_Data_SineValues" target="_top" title="DT_Data_SineValues" alt="" coords="448,5,594,32"/>
+</map><section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
+</section>
+<section id="module-Data.DT_Data">
+<span id="data-dt-data-module"></span><h2>Data.DT_Data module<a class="headerlink" href="#module-Data.DT_Data" title="Link to this heading">¶</a></h2>
+<p>Copyright (C) 2026 : Milad Zahediyami</p>
+<p>This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.</p>
+<p>This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.</p>
+<p>You should have received a copy of the GNU General Public License
+along with this program.  If not, see &lt;<a class="reference external" href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>&gt;.</p>
+<p>author Milad Zahediyami (<a class="reference external" href="mailto:milad&#46;zahediyami&#37;&#52;&#48;u-bordeaux&#46;fr">milad<span>&#46;</span>zahediyami<span>&#64;</span>u-bordeaux<span>&#46;</span>fr</a>)
+IMS (UMR CNRS 5218 / University of Bordeaux)</p>
+<p>DT_Data.py</p>
+<p>Abstract base class for all data sources in the Digital Twin system.
+Implements ObserverDataManager to support the Observer Pattern.</p>
+<p>It maintains a list of observers (Models and Services) and notifies them
+automatically when data is updated via update_data().</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="Data.DT_Data.DT_Data">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Data.DT_Data.</span></span><span class="sig-name descname"><span class="pre">DT_Data</span></span><a class="reference internal" href="_modules/Data/DT_Data.html#DT_Data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Data.DT_Data.DT_Data" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="DataObserver.html#DataObserver.ObserverDataManager.ObserverDataManager" title="DataObserver.ObserverDataManager.ObserverDataManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">ObserverDataManager</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<p>Abstract base class representing a source of data (the “Physical Twin”
+side of the Digital Twin).</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Data.DT_Data.DT_Data.get_data_name">
+<span class="sig-name descname"><span class="pre">get_data_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Data/DT_Data.html#DT_Data.get_data_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Data.DT_Data.DT_Data.get_data_name" title="Link to this definition">¶</a></dt>
+<dd><p>Returns the name of this data source.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Data.DT_Data.DT_Data.notify_observers">
+<span class="sig-name descname"><span class="pre">notify_observers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Data/DT_Data.html#DT_Data.notify_observers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Data.DT_Data.DT_Data.notify_observers" title="Link to this definition">¶</a></dt>
+<dd><p>Notifies every registered observer that data has changed.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Data.DT_Data.DT_Data.register_observer">
+<span class="sig-name descname"><span class="pre">register_observer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">observer</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Data/DT_Data.html#DT_Data.register_observer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Data.DT_Data.DT_Data.register_observer" title="Link to this definition">¶</a></dt>
+<dd><p>Registers an observer if it is not already registered.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Data.DT_Data.DT_Data.remove_observer">
+<span class="sig-name descname"><span class="pre">remove_observer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">observer</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Data/DT_Data.html#DT_Data.remove_observer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Data.DT_Data.DT_Data.remove_observer" title="Link to this definition">¶</a></dt>
+<dd><p>Removes a previously registered observer.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Data.DT_Data.DT_Data.update_data">
+<span class="sig-name descname"><span class="pre">update_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Data/DT_Data.html#DT_Data.update_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Data.DT_Data.DT_Data.update_data" title="Link to this definition">¶</a></dt>
+<dd><p>Updates the data and notifies all registered observers (Models and Services).
+This is the central method that triggers the Observer Pattern.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-Data.DT_Data_SineValues">
+<span id="data-dt-data-sinevalues-module"></span><h2>Data.DT_Data_SineValues module<a class="headerlink" href="#module-Data.DT_Data_SineValues" title="Link to this heading">¶</a></h2>
+<p>DT_Data_SineValues.py</p>
+<p>Concrete data class that generates and stores sine wave values.
+Every time 10 new values are added, it triggers notification to all observers
+using the Observer Pattern.</p>
+<p>This represents the “Physical Twin” part of the Digital Twin.</p>
+<p>This is the Python equivalent of Data/DT_Data_SineValues.java.</p>
+<p>&#64;author Zeeshan ALI, Mamadou Kaba TRAORE
+&#64;version 1.0 (Python port)</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="Data.DT_Data_SineValues.DT_Data_SineValues">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Data.DT_Data_SineValues.</span></span><span class="sig-name descname"><span class="pre">DT_Data_SineValues</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Data/DT_Data_SineValues.html#DT_Data_SineValues"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Data.DT_Data_SineValues.DT_Data_SineValues" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Data.DT_Data.DT_Data" title="Data.DT_Data.DT_Data"><code class="xref py py-class docutils literal notranslate"><span class="pre">DT_Data</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Data.DT_Data_SineValues.DT_Data_SineValues.get_current_index">
+<span class="sig-name descname"><span class="pre">get_current_index</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="reference internal" href="_modules/Data/DT_Data_SineValues.html#DT_Data_SineValues.get_current_index"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Data.DT_Data_SineValues.DT_Data_SineValues.get_current_index" title="Link to this definition">¶</a></dt>
+<dd><p>Returns the current index (number of values pushed so far).
+Used by the chart and diagnosis service to plot the correct x-axis.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Data.DT_Data_SineValues.DT_Data_SineValues.get_sine_data_values">
+<span class="sig-name descname"><span class="pre">get_sine_data_values</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Data/DT_Data_SineValues.html#DT_Data_SineValues.get_sine_data_values"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Data.DT_Data_SineValues.DT_Data_SineValues.get_sine_data_values" title="Link to this definition">¶</a></dt>
+<dd><p>Returns the list of all sine values collected so far.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Data.DT_Data_SineValues.DT_Data_SineValues.push_back">
+<span class="sig-name descname"><span class="pre">push_back</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Data/DT_Data_SineValues.html#DT_Data_SineValues.push_back"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Data.DT_Data_SineValues.DT_Data_SineValues.push_back" title="Link to this definition">¶</a></dt>
+<dd><p>Adds a new sine value to the collection.
+Increments the index and triggers notification to observers every 10 values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>val</strong> – The sine value to add.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-Data">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-Data" title="Link to this heading">¶</a></h2>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">DT_DMS</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">DT_DMS</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="DT_DMS.html">DT_DMS module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DT_DMS_SineCubicBP.html">DT_DMS_SineCubicBP module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Data package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DataObserver.html">DataObserver package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Models.html">Models package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Services.html">Services package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Visualization.html">Visualization package</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">DT_DMS</a><ul>
+      <li>Previous: <a href="DT_DMS_SineCubicBP.html" title="previous chapter">DT_DMS_SineCubicBP module</a></li>
+      <li>Next: <a href="DataObserver.html" title="next chapter">DataObserver package</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2026, Milad Zahediyami.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.1.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/Data.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
