@@ -1,7 +1,7 @@
 # DT-DMS Framework
 
 The Digital Twin Data-Models-Services (DT-DMS) framework implements the formal specification of a
-Digital Twin (DT) of a Thing of Interest (ToI):
+Digital Twin (DT) of a Twin of Interest (ToI):
 
     DT = ⟨ D, M, S, μ ⟩
 

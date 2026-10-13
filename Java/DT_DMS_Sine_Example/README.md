@@ -1,6 +1,6 @@
 # DT-DMS Sine Example
 
-A minimal "Hello World" Digital Twin built with the DT-DMS framework. The Thing of Interest (ToI) produces a
+A minimal "Hello World" Digital Twin built with the DT-DMS framework. The Twin of Interest (ToI) produces a
 sine wave; the Digital Twin follows it with a Cubic B-Spline model and diagnoses its anomalies.
 
     DT = ⟨ D, M, S, μ ⟩
