@@ -1,30 +1,24 @@
 /**
- * This package contains Service related to the DT_DMS framework.
- *  <p>
- *      DT uses set of Data (Historical &amp; real-time) and Models (Descriptive, Predictive &amp; Perspective),
- *      for the provision of data nd model drive services.
+ * This package contains the Services ({@code S}) of the DT-DMS framework.
  *
- *      This package contains DT Services related classes, {@code Services} as
- *      Abstract class representing generic model, as well as the {@code Monitoring},
- *      {@code Prediction}, {@code Diagnosis}, {@code Optimization} and {@code Control} the Child classes inherited from the
- *      {@code Services} Abstract class, ensuring a modular and extensible design.
- *      The description for each class in the {@code Services} package is as follows:
- *  </p>
+ * <p>
+ *     {@code S} is the set of DT services: {@code S = S_moni ∪ S_pred ∪ S_diag ∪ S_opti ∪ S_cont}.
+ *     A service is parameterized by a model and/or the data segments it consumes,
+ *     {@code s : M × Ω_D → Y_s}. Every service belongs to the class of automata {@code 𝒜}
+ *     ({@code S ⊆ 𝒜}) and is specified by the 7-tuple {@code 𝒮 = ⟨Λ, X, Y, Σ, Φ, Δ, Δ*⟩}.
+ *     The description for each class in the {@code Services} package is as follows:
+ * </p>
  *
  * <ul>
- *   <li>{@code Services}: The abstract class. It handels generic DT Services.</li>
- *   <li>{@code Monitoring}: Class inherited from {@code Services} class. It monitors the states of the physical entity in real-time.</li>
- *   <li>{@code Prediction}: Class inherited from {@code Services} class. It predicts the future states of the physical entity using historical and realtime data and predictive models.</li>
- *   <li>{@code Diagnosis}: Class inherited from {@code Services} class. It diagnosis the anomilies inherit in system before they occur, using various data and models.</li>
- *   <li>{@code Optimization}: Class inherited from {@code Services} class. It find the best solution, using various data and models.</li>
- *   <li>{@code Control}: Class inherited from {@code Services} class. It provides the feedback control on the physical entity using actuators or other systems.</li>
+ *   <li>{@code DT_Service}: the abstract class, built on {@code DT_Automaton}. It handles generic DT services.</li>
+ *   <li>{@code DT_Service_Monitoring}: Class inherited from {@code DT_Service}. It monitors the states of the ToI in real time.</li>
+ *   <li>{@code DT_Service_Prediction}: Class inherited from {@code DT_Service}. It predicts the future states of the ToI.</li>
+ *   <li>{@code DT_Service_Diagnosis}: Class inherited from {@code DT_Service}. It identifies the anomalies of the ToI.</li>
+ *   <li>{@code DT_Service_Optimization}: Class inherited from {@code DT_Service}. It finds the best solution for the ToI.</li>
+ *   <li>{@code DT_Service_Control}: Class inherited from {@code DT_Service}. It provides the feedback control on the ToI.</li>
  * </ul>
  *
- *
- *
  * @author [ALI Zeeshan, Mamadou Kaba TRAORÉ]
- * @version 1.0
+ * @version 2.0
  */
-
-
 package Services;

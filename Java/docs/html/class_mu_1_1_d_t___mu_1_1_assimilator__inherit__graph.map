@@ -1,0 +1,5 @@
+<map id="Mu.DT_Mu&lt; T &gt;.Assimilator" name="Mu.DT_Mu&lt; T &gt;.Assimilator">
+<area shape="rect" id="Node000001" title="Observer registered on one data source: forwards every new datum of that source to μ." alt="" coords="5,123,190,245"/>
+<area shape="rect" id="Node000002" href="$interface_mu_1_1_observer_data.html" title="Observer of the data observer pattern: an object that wants to be told when new data arrives." alt="" coords="5,5,190,75"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,87,100,124,95,123,97,92"/>
+</map>

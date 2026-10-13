@@ -1,0 +1,123 @@
+// Black-and-white overview class diagram of the DT-DMS framework for the paper:
+// class names and formal symbols only, packages marked as frames.
+// All positions are fixed (inches). Render it with the script (from the docs folder, in Git Bash):
+//   sh make_overview.sh DT_DMS_Overview_bw
+digraph DT_DMS_Overview_bw {
+  graph [splines=true, fontname="Arial", margin=0, pad=0.08, bgcolor=white, outputorder=edgesfirst];
+  node  [shape=box, style=filled, fillcolor=white, color=black, fontname="Arial", fontsize=13, fixedsize=true, height=0.62];
+  edge  [fontname="Arial", fontsize=11, arrowsize=0.9, color=black, fontcolor=black];
+
+  // ================================================================ left column: general classes
+  DT_DMS_Architecture [pos="1.25,5.25!", width=2.3, height=0.45, label=<<b>DT_DMS_Architecture</b>>];
+  DT_DMS [pos="1.6,4.2!", width=3.0, penwidth=1.8,
+          label=<<b>DT_DMS</b><br/><font face="Cambria Math" point-size="12">DT = ⟨D, M, S, μ⟩</font>>];
+
+  // ================================================================ middle column: Mu and Automaton
+  subgraph cluster_mu {
+    label=<<b>Mu</b>>; labelloc=t; fontname="Arial"; fontsize=13; style="rounded"; color=gray55; penwidth=1.2;
+    mu_a [pos="3.6,5.7!", shape=point, width=0.01, style=invis];
+    mu_b [pos="6.8,8.85!", shape=point, width=0.01, style=invis];
+    ObserverDataManager [pos="5.2,7.95!", width=2.8, label=<<i>«interface»</i><br/><b>ObserverDataManager</b>>];
+    DT_Mu [pos="5.2,6.25!", width=2.2,
+           label=<<b>DT_Mu</b><br/><font face="Cambria Math" point-size="12">μ : Ω<sub>D</sub> × M → M</font>>];
+    ObserverData [pos="5.2,7.1!", width=2.0, label=<<i>«interface»</i><br/><b>ObserverData</b>>];
+  }
+
+  subgraph cluster_automaton {
+    label=<<b>Automaton</b>>; labelloc=t; fontname="Arial"; fontsize=13; style="rounded"; color=gray55; penwidth=1.2;
+    au_a [pos="3.6,0.85!", shape=point, width=0.01, style=invis];
+    au_b [pos="6.8,2.55!", shape=point, width=0.01, style=invis];
+    DT_Automaton [pos="5.2,1.5!", width=2.4, height=0.85,
+                  label=<<i>«abstract»</i><br/><b>DT_Automaton</b><br/><font face="Cambria Math" point-size="12">⟨Λ, X, Y, Σ, Φ, Δ, Δ*⟩</font>>];
+  }
+
+  // ================================================================ right column: Data, Models, Services
+  // The three frames have the same left edge (x = 8.6), the same width and the same gap (0.5).
+  // In each frame the main class starts at x = 8.9 and every subclass starts at x = 11.6.
+
+  subgraph cluster_data {
+    label=<<b>Data</b>>; labelloc=t; fontname="Arial"; fontsize=13; style="rounded"; color=gray55; penwidth=1.2;
+    da_a [pos="8.6,8.1!", shape=point, width=0.01, style=invis];
+    da_b [pos="15.05,9.6!", shape=point, width=0.01, style=invis];
+    DT_Data [pos="9.9,8.7!", width=2.0,
+             label=<<b>DT_Data</b><br/><font face="Cambria Math" point-size="12">D = D<sub>hist</sub> ∪ D<sub>rt</sub></font>>];
+    DT_DataSegment [pos="12.7,8.7!", width=2.2,
+                    label=<<b>DT_DataSegment</b><br/><font face="Cambria Math" point-size="12">ω : T<sub>U</sub> ⇀ D</font>>];
+  }
+
+  subgraph cluster_models {
+    label=<<b>Models</b>>; labelloc=t; fontname="Arial"; fontsize=13; style="rounded"; color=gray55; penwidth=1.2;
+    mo_a [pos="8.6,4.9!", shape=point, width=0.01, style=invis];
+    mo_b [pos="15.05,7.6!", shape=point, width=0.01, style=invis];
+    DT_Model [pos="9.9,6.05!", width=2.0, height=0.85,
+              label=<<i>«abstract»</i><br/><b>DT_Model</b><br/><font face="Cambria Math" point-size="12">m ∈ M</font>>];
+    DT_Model_Descriptive  [pos="13.075,6.7!",  width=2.95, height=0.45, label=<<b>DT_Model_Descriptive</b>  <font face="Cambria Math" point-size="12">(M<sub>desc</sub>)</font>>];
+    DT_Model_Predictive   [pos="13.025,6.05!", width=2.85, height=0.45, label=<<b>DT_Model_Predictive</b>  <font face="Cambria Math" point-size="12">(M<sub>pred</sub>)</font>>];
+    DT_Model_Prescriptive [pos="13.125,5.4!",  width=3.05, height=0.45, label=<<b>DT_Model_Prescriptive</b>  <font face="Cambria Math" point-size="12">(M<sub>presc</sub>)</font>>];
+  }
+
+  subgraph cluster_services {
+    label=<<b>Services</b>>; labelloc=t; fontname="Arial"; fontsize=13; style="rounded"; color=gray55; penwidth=1.2;
+    se_a [pos="8.6,0.4!", shape=point, width=0.01, style=invis];
+    se_b [pos="15.05,4.4!", shape=point, width=0.01, style=invis];
+    DT_Service [pos="9.9,2.2!", width=2.0, height=0.85,
+                label=<<i>«abstract»</i><br/><b>DT_Service</b><br/><font face="Cambria Math" point-size="12">s : M × Ω<sub>D</sub> → Y<sub>s</sub></font>>];
+    DT_Service_Monitoring   [pos="13.125,3.5!",  width=3.05, height=0.45, label=<<b>DT_Service_Monitoring</b>  <font face="Cambria Math" point-size="12">(S<sub>moni</sub>)</font>>];
+    DT_Service_Prediction   [pos="13.05,2.85!",  width=2.9,  height=0.45, label=<<b>DT_Service_Prediction</b>  <font face="Cambria Math" point-size="12">(S<sub>pred</sub>)</font>>];
+    DT_Service_Diagnosis    [pos="13.05,2.2!",   width=2.9,  height=0.45, label=<<b>DT_Service_Diagnosis</b>  <font face="Cambria Math" point-size="12">(S<sub>diag</sub>)</font>>];
+    DT_Service_Optimization [pos="13.175,1.55!", width=3.15, height=0.45, label=<<b>DT_Service_Optimization</b>  <font face="Cambria Math" point-size="12">(S<sub>opti</sub>)</font>>];
+    DT_Service_Control      [pos="12.95,0.9!",   width=2.7,  height=0.45, label=<<b>DT_Service_Control</b>  <font face="Cambria Math" point-size="12">(S<sub>cont</sub>)</font>>];
+  }
+
+  // ================================================================ relations
+  // ---------------------------------------------------------------- inheritance (hollow triangle at the parent)
+  edge [dir=back, arrowtail=onormal, style=solid];
+  DT_DMS -> DT_DMS_Architecture [id=edgeA];
+  DT_Automaton -> DT_Model;
+  DT_Automaton -> DT_Service;
+  DT_Model -> DT_Model_Descriptive   [tailport=e, headport=w];
+  DT_Model -> DT_Model_Predictive    [tailport=e, headport=w];
+  DT_Model -> DT_Model_Prescriptive  [tailport=e, headport=w];
+  DT_Service -> DT_Service_Monitoring    [tailport=e, headport=w];
+  DT_Service -> DT_Service_Prediction    [tailport=e, headport=w];
+  DT_Service -> DT_Service_Diagnosis     [tailport=e, headport=w];
+  DT_Service -> DT_Service_Optimization  [tailport=e, headport=w];
+  DT_Service -> DT_Service_Control       [tailport=e, headport=w];
+
+  // ---------------------------------------------------------------- implements (dashed, hollow triangle at the interface)
+  edge [dir=back, arrowtail=onormal, style=dashed];
+  ObserverData -> DT_Model;
+  ObserverData -> DT_Service [id=edgeI];
+  ObserverDataManager -> DT_Data;
+
+  // ---------------------------------------------------------------- composition (filled diamond at the whole)
+  edge [dir=back, arrowtail=diamond, style=solid];
+  // these three lines are redrawn as hand-made curves by make_overview.sh (see the ids)
+  // anchor DT_DMS 1.6,4.2
+  // curve edgeD 2.7,4.51 | 2.7,4.68 2.7,6.9 2.4,9.3 4.4,9.3 6.2,9.3 7.6,9.05 8.9,8.75
+  // curve edgeM 3.1,4.2 | 3.27,4.2 5.4,4.2 6.8,5.8 8.9,5.8
+  // curve edgeS 1.9,3.89 | 1.9,3.72 1.9,1.8 2.6,0.45 4.6,0.45 6.6,0.45 7.8,1.3 8.9,2.05
+  // curve edgeI 6.2,6.95 | 6.38,6.92 7.9,6.8 8.35,6.5 8.35,5.6 8.35,4.2 8.6,3.2 9.2,2.63
+  // curve edgeA 1.25,4.51 | 1.25,4.69 1.25,4.8 1.25,4.92 1.25,5.025
+  DT_DMS -> DT_Data    [id=edgeD];
+  DT_DMS -> DT_Model   [id=edgeM];
+  DT_DMS -> DT_Service [id=edgeS];
+  DT_DMS -> DT_Mu [tailport=ne];
+  DT_Data -> DT_DataSegment [label="1"];
+
+  // ---------------------------------------------------------------- associations
+  edge [dir=forward, arrowhead=vee, arrowtail=none, style=solid];
+  DT_Service -> DT_Model;
+  DT_Mu -> DT_Data;
+  DT_Mu -> DT_Model;
+
+  // ---------------------------------------------------------------- labels of the relations (placed by hand)
+  node [shape=plaintext, style="", fixedsize=false, width=0, height=0, margin=0, fontsize=11];
+  lD   [pos="2.1,7.3!",  label="D   0..*"];
+  lMu  [pos="3.45,5.1!", label="μ   1"];
+  lM   [pos="4.6,4.02!", label="M   0..*"];
+  lS   [pos="2.6,2.4!",  label="S   0..*"];
+  lObs [pos="7.85,7.85!", label="observes"];
+  lUpd [pos="7.25,6.03!", label=<updates: μ(ω, m) = m′>];
+  lCpl [pos="10.75,4.65!", label="coupled model   0..1"];
+}

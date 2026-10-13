@@ -1,28 +1,21 @@
-
-
 /**
- * This package contains Data related to the DT-DMS framework.
+ * This package contains the Data ({@code D}) of the DT-DMS framework.
  *
- *  <p>
- *     DT uses set of Data (Historical &amp; Real-Time) from Sensors/System, Platforms and Humans.
- *     This package contains DT data related classes with {@code Data} as Abstract class representing generic data
- *     in DMS framework, as well as the {@code SystemData}, {@code PlatformData} and {@code HumanData} the
- *     Child classes inherited from the {@code Data} Abstract class, ensuring a modular and extensible design.
+ * <p>
+ *     {@code D} is the data collected from the ToI, either historical or real-time:
+ *     {@code D = D_hist ∪ D_rt}. The classification depends only on the measurement time: a datum
+ *     {@code d = ω(t)} is real-time iff {@code t ≥ t_now − δ}, and historical otherwise.
  *     The description for each class in the {@code Data} package is as follows:
- *  </p>
+ * </p>
  *
  * <ul>
- *   <li>{@code Data}: The abstract class. It handels generic DT data.</li>
- *   <li>{@code SystemData}: Class inherited from {@code Data} class. It handels the data from Sensors, IoTs, Embedded Systems, etc.</li>
- *   <li>{@code PlatformData}: Class inherited from {@code Data} class. It handels the data from data platforms, APIs, Cloud, etc.</li>
- *   <li>{@code HumanData}: Class inherited from {@code Data} class. It handels the DT human-related and interaction data.</li>
+ *   <li>{@code DT_Data}: a source of data of the ToI. It records every datum with its measurement time and
+ *       notifies its observers (the data assimilation function {@code μ}).</li>
+ *   <li>{@code DT_DataSegment}: a measured data segment {@code ω : T_U ⇀ D}, classified at {@code t_now} as
+ *       real-time, historical or mixed.</li>
  * </ul>
  *
- *
- *
  * @author [ALI Zeeshan, Mamadou Kaba TRAORÉ]
- * @version 1.0
+ * @version 2.0
  */
-
 package Data;
-// Optionally include package-level annotations

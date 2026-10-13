@@ -1,0 +1,9 @@
+<map id="Models.DT_Model_Descriptive&lt; T &gt;" name="Models.DT_Model_Descriptive&lt; T &gt;">
+<area shape="rect" id="Node000001" title="Represents a descriptive model (m ∈ M_desc) of the Digital Twin." alt="" coords="116,1387,336,1744"/>
+<area shape="rect" id="Node000002" href="$class_models_1_1_d_t___model.html" title="Abstract base class representing a generic DT model m ∈ M of DT = ⟨D, M, S, μ⟩." alt="" coords="126,1051,326,1339"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="227,1351,228,1388,223,1386,225,1356"/>
+<area shape="rect" id="Node000003" href="$class_automaton_1_1_d_t___automaton.html" title="Abstract base class representing the class of automata 𝒜 of the DT&#45;DMS framework." alt="" coords="5,5,222,1003"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="197,1015,205,1051,200,1051,197,1020"/>
+<area shape="rect" id="Node000004" href="$interface_mu_1_1_observer_data.html" title="Observer of the data observer pattern: an object that wants to be told when new data arrives." alt="" coords="247,469,432,539"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="332,551,252,1051,247,1050,330,556"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Visualization.DT_ChartPanel" name="Visualization.DT_ChartPanel">
+<area shape="rect" id="Node000001" title="Live chart of the sine example: it plots the raw sine data measured on the ToI (real space) and the v..." alt="" coords="5,123,201,357"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="76,5,131,75"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="104,87,106,123,101,122,103,92"/>
+</map>

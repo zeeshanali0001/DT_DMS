@@ -1,0 +1,5 @@
+<map id="Automaton.DT_Automaton" name="Automaton.DT_Automaton">
+<area shape="rect" id="Node000001" title="Abstract base class representing the class of automata 𝒜 of the DT&#45;DMS framework." alt="" coords="16,269,233,1245"/>
+<area shape="rect" id="Node000002" href="$class_automaton_1_1_d_t___automaton_1_1_initialization.html" title="The initialization Δ* = ⟨φ_0, Update_0, τ_0⟩." alt="" coords="5,5,244,197"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="125,195,127,253,122,252,124,200"/>
+</map>

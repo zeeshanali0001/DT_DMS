@@ -1,0 +1,17 @@
+<map id="Services.DT_Service&lt; T &gt;" name="Services.DT_Service&lt; T &gt;">
+<area shape="rect" id="Node000001" title="Abstract base class representing a generic DT service s ∈ S of DT = ⟨D, M, S, μ⟩." alt="" coords="490,1051,705,1611"/>
+<area shape="rect" id="Node000004" href="$class_services_1_1_d_t___service___control.html" title="Class representing a Control Service (s ∈ S_cont) of the Digital Twin." alt="" coords="5,1739,210,1995"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="476,1420,350,1529,285,1593,225,1660,196,1699,171,1740,166,1738,192,1696,220,1657,281,1589,347,1525,480,1416"/>
+<area shape="rect" id="Node000005" href="$class_services_1_1_d_t___service___diagnosis.html" title="Class representing a Diagnosis Service (s ∈ S_diag) of the Digital Twin." alt="" coords="234,1749,442,1984"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="485,1565,397,1751,393,1748,481,1569"/>
+<area shape="rect" id="Node000006" href="$class_services_1_1_d_t___service___monitoring.html" title="Class representing a Monitoring Service (s ∈ S_moni) of the Digital Twin." alt="" coords="467,1659,727,2075"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="598,1623,600,1660,595,1658,596,1628"/>
+<area shape="rect" id="Node000007" href="$class_services_1_1_d_t___service___optimization.html" title="Class representing an Optimization Service (s ∈ S_opti) of the Digital Twin." alt="" coords="752,1757,968,1976"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="712,1561,809,1758,804,1757,710,1566"/>
+<area shape="rect" id="Node000008" href="$class_services_1_1_d_t___service___prediction.html" title="Class representing a Prediction Service (s ∈ S_pred) of the Digital Twin." alt="" coords="991,1787,1176,1947"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="716,1411,783,1462,852,1521,920,1587,982,1657,1024,1721,1056,1788,1051,1786,1019,1723,978,1660,916,1590,849,1525,780,1466,716,1417"/>
+<area shape="rect" id="Node000002" href="$class_automaton_1_1_d_t___automaton.html" title="Abstract base class representing the class of automata 𝒜 of the DT&#45;DMS framework." alt="" coords="377,5,594,1003"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="555,1015,562,1051,557,1050,554,1020"/>
+<area shape="rect" id="Node000003" href="$interface_mu_1_1_observer_data.html" title="Observer of the data observer pattern: an object that wants to be told when new data arrives." alt="" coords="618,469,803,539"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="705,551,638,1052,633,1050,703,556"/>
+</map>

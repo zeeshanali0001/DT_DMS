@@ -1,102 +1,130 @@
+
+import Data.DT_DataSegment;
 import Data.DT_Data_SineValues;
-import Models.DT_Models_Descr_CubicBSpline;
-import Services.DT_Services_Diagnosis_Sine;
+import Models.DT_Model_Descr_CubicBSpline;
+import Mu.DT_Mu;
+import Services.DT_Service_Diagnosis_Sine;
+import Visualization.DT_ChartPanel;
+
+import java.awt.GraphicsEnvironment;
 
 /**
- * Main orchestrator class for the Sine Wave Cubic B-Spline Digital Twin example.
- * This class sets up the entire Digital Twin system:
+ * Main class of the Sine Wave Cubic B-Spline Digital Twin example: a minimal "Hello World" Digital Twin
+ * {@code DT = ⟨D, M, S, μ⟩} built with the DT-DMS framework.
  * <ul>
- *   <li>Creates the Data source (Physical Twin)</li>
- *   <li>Creates the Model (Digital Model)</li>
- *   <li>Creates the Diagnosis Service</li>
- *   <li>Links them using the Observer Pattern</li>
- *   <li>Runs the simulation by pushing sine values</li>
+ *   <li>{@code D}: the sine values measured on the ToI ({@link DT_Data_SineValues}).</li>
+ *   <li>{@code M}: one descriptive model, the Cubic B-Spline ({@link DT_Model_Descr_CubicBSpline}).</li>
+ *   <li>{@code S}: one diagnosis service ({@link DT_Service_Diagnosis_Sine}), coupled to the model.</li>
+ *   <li>{@code μ}: the data assimilation function of the framework; it observes the data and updates the model.</li>
  * </ul>
  *
- * <p>This is a minimal "Hello World" Digital Twin that demonstrates:
- * Data → Model → Diagnosis with live charting and anomaly detection.</p>
+ * <p>Information flow for each sample: Data → μ → Model → Diagnosis, with live charting and anomaly
+ * detection. The model and the service are both specified as automata (see their classes).</p>
  *
  * @author Zeeshan ALI, Mamadou Kaba TRAORE
- * @version 1.0
+ * @version 2.0
  */
-public class DT_DMS_SineCubicBP extends DT_DMS {
+public class DT_DMS_SineCubicBP extends DT_DMS<Double> {
+
+    /** Step size between two samples. */
+    static final double STEP = 0.05;
+
+    /** Freshness threshold {@code δ}: data measured during the last time unit is real-time. */
+    static final double DELTA = 1.0;
+
+    /** Largest residual considered normal by the diagnosis service. */
+    static final double ANOMALY_THRESHOLD = 0.05;
+
+    /** The sine data source ({@code D}). */
+    DT_Data_SineValues sineData;
+
+    /** The Cubic B-Spline model ({@code M}). */
+    DT_Model_Descr_CubicBSpline splineModel;
+
+    /** The diagnosis service ({@code S}). */
+    DT_Service_Diagnosis_Sine diagnosis;
+
+    /** The data assimilation function ({@code μ}); the same object as {@code getMu()}. */
+    DT_Mu<Double> assimilation;
+
+    /** The live chart ({@code null} if not shown). */
+    DT_ChartPanel chart;
+
+    /** The simulated current time {@code t_now}. */
+    private double now = 0.0;
 
     /**
-     * Default constructor.
+     * Builds the Digital Twin: creates the data, the model and the service and connects them.
+     *
+     * @param showChart {@code true} to show the live chart.
      */
-    public DT_DMS_SineCubicBP() {
-        super();
+    public DT_DMS_SineCubicBP(boolean showChart) {
+        super(DELTA);
+        setClock(() -> now);
+        assimilation = mu;
+
+        sineData = new DT_Data_SineValues("Sine values");
+        splineModel = new DT_Model_Descr_CubicBSpline(STEP, 0.0);
+        diagnosis = new DT_Service_Diagnosis_Sine(ANOMALY_THRESHOLD);
+
+        addData(sineData);                      // μ observes the data
+        addService(diagnosis, splineModel);     // adds the model to M and couples the service to it
+
+        if (showChart) {
+            chart = new DT_ChartPanel();
+        }
     }
 
     /**
-     * Orchestrates the complete setup and execution of the Digital Twin system.
-     * 
-     * <p>Execution flow:</p>
+     * Runs the simulation: measures {@code nbVal} sine values, one per step. For each value:
      * <ol>
-     *   <li>Create Model (Cubic B-Spline)</li>
-     *   <li>Create Diagnosis Service</li>
-     *   <li>Create Data source (Sine Values)</li>
-     *   <li>Register Model and Service as observers to the Data (Observer Pattern)</li>
-     *   <li>Link Service with Data for chart updates and diagnosis</li>
-     *   <li>Simulate incoming data by calling push_back() in a loop</li>
+     *   <li>the data source measures the ToI at {@code t_now};</li>
+     *   <li>{@code μ} assimilates the real-time datum synchronously into the model;</li>
+     *   <li>the diagnosis service is run on the datum, {@code s(m, ω)};</li>
+     *   <li>the chart is updated.</li>
      * </ol>
+     *
+     * @param nbVal the number of values to measure.
      */
-    public void execute() {
+    public void execute(int nbVal) {
         System.out.println("Sine_DMS::execute() begin");
+        System.out.println(this);
 
-        // Step 1: Create the Digital Model (Cubic B-Spline)
-        double step = 0.05;
-        DT_Models_Descr_CubicBSpline cBSModel = new DT_Models_Descr_CubicBSpline(step);
-        this.addModel(cBSModel);
-
-        // Step 2: Create the Diagnosis Service
-        DT_Services_Diagnosis_Sine svService = new DT_Services_Diagnosis_Sine(cBSModel);
-        this.addService(svService);
-
-        // Step 3: Create the Data Source (Physical Twin)
-        DT_Data_SineValues svData = new DT_Data_SineValues("Sine values");
-        this.addData(svData);
-
-        // Step 4: Link using Observer Pattern
-        // Both Model and Service will be automatically notified when data changes
-        svData.registerObserver(cBSModel);
-        svData.registerObserver(svService);
-
-        // Step 5: Link the Service with the Data source
-        // This is REQUIRED for chart updates and accessing raw values in diagnosis
-        svService.setLatestData(svData);
-
-        // Step 6: Connect model and service directly (kept from your original design)
-        cBSModel.addService2BeUpdated(svService);
-
-        System.out.println("Starting simulation - pushing 100 sine values...\n");
-
-        int nbVal = 100;
         for (int index = 0; index < nbVal; ++index) {
-            double xraw = index * step;
-            double x = Math.round(xraw * 1000.0) / 1000.0;   // round to 3 decimal places
-            double sineValue = Math.sin(x);
+            now = Math.round(index * STEP * 1000.0) / 1000.0;       // t_now, rounded to 3 decimal places
 
-            // Push new value → This triggers the Observer Pattern every 10 values
-            svData.push_back(sineValue);
+            double sineValue = sineData.measure(now);                // D, then μ(ω, m) = m'
+            Object report = runService(diagnosis, new DT_DataSegment<>(now, sineValue));   // s(m, ω)
 
-            System.out.println("Data index " + index + " (x=" + x + "), sine value = " + sineValue);
+            if (index % 10 == 0 || !"OK".equals(report)) {
+                System.out.println("Data index " + index + " (t=" + now + "), sine value = " + sineValue
+                        + ", model = " + splineModel.getSineModelValue(now) + " → " + report);
+            }
+            if (chart != null) {
+                chart.updateChart(index, sineValue, splineModel.getSineModelValue(now));
+            }
         }
 
         System.out.println("\nSine_DMS::execute() end");
-        System.out.println("Digital Twin simulation completed successfully.");
+        splineModel.executeModel();
+        System.out.println("Anomalies detected at t = " + diagnosis.getAnomalyTimes());
+        System.out.println("D_rt   (t ≥ t_now − δ): " + sineData.getRealTimeData(DELTA).size() + " values");
+        System.out.println("D_hist (t < t_now − δ): " + sineData.getHistoricalData(DELTA).size() + " values");
+        System.out.println("Model automaton:   phase " + splineModel.getCurrentPhase() + ", state " + splineModel.getState());
+        System.out.println("Service automaton: phase " + diagnosis.getCurrentPhase() + ", state " + diagnosis.getState());
     }
 
-    // ==================== Commented fields for documentation ====================
-    // These are kept for Doxygen reference (you can remove them if not needed)
+    /**
+     * Runs the example. Pass the argument {@code nochart} to run without the live chart.
+     *
+     * @param args optional: {@code nochart}.
+     */
+    public static void main(String[] args) {
+        boolean showChart = !(args.length > 0 && args[0].equalsIgnoreCase("nochart"))
+                && !GraphicsEnvironment.isHeadless();
 
-    /** Reference to the Cubic B-Spline model */
-    DT_Models_Descr_CubicBSpline cBSModel = null;
-
-    /** Reference to the sine data source */
-    DT_Data_SineValues cBS = null;
-
-    /** Reference to the diagnosis service */
-    DT_Services_Diagnosis_Sine sineDiagnosisService = null;
-    //        
+        DT_DMS_SineCubicBP dtSystem = new DT_DMS_SineCubicBP(showChart);
+        dtSystem.sineData.injectAnomaly(3.0, 0.5);      // a spike on the ToI, to be found by the diagnosis
+        dtSystem.execute(100);
+    }
 }

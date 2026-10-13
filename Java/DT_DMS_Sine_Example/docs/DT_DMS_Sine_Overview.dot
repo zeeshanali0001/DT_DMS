@@ -1,0 +1,121 @@
+// Black-and-white class diagram of the DT-DMS sine example: class names only, packages marked as frames.
+// Thick boxes are the classes of the example; thin boxes are the classes of the DT-DMS framework.
+// All positions are fixed (inches). Render it with the script (from the docs folder, in Git Bash):
+//   sh make_overview.sh DT_DMS_Sine_Overview
+digraph DT_DMS_Sine_Overview {
+  graph [splines=line, fontname="Arial", margin=0, pad=0.08, bgcolor=white, outputorder=edgesfirst];
+  node  [shape=box, style=filled, fillcolor=white, color=black, fontname="Arial", fontsize=13, fixedsize=true, height=0.62];
+  edge  [fontname="Arial", fontsize=11, arrowsize=0.9, color=black, fontcolor=black];
+
+  // ================================================================ left column: the Digital Twin
+  DT_DMS [pos="1.6,7.4!", width=2.6,
+          label=<<b>DT_DMS</b><br/><font face="Cambria Math" point-size="12">DT = ⟨D, M, S, μ⟩</font>>];
+  DT_DMS_SineCubicBP [pos="1.6,3.0!", width=2.7, penwidth=2.2,
+          label=<<b>DT_DMS_SineCubicBP</b><br/><font face="Cambria Math" point-size="12">the sine Digital Twin</font>>];
+
+  subgraph cluster_mu {
+    label=<<b>Mu</b>>; labelloc=t; labeljust=l; fontname="Arial"; fontsize=13; style="rounded"; color=gray55; penwidth=1.2;
+    mu_a [pos="0.3,4.55!", shape=point, width=0.01, style=invis];
+    mu_b [pos="2.9,6.05!", shape=point, width=0.01, style=invis];
+    DT_Mu [pos="1.6,5.15!", width=2.3,
+           label=<<b>DT_Mu</b><br/><font face="Cambria Math" point-size="12">μ : Ω<sub>D</sub> × M → M</font>>];
+  }
+
+  subgraph cluster_visualization {
+    label=<<b>Visualization</b>>; labelloc=t; labeljust=l; fontname="Arial"; fontsize=13; style="rounded"; color=gray55; penwidth=1.2;
+    vi_a [pos="0.3,-0.4!", shape=point, width=0.01, style=invis];
+    vi_b [pos="2.9,1.0!", shape=point, width=0.01, style=invis];
+    DT_ChartPanel [pos="1.6,0.15!", width=2.3, height=0.45, penwidth=2.2, label=<<b>DT_ChartPanel</b>>];
+  }
+
+  // ================================================================ top: Automaton
+  subgraph cluster_automaton {
+    label=<<b>Automaton</b>>; labelloc=t; fontname="Arial"; fontsize=13; style="rounded"; color=gray55; penwidth=1.2;
+    au_a [pos="9.4,9.0!", shape=point, width=0.01, style=invis];
+    au_b [pos="12.4,10.6!", shape=point, width=0.01, style=invis];
+    DT_Automaton [pos="10.9,9.65!", width=2.6, height=0.85,
+                  label=<<i>«abstract»</i><br/><b>DT_Automaton</b><br/><font face="Cambria Math" point-size="12">⟨Λ, X, Y, Σ, Φ, Δ, Δ*⟩</font>>];
+  }
+
+  // ================================================================ Data, Models, Services
+  // In each frame: the framework classes on top, the class of the example at the bottom.
+
+  subgraph cluster_data {
+    label=<<b>Data</b>>; labelloc=t; fontname="Arial"; fontsize=13; style="rounded"; color=gray55; penwidth=1.2;
+    da_a [pos="3.75,2.35!", shape=point, width=0.01, style=invis];
+    da_b [pos="6.95,8.5!", shape=point, width=0.01, style=invis];
+    DT_Data [pos="5.35,7.4!", width=2.9,
+             label=<<b>DT_Data</b><br/><font face="Cambria Math" point-size="12">D = D<sub>hist</sub> ∪ D<sub>rt</sub></font>>];
+    DT_Data_SineValues [pos="5.35,3.0!", width=2.9, penwidth=2.2,
+             label=<<b>DT_Data_SineValues</b><br/><font face="Cambria Math" point-size="12">d = ω(t) = sin(t)</font>>];
+  }
+
+  subgraph cluster_models {
+    label=<<b>Models</b>>; labelloc=t; fontname="Arial"; fontsize=13; style="rounded"; color=gray55; penwidth=1.2;
+    mo_a [pos="7.45,2.35!", shape=point, width=0.01, style=invis];
+    mo_b [pos="10.65,8.5!", shape=point, width=0.01, style=invis];
+    DT_Model [pos="9.05,7.4!", width=2.9, height=0.85,
+              label=<<i>«abstract»</i><br/><b>DT_Model</b><br/><font face="Cambria Math" point-size="12">m ∈ M</font>>];
+    DT_Model_Descriptive [pos="9.05,5.2!", width=2.9,
+              label=<<b>DT_Model_Descriptive</b><br/><font face="Cambria Math" point-size="12">M<sub>desc</sub></font>>];
+    DT_Model_Descr_CubicBSpline [pos="9.05,3.0!", width=2.9, penwidth=2.2, fontsize=12,
+              label=<<b>DT_Model_Descr_CubicBSpline</b><br/><font face="Cambria Math" point-size="12">automaton ℳ: WAIT, UPDATE</font>>];
+  }
+
+  subgraph cluster_services {
+    label=<<b>Services</b>>; labelloc=t; fontname="Arial"; fontsize=13; style="rounded"; color=gray55; penwidth=1.2;
+    se_a [pos="11.15,2.35!", shape=point, width=0.01, style=invis];
+    se_b [pos="14.35,8.5!", shape=point, width=0.01, style=invis];
+    DT_Service [pos="12.75,7.4!", width=2.9, height=0.85,
+                label=<<i>«abstract»</i><br/><b>DT_Service</b><br/><font face="Cambria Math" point-size="12">s : M × Ω<sub>D</sub> → Y<sub>s</sub></font>>];
+    DT_Service_Diagnosis [pos="12.75,5.2!", width=2.9,
+                label=<<b>DT_Service_Diagnosis</b><br/><font face="Cambria Math" point-size="12">S<sub>diag</sub></font>>];
+    DT_Service_Diagnosis_Sine [pos="12.75,3.0!", width=2.9, penwidth=2.2, fontsize=12,
+                label=<<b>DT_Service_Diagnosis_Sine</b><br/><font face="Cambria Math" point-size="12">automaton 𝒮: IDLE, CHECK</font>>];
+  }
+
+  // ================================================================ relations
+  // ---------------------------------------------------------------- inheritance (hollow triangle at the parent)
+  edge [dir=back, arrowtail=onormal, style=solid];
+  DT_Automaton -> DT_Model;
+  DT_Automaton -> DT_Service;
+  DT_Data -> DT_Data_SineValues;
+  DT_Model -> DT_Model_Descriptive;
+  DT_Model_Descriptive -> DT_Model_Descr_CubicBSpline;
+  DT_Service -> DT_Service_Diagnosis;
+  DT_Service_Diagnosis -> DT_Service_Diagnosis_Sine;
+  // DT_DMS_SineCubicBP extends DT_DMS: around the left side of the Mu frame
+  b1 [pos="0.0,7.4!", shape=point, width=0.01];
+  b2 [pos="0.0,3.0!", shape=point, width=0.01];
+  DT_DMS -> b1 [tailport=w];
+  b1 -> b2 [dir=none];
+  b2 -> DT_DMS_SineCubicBP [dir=none, headport=w];
+
+  // ---------------------------------------------------------------- composition (filled diamond at the whole)
+  edge [dir=back, arrowtail=diamond, style=solid];
+  DT_DMS -> DT_Mu;
+  DT_DMS_SineCubicBP -> DT_Data_SineValues [tailport=e, headport=w];
+  DT_DMS_SineCubicBP -> DT_ChartPanel [tailport=s, headport=n];
+  // these two lines are drawn as hand-made curves under the frames by make_overview.sh (see the ids)
+  // anchor DT_DMS 1.6,7.4
+  // curve edgeM 2.8,2.69 | 2.8,2.52 2.85,2.0 3.4,1.8 4.6,1.8 7.0,1.8 9.05,1.75 9.05,2.69
+  // curve edgeS 2.45,2.69 | 2.45,2.52 2.5,1.75 3.2,1.35 4.6,1.35 9.0,1.35 12.75,1.3 12.75,2.69
+  DT_DMS_SineCubicBP -> DT_Model_Descr_CubicBSpline [id=edgeM];
+  DT_DMS_SineCubicBP -> DT_Service_Diagnosis_Sine   [id=edgeS];
+
+  // ---------------------------------------------------------------- associations
+  edge [dir=forward, arrowhead=vee, arrowtail=none, style=solid];
+  DT_Mu -> DT_Data_SineValues;
+  DT_Mu -> DT_Model_Descr_CubicBSpline;
+  DT_Service_Diagnosis_Sine -> DT_Model_Descr_CubicBSpline [tailport=w, headport=e];
+
+  // ---------------------------------------------------------------- labels of the relations (placed by hand)
+  node [shape=plaintext, style="", fixedsize=false, width=0, height=0, margin=0, fontsize=11, penwidth=1];
+  lMu  [pos="1.95,6.55!", label="μ   1"];
+  lD   [pos="3.35,3.17!", label="D"];
+  lM   [pos="9.25,2.1!",  label="M"];
+  lS   [pos="12.95,2.1!", label="S"];
+  lObs [pos="2.7,3.85!",  label="observes"];
+  lUpd [pos="4.55,4.62!", label="updates (μ)"];
+  lCpl [pos="10.9,3.42!", label="coupled\nmodel"];
+}

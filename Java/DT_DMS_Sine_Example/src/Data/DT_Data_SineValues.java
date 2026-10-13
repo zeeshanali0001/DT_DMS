@@ -1,69 +1,58 @@
 package Data;
 
-
-import java.util.ArrayList;
-import java.util.List;
 /**
- * Concrete data class that generates and stores sine wave values.
- * Every time 10 new values are added, it triggers notification to all observers
- * using the Observer Pattern.
- *
- * <p>This represents the "Physical Twin" part of the Digital Twin.</p>
+ * Data source of the sine example: it plays the role of the ToI (the "physical twin") and produces the
+ * sine wave values measured over time.
+ * <p>
+ * Each call to {@link #measure} produces the datum {@code d = ω(t) = sin(t)} measured at time {@code t} and
+ * records it; the observers (the data assimilation function {@code μ}) are notified at once.
+ * An anomaly can be injected to test the diagnosis service.
+ * </p>
  *
  * @author Zeeshan ALI, Mamadou Kaba TRAORE
- * @version 1.0
+ * @version 2.0
  */
+public class DT_Data_SineValues extends DT_Data<Double> {
 
+    /** The time at which an anomaly is injected ({@code NaN} = no anomaly). */
+    private double anomalyTime = Double.NaN;
 
-
-public class DT_Data_SineValues extends DT_Data {
-
-    /** List that stores all generated sine values */
-    private final List<Double> _sineValues = new ArrayList<>();
-
-    /** Current index / counter of how many values have been pushed */
-    private int _currentIndex = 0;
+    /** The offset added to the sine value at {@link #anomalyTime}. */
+    private double anomalyOffset = 0.0;
 
     /**
      * Constructor to initialize the sine data source.
      *
-     * @param name Descriptive name of this data source (e.g., "Sine values")
+     * @param name descriptive name of this data source (e.g., "Sine values").
      */
     public DT_Data_SineValues(String name) {
-        this._dataName = name;
+        super(name, "Sine");
     }
 
     /**
-     * Returns the list of all sine values collected so far.
+     * Measures the ToI at time {@code t}: produces {@code sin(t)} (plus the anomaly offset, if any at that
+     * time), records it and notifies the observers.
      *
-     * @return Immutable view of sine values list (consider Collections.unmodifiableList in production)
+     * @param t the measurement time.
+     * @return the measured value.
      */
-    public List<Double> getSineDataValues() {
-        return _sineValues;
-    }
-
-    /**
-     * Returns the current index (number of values pushed so far).
-     * This is used by the chart and diagnosis service to plot correct x-axis.
-     *
-     * @return Current sample index
-     */
-    public int getCurrentIndex() {
-        return _currentIndex;
-    }
-
-    /**
-     * Adds a new sine value to the collection.
-     * Increments the index and triggers notification to observers every 10 values.
-     *
-     * @param val The sine value to add
-     */
-    public void push_back(double val) {
-        _sineValues.add(val);
-        _currentIndex++;
-
-        if (_sineValues.size() % 10 == 0) {
-            updateData();   // Triggers Observer Pattern - notifies Model and Service
+    public double measure(double t) {
+        double value = Math.sin(t);
+        if (Math.abs(t - anomalyTime) < 1e-9) {
+            value += anomalyOffset;
         }
+        updateData(t, value);
+        return value;
+    }
+
+    /**
+     * Injects an anomaly: the value measured at {@code time} will be shifted by {@code offset}.
+     *
+     * @param time   the measurement time of the anomaly.
+     * @param offset the offset added to the sine value.
+     */
+    public void injectAnomaly(double time, double offset) {
+        this.anomalyTime = time;
+        this.anomalyOffset = offset;
     }
 }

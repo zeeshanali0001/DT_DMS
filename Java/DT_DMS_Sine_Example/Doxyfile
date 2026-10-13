@@ -1,0 +1,41 @@
+# Doxygen configuration for the DT-DMS framework (run from this folder: doxygen Doxyfile)
+# Only the options that differ from the Doxygen defaults are listed.
+
+PROJECT_NAME           = "DT-DMS Sine Example"
+PROJECT_NUMBER         = 2.0
+PROJECT_BRIEF          = "A minimal Digital Twin DT = <D, M, S, mu> of a sine wave, built with the DT-DMS framework"
+OUTPUT_DIRECTORY       = docs
+
+INPUT                  = README.md src
+USE_MDFILE_AS_MAINPAGE = README.md
+FILE_PATTERNS          = *.java *.md
+RECURSIVE              = YES
+INPUT_ENCODING         = UTF-8
+OPTIMIZE_OUTPUT_JAVA   = YES
+JAVADOC_AUTOBRIEF      = YES
+
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+EXTRACT_PACKAGE        = YES
+EXTRACT_STATIC         = YES
+
+GENERATE_HTML          = YES
+GENERATE_LATEX         = NO
+GENERATE_TREEVIEW      = YES
+
+# Diagrams (needs Graphviz "dot" on the PATH)
+HAVE_DOT               = YES
+DOT_IMAGE_FORMAT       = svg
+INTERACTIVE_SVG        = YES
+CLASS_GRAPH            = YES
+COLLABORATION_GRAPH    = YES
+UML_LOOK               = YES
+UML_LIMIT_NUM_FIELDS   = 30
+DOT_UML_DETAILS        = YES
+TEMPLATE_RELATIONS     = YES
+GRAPHICAL_HIERARCHY    = YES
+DIRECTORY_GRAPH        = YES
+DOT_GRAPH_MAX_NODES    = 100
+MAX_DOT_GRAPH_DEPTH    = 0
+# Keep the .dot files so that the architecture image can also be rendered as PNG
+DOT_CLEANUP            = NO

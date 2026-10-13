@@ -1,280 +1,217 @@
 package Data;
 
-import DataObserver.*;
-
+import Mu.ObserverData;
+import Mu.ObserverDataManager;
 
 import java.util.ArrayList;
 import java.util.List;
-
-
+import java.util.Objects;
+import java.util.function.DoubleSupplier;
 
 /**
- * Abstract class representing generic data in the Digital Twin framework.
- * This class serves as a base for different specialized data types (e.g., {@code SystemData}, {@code PlatformData}),
- * providing shared attributes and methods for data management.
+ * Class representing a source of data collected from the ToI, i.e., a part of {@code D} in
+ * {@code DT = ⟨D, M, S, μ⟩}.
+ * <p>
+ * The collected data is either historical or real-time, {@code D = D_hist ∪ D_rt}. The classification
+ * depends only on the measurement time: a datum {@code d = ω(t)} is real-time iff {@code t ≥ t_now − δ},
+ * and historical otherwise, where {@code t} is the measurement time, {@code t_now} the current time and
+ * {@code δ} the data scope during which data is considered real-time.
+ * </p>
  *
  * <p>Key features of the class include:
  * <ul>
- *   <li>Encapsulation of common data attributes such as source, data type, and timestamp.</li>
- *   <li>Abstract methods for fetching and validating data to enforce implementation in derived classes.</li>
- *   <li>A standard {@code toString} method for debugging and logging purposes.</li>
+ *   <li>Every datum is recorded with its measurement time in a segment {@code ω} ({@link DT_DataSegment}).</li>
+ *   <li>{@link #getRealTimeData} and {@link #getHistoricalData} give {@code D_rt} and {@code D_hist} of the source.</li>
+ *   <li>It is the subject of the observer pattern ({@link ObserverDataManager}): each new datum is pushed to
+ *       the registered observers, in particular to the data assimilation function {@code μ}.</li>
  * </ul>
  * </p>
+ *
+ * @param <T> the type of a datum {@code d ∈ D}.
  */
-public abstract class DT_Data<T> implements ObserverDataManager<T> {
+public class DT_Data<T> implements ObserverDataManager<T> {
 
-    // List to hold all observers interested in this data type
+    /** The observers interested in this data source. */
     private final List<ObserverData<T>> observers = new ArrayList<>();
 
-    // Holds the latest data
+    /** The source of the data (e.g., "Sensor A", "API"). */
+    protected String source;
+
+    /** The type of the data (e.g., "Temperature", "Pressure"). */
+    protected String dataType;
+
+    /** The latest datum. */
     private T currentData;
+
+    /** The measurement time {@code t ∈ T_U} of the latest datum, i.e., {@code currentData = ω(currentTime)}. */
+    private double currentTime;
+
+    /** All data collected from this source, as a segment {@code ω : T_U ⇀ D}. */
+    private final DT_DataSegment<T> collectedData = new DT_DataSegment<>();
+
+    /** Gives the current time {@code t_now} (default: system time in seconds). */
+    private DoubleSupplier clock = () -> System.currentTimeMillis() / 1000.0;
+
+    /**
+     * Constructs a data source.
+     *
+     * @param source   the origin of the data (e.g., sensor name or system name).
+     * @param dataType the type or category of the data (e.g., temperature).
+     */
+    public DT_Data(String source, String dataType) {
+        this.source = source;
+        this.dataType = dataType;
+    }
+
+    // ---------------------------------------------------------------- observer pattern (subject)
 
     @Override
     public void registerObserver(ObserverData<T> observer) {
         if (!observers.contains(observer)) {
             observers.add(observer);
-            System.out.println("Observer registered: " + observer.getClass().getSimpleName());
         }
     }
 
     @Override
     public void removeObserver(ObserverData<T> observer) {
         observers.remove(observer);
-        System.out.println("Observer removed: " + observer.getClass().getSimpleName());
     }
 
     @Override
     public void notifyObservers() {
-        // Safe copy to avoid issues if observer removes itself during update
-        List<ObserverData<T>> observersCopy = new ArrayList<>(observers);
-
-        for (ObserverData<T> observer : observersCopy) {
+        // Safe copy to avoid issues if an observer removes itself during update
+        for (ObserverData<T> observer : new ArrayList<>(observers)) {
             observer.update(currentData);
         }
     }
 
+    // ---------------------------------------------------------------- data collection
+
     /**
-     * Call this method whenever new data arrives
+     * Call this method whenever new data arrives; the datum is time-stamped with the current time {@code t_now}.
+     *
+     * @param newData the new datum.
      */
     public void updateData(T newData) {
-        this.currentData = newData;
-        System.out.println("\n[DATA SOURCE] New data received: " + newData);
-        notifyObservers();
+        updateData(clock.getAsDouble(), newData);
     }
 
     /**
-     * Get the latest data
+     * Call this method whenever new data measured at time {@code t} arrives. The datum is recorded
+     * ({@code ω(t) = newData}) and the observers are notified.
+     *
+     * @param t       the measurement time {@code t ∈ T_U}.
+     * @param newData the new datum.
+     * @throws IllegalArgumentException if {@code t > t_now}: no datum may lie in the future.
      */
+    public void updateData(double t, T newData) {
+        if (t > clock.getAsDouble()) {
+            throw new IllegalArgumentException("No datum may lie in the future: t = " + t
+                    + " > t_now = " + clock.getAsDouble());
+        }
+        this.currentData = newData;
+        this.currentTime = t;
+        collectedData.put(t, newData);
+        notifyObservers();
+    }
+
+    /** @return the latest datum. */
     public T getCurrentData() {
         return currentData;
     }
 
-
-
-/*
-private final List<ObserverData<T>> observers = new ArrayList<>();
-    private int temperature;           // Example data field (you can add more)
-    private String location = "City Center"; // Another field for realism
-
-    // === Subject methods (from DataSubject) ===
-    @Override
-    public void registerObserver(ObserverData<DT_Data> observer) {
-        observers.add(observer);
-        System.out.println("Observer registered: " + observer.getClass().getSimpleName());
+    /** @return the measurement time of the latest datum. */
+    public double getCurrentTime() {
+        return currentTime;
     }
 
-    @Override
-    public void removeObserver(ObserverData<DT_Data> observer) {
-        observers.remove(observer);
-        System.out.println("Observer removed: " + observer.getClass().getSimpleName());
+    /** @return all data collected from this source, as a segment {@code ω}. */
+    public DT_DataSegment<T> getCollectedData() {
+        return collectedData;
     }
-
-    @Override
-    public void notifyObservers() {
-        // Safe copy to avoid ConcurrentModificationException if an observer removes itself
-        List<ObserverData<DT_Data>> observersCopy = new ArrayList<>(observers);
-        for (ObserverData<DT_Data> observer : observersCopy) {
-            observer.update(this);
-        }
-    }
-
-    // === Your data-update method (this is where "new data comes") ===
-    public void setNewTemperature(int newTemperature) {
-        this.temperature = newTemperature;
-        System.out.println("\n[DATA] New temperature received: " + newTemperature + "°C");
-        notifyObservers();   // <-- This automatically updates all Models & Applications
-    }
-
-    // Getters so observers can read the latest data
-    public int getTemperature() {
-        return temperature;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-    */
-
-
-
-
 
     /**
-     * The source of the data (e.g., "Sensor", "API",Human,...).
+     * @param delta the data scope {@code δ}.
+     * @return {@code D_rt}: the collected data measured at {@code t ≥ t_now − δ}.
      */
-    protected String source;
+    public DT_DataSegment<T> getRealTimeData(double delta) {
+        return collectedData.realTimePart(clock.getAsDouble(), delta);
+    }
 
     /**
-     * The type of the data (e.g., "Temperature", "Pressure").
-     * */
-    protected String dataType;
+     * @param delta the data scope {@code δ}.
+     * @return {@code D_hist}: the collected data measured at {@code t < t_now − δ}.
+     */
+    public DT_DataSegment<T> getHistoricalData(double delta) {
+        return collectedData.historicalPart(clock.getAsDouble(), delta);
+    }
 
     /**
-     * The timestamp indicating when the data was collected.
-     * */
-    protected String timestamp;
-
-    /**
-     * Constructs a new {@code DigitalTwin_DMS_Framework.Data} object with the specified attributes.
+     * Replaces the clock giving {@code t_now} (set by the DT so that all its parts share the same time).
      *
-     * @param source     The origin of the data (e.g., sensor name or system name).
-     * @param dataType   The type or category of the data (e.g., temperature, text).
-     * @param timestamp  The time at which the data was recorded, in an ISO-compliant format.
+     * @param clock the new clock.
      */
-    public DT_Data(String source, String dataType, String timestamp) {
-        this.source = source;
-        this.dataType = dataType;
-        this.timestamp = timestamp;
+    public void setClock(DoubleSupplier clock) {
+        this.clock = clock;
     }
 
-    /**
-     * Fetches data from the source.
-     * Subclasses must implement specific logic for fetching data based on their context.
-     */
-    public abstract void fetchData();
+    // ---------------------------------------------------------------- attributes
 
     /**
-     * Validates the integrity and completeness of the data.
-     * Subclasses must define their own validation criteria and logic.
+     * Validates the common attributes of the data source.
      *
-     * @return {@code true} if the data is valid; {@code false} otherwise.
-     */
-    /**
-     * Validates the common attributes of the data object.
-     * Subclasses can extend this validation as needed.
-     *
-     * @return true if the basic data attributes are valid; false otherwise.
+     * @return true if the source and the data type are defined; false otherwise.
      */
     public boolean validateData() {
-        return source != null && !source.isEmpty() &&
-                dataType != null && !dataType.isEmpty() &&
-                timestamp != null && !timestamp.isEmpty();
+        return source != null && !source.isEmpty() && dataType != null && !dataType.isEmpty();
     }
 
-    /**
-     * Retrieves the source of the data.
-     *
-     * @return The source of the data.
-     */
+    /** @return the source of the data. */
     public String getSource() {
         return source;
     }
 
-    /**
-     * Sets a new source for the data.
-     *
-     * @param source The new source of the data.
-     */
+    /** @param source the new source of the data. */
     public void setSource(String source) {
         this.source = source;
     }
 
-    /**
-     * Retrieves the type of the data.
-     *
-     * @return The data type.
-     */
+    /** @return the type of the data. */
     public String getDataType() {
         return dataType;
     }
 
-    /**
-     * Sets a new type for the data.
-     *
-     * @param dataType The new data type.
-     */
+    /** @param dataType the new type of the data. */
     public void setDataType(String dataType) {
         this.dataType = dataType;
     }
 
     /**
-     * Retrieves the timestamp of the data.
+     * Converts the data source into a human-readable string format.
      *
-     * @return The timestamp when the data was collected.
-     */
-    public String getTimestamp() {
-        return timestamp;
-    }
-
-    /**
-     * Sets a new timestamp for the data.
-     *
-     * @param timestamp The new timestamp.
-     */
-    public void setTimestamp(String timestamp) {
-        this.timestamp = timestamp;
-    }
-
-    /**
-     * Converts the {@code DigitalTwin_DMS_Framework.Data} object into a human-readable string format.
-     *
-     * @return A string representation of the data object, including its attributes.
+     * @return a string with the source, the data type and the number of collected data.
      */
     @Override
     public String toString() {
-        return "DigitalTwin_DMS_Framework.Data{" +
-                "source='" + source + '\'' +
-                ", dataType='" + dataType + '\'' +
-                ", timestamp='" + timestamp + '\'' +
-                '}';
+        return "DT_Data{source='" + source + "', dataType='" + dataType + "', collected=" + collectedData.size() + "}";
     }
 
     /**
-     * Compares this {@code DigitalTwin_DMS_Framework.Data} object with another object for equality.
-     * Two {@code DigitalTwin_DMS_Framework.Data} objects are considered equal if their attributes match.
+     * Two data sources are considered equal if they have the same source and data type.
      *
-     * @param obj The object to compare with this instance.
+     * @param obj the object to compare with.
      * @return {@code true} if the objects are equal; {@code false} otherwise.
      */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
-        if (!(obj instanceof DT_Data)) return false;
-
-        if (!(obj instanceof DT_Data<?>)) 
-        {
-            return false;
-        }
-
-        DT_Data<?> data = (DT_Data<?>) obj;
-
-        return source.equals(data.source)
-            && dataType.equals(data.dataType)
-            && timestamp.equals(data.timestamp);
-            
+        if (!(obj instanceof DT_Data<?> other)) return false;
+        return Objects.equals(source, other.source) && Objects.equals(dataType, other.dataType);
     }
 
-    /**
-     * Computes the hash code for this {@code DigitalTwin_DMS_Framework.Data} object.
-     * The hash code is based on the source, data type, and timestamp.
-     *
-     * @return The computed hash code.
-     */
+    /** @return the hash code, based on the source and the data type. */
     @Override
     public int hashCode() {
-        int result = source.hashCode();
-        result = 31 * result + dataType.hashCode();
-        result = 31 * result + timestamp.hashCode();
-        return result;
+        return Objects.hash(source, dataType);
     }
 }
