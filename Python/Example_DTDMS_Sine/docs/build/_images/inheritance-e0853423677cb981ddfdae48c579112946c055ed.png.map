@@ -1,5 +1,0 @@
-<map id="inheritance5850d4ebdb" name="inheritance5850d4ebdb">
-<area shape="rect" id="node1" title="Helper class that provides a standard way to create an ABC using" alt="" coords="5,31,77,57"/>
-<area shape="rect" id="node2" href="#DataObserver.ObserverData.ObserverData" target="_top" title="Generic Observer interface." alt="" coords="150,5,253,32"/>
-<area shape="rect" id="node3" href="#DataObserver.ObserverDataManager.ObserverDataManager" target="_top" title="Generic Subject/Publisher interface." alt="" coords="125,56,278,83"/>
-</map>

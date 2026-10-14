@@ -1,0 +1,9 @@
+<map id="Models.DT_Model_Prescriptive.DT_Model_Prescriptive" name="Models.DT_Model_Prescriptive.DT_Model_Prescriptive">
+<area shape="rect" id="Node000001" title="Represents a prescriptive model (m ∈ M_presc) of the Digital Twin." alt="" coords="109,1915,306,2331"/>
+<area shape="rect" id="Node000002" href="$class_models_1_1_d_t___model_1_1_d_t___model.html" title="Abstract base class representing a generic DT model m ∈ M of DT = ⟨D, M, S, μ⟩." alt="" coords="115,1280,299,1867"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="208,1879,210,1915,205,1914,207,1884"/>
+<area shape="rect" id="Node000003" href="$class_automaton_1_1_d_t___automaton_1_1_d_t___automaton.html" title="Abstract base class representing the class of automata 𝒜 of the DT&#45;DMS framework." alt="" coords="5,5,193,1232"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="170,1244,177,1280,171,1280,170,1249"/>
+<area shape="rect" id="Node000004" href="$class_mu_1_1_observer_data_1_1_observer_data.html" title="Observer of the data observer pattern: an object that wants to be told when new data arrives." alt="" coords="217,576,416,661"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="311,673,243,1281,238,1280,309,678"/>
+</map>

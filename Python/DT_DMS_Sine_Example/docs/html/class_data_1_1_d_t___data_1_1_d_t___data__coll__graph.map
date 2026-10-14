@@ -1,0 +1,9 @@
+<map id="Data.DT_Data.DT_Data" name="Data.DT_Data.DT_Data">
+<area shape="rect" id="Node000001" title="Class representing a source of data collected from the ToI, i.e., a part of D in DT = ⟨D,..." alt="" coords="225,1171,486,2109"/>
+<area shape="rect" id="Node000002" href="$class_mu_1_1_observer_data_manager_1_1_observer_data_manager.html" title="Subject of the data observer pattern: an object that produces data and manages its observers." alt="" coords="5,464,226,640"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="139,652,255,1171,250,1171,137,657"/>
+<area shape="rect" id="Node000003" href="$class_data_1_1_d_t___data_segment_1_1_d_t___data_segment.html" title="Class representing a measured data segment ω ∈ Ω_D of the Digital Twin." alt="" coords="251,160,461,944"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="356,941,358,1154,353,1153,355,946"/>
+<area shape="rect" id="Node000004" href="$class_data_1_1_d_t___data_characterization_1_1_d_t___data_characterization.html" title="Class representing the characterization of a data source of the ToI: the metadata that tell how the d..." alt="" coords="485,5,680,1099"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="486,1060,470,1147,469,1155,464,1153,465,1146,484,1065"/>
+</map>

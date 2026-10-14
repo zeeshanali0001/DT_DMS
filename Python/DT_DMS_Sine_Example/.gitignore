@@ -1,0 +1,4 @@
+# Python cache
+__pycache__/
+# written by the example at each run
+docs/DT_DMS_Sine.dot

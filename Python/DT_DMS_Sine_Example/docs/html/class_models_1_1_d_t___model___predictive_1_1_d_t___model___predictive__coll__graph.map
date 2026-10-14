@@ -1,0 +1,11 @@
+<map id="Models.DT_Model_Predictive.DT_Model_Predictive" name="Models.DT_Model_Predictive.DT_Model_Predictive">
+<area shape="rect" id="Node000001" title="Represents a predictive model (m ∈ M_pred) of the Digital Twin." alt="" coords="140,2112,326,2523"/>
+<area shape="rect" id="Node000002" href="$class_models_1_1_d_t___model_1_1_d_t___model.html" title="Abstract base class representing a generic DT model m ∈ M of DT = ⟨D, M, S, μ⟩." alt="" coords="141,1476,325,2063"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="233,2075,235,2113,230,2112,232,2080"/>
+<area shape="rect" id="Node000003" href="$class_automaton_1_1_d_t___automaton_1_1_d_t___automaton.html" title="Abstract base class representing the class of automata 𝒜 of the DT&#45;DMS framework." alt="" coords="31,237,218,1427"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="195,1439,202,1476,196,1476,195,1444"/>
+<area shape="rect" id="Node000004" href="$class_automaton_1_1_d_t___automaton_1_1_initialization.html" title="The initialization Δ* = ⟨φ_0, Update_0, τ_0⟩." alt="" coords="5,5,244,165"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="125,163,127,220,122,220,125,168"/>
+<area shape="rect" id="Node000005" href="$class_mu_1_1_observer_data_1_1_observer_data.html" title="Observer of the data observer pattern: an object that wants to be told when new data arrives." alt="" coords="243,789,441,875"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="336,886,269,1476,264,1476,335,892"/>
+</map>

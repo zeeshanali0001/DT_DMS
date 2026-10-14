@@ -1,0 +1,10 @@
+digraph "Graphical Class Hierarchy"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node0 [id="Node000000",label="Visualization.DT_ChartPanel.\lDT_ChartPanel",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_visualization_1_1_d_t___chart_panel_1_1_d_t___chart_panel.html",tooltip="Live chart of the sine example: it plots the raw sine data measured on the ToI (real space) and the v..."];
+}

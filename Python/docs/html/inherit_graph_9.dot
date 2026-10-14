@@ -1,0 +1,12 @@
+digraph "Graphical Class Hierarchy"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node0 [id="Node000000",label="DT_DMS.DT_DMS",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_d_t___d_m_s_1_1_d_t___d_m_s.html",tooltip="The DT_DMS class is the general class of the Digital Twin Data-Models-Services (DT-DMS) framework."];
+  Node0 -> Node1 [id="edge15_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 [id="Node000001",label="DT_DMS_Architecture.DT\l_DMS_Architecture",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_d_t___d_m_s___architecture_1_1_d_t___d_m_s___architecture.html",tooltip="The DT_DMS_Architecture class connects all classes of the DT-DMS framework."];
+}

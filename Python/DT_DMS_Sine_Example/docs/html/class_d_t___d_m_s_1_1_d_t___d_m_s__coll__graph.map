@@ -1,0 +1,28 @@
+<map id="DT_DMS.DT_DMS" name="DT_DMS.DT_DMS">
+<area shape="rect" id="Node000001" title="The DT_DMS class is the general class of the Digital Twin Data&#45;Models&#45;Services (DT&#45;DMS) framework." alt="" coords="710,3652,918,5076"/>
+<area shape="rect" id="Node000002" href="$class_data_1_1_d_t___data_1_1_d_t___data.html" title="Class representing a source of data collected from the ToI, i.e., a part of D in DT = ⟨D,..." alt="" coords="349,2641,610,3580"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="606,3577,709,3958,703,3958,604,3582"/>
+<area shape="rect" id="Node000003" href="$class_mu_1_1_observer_data_manager_1_1_observer_data_manager.html" title="Subject of the data observer pattern: an object that produces data and manages its observers." alt="" coords="5,1935,226,2111"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="132,2123,176,2331,206,2451,241,2568,293,2709,352,2845,347,2846,288,2711,236,2570,201,2452,171,2333,132,2128"/>
+<area shape="rect" id="Node000004" href="$class_data_1_1_d_t___data_segment_1_1_d_t___data_segment.html" title="Class representing a measured data segment ω ∈ Ω_D of the Digital Twin." alt="" coords="251,1631,461,2415"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="393,2412,418,2617,419,2625,413,2625,412,2618,393,2417"/>
+<area shape="rect" id="Node000005" href="$class_data_1_1_d_t___data_characterization_1_1_d_t___data_characterization.html" title="Class representing the characterization of a data source of the ToI: the metadata that tell how the d..." alt="" coords="485,1476,680,2569"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="531,2566,528,2625,523,2624,530,2572"/>
+<area shape="rect" id="Node000006" href="$class_models_1_1_d_t___model_1_1_d_t___model.html" title="Abstract base class representing a generic DT model m ∈ M of DT = ⟨D, M, S, μ⟩." alt="" coords="704,1729,888,2316"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="779,2313,769,2641,760,3111,762,3316,769,3580,771,3636,765,3635,763,3580,756,3316,755,3111,763,2641,778,2319"/>
+<area shape="rect" id="Node000010" href="$class_services_1_1_d_t___service_1_1_d_t___service.html" title="Abstract base class representing a generic DT service s ∈ S of DT = ⟨D, M, S, μ⟩." alt="" coords="854,2777,1050,3444"/>
+<area shape="poly" id="edge13_Node000010_Node000006" title=" " alt="" coords="820,2313,838,2466,858,2617,882,2761,877,2761,853,2618,833,2466,819,2319"/>
+<area shape="rect" id="Node000007" href="$class_automaton_1_1_d_t___automaton_1_1_d_t___automaton.html" title="Abstract base class representing the class of automata 𝒜 of the DT&#45;DMS framework." alt="" coords="686,237,874,1427"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="788,1439,794,1730,789,1729,788,1444"/>
+<area shape="poly" id="edge10_Node000010_Node000007" title=" " alt="" coords="877,1388,888,1426,895,1450,902,1475,916,1584,927,1724,942,2066,950,2438,954,2778,949,2777,945,2438,936,2066,921,1725,910,1585,897,1477,890,1452,882,1427,877,1394"/>
+<area shape="rect" id="Node000008" href="$class_automaton_1_1_d_t___automaton_1_1_initialization.html" title="The initialization Δ* = ⟨φ_0, Update_0, τ_0⟩." alt="" coords="660,5,899,165"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="780,163,782,220,777,220,779,168"/>
+<area shape="rect" id="Node000009" href="$class_mu_1_1_observer_data_1_1_observer_data.html" title="Observer of the data observer pattern: an object that wants to be told when new data arrives." alt="" coords="898,789,1096,875"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="988,887,848,1730,843,1729,987,892"/>
+<area shape="poly" id="edge11_Node000010_Node000009" title=" " alt="" coords="997,887,961,2778,956,2778,994,892"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="916,3441,897,3636,892,3635,914,3446"/>
+<area shape="rect" id="Node000011" href="$class_mu_1_1_observer_model_1_1_observer_model.html" title="Observer of the model observer pattern: an object (typically a service s ∈ S) that wants to be told w..." alt="" coords="1030,1972,1207,2073"/>
+<area shape="poly" id="edge12_Node000010_Node000011" title=" " alt="" coords="1109,2085,1005,2778,1000,2777,1108,2090"/>
+<area shape="rect" id="Node000012" href="$class_mu_1_1_d_t___mu_1_1_d_t___mu.html" title="Class representing the model inference or data assimilation function μ : Ω_D × M → M of DT = ⟨D,..." alt="" coords="1074,2753,1290,3468"/>
+<area shape="poly" id="edge14_Node000001_Node000012" title=" " alt="" coords="1095,3465,1065,3581,996,3811,926,4034,921,4031,991,3809,1060,3579,1092,3470"/>
+</map>

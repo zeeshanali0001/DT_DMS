@@ -1,0 +1,41 @@
+# Doxygen configuration of the DT-DMS framework (Python). Run "doxygen Doxyfile" from this folder.
+# Only the settings that differ from the Doxygen defaults are listed (same settings as the Java version).
+PROJECT_NAME           = "DT-DMS Framework (Python)"
+PROJECT_NUMBER         = 2.0
+PROJECT_BRIEF          = "Digital Twin DT = <D, M, S, mu>: Data, Models, Services and model inference"
+OUTPUT_DIRECTORY       = docs
+INPUT                  = README.md src
+USE_MDFILE_AS_MAINPAGE = README.md
+FILE_PATTERNS          = *.py *.md
+RECURSIVE              = YES
+INPUT_ENCODING         = UTF-8
+OPTIMIZE_OUTPUT_JAVA   = YES
+PYTHON_DOCSTRING       = YES
+JAVADOC_AUTOBRIEF      = YES
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+EXTRACT_STATIC         = YES
+EXTRACT_LOCAL_CLASSES  = YES
+SHOW_INCLUDE_FILES     = YES
+GENERATE_HTML          = YES
+GENERATE_LATEX         = NO
+GENERATE_TREEVIEW      = YES
+HAVE_DOT               = YES
+DOT_IMAGE_FORMAT       = svg
+INTERACTIVE_SVG        = YES
+CLASS_GRAPH            = YES
+COLLABORATION_GRAPH    = YES
+UML_LOOK               = YES
+UML_LIMIT_NUM_FIELDS   = 30
+DOT_UML_DETAILS        = YES
+TEMPLATE_RELATIONS     = NO
+INCLUDE_GRAPH          = NO
+INCLUDED_BY_GRAPH      = NO
+GRAPHICAL_HIERARCHY    = YES
+DIRECTORY_GRAPH        = YES
+DOT_GRAPH_MAX_NODES    = 100
+MAX_DOT_GRAPH_DEPTH    = 0
+DOT_CLEANUP            = NO
+QUIET                  = YES
+WARN_IF_UNDOCUMENTED   = NO
+INPUT_FILTER           = "python doxygen_filter.py"

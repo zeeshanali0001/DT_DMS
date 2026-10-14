@@ -1,0 +1,2 @@
+# Optional: the live chart of the example (the example runs without it, or with the argument nochart).
+matplotlib>=3.5

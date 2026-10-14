@@ -1,0 +1,5 @@
+<map id="Data.DT_Data.DT_Data" name="Data.DT_Data.DT_Data">
+<area shape="rect" id="Node000001" title="Class representing a source of data collected from the ToI, i.e., a part of D in DT = ⟨D,..." alt="" coords="5,229,266,1227"/>
+<area shape="rect" id="Node000002" href="$class_mu_1_1_observer_data_manager_1_1_observer_data_manager.html" title="Subject of the data observer pattern: an object that produces data and manages its observers." alt="" coords="26,5,246,181"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="136,194,138,230,133,230,136,199"/>
+</map>

@@ -1,6 +1,0 @@
-<map id="inheritancef5f23ccc09" name="inheritancef5f23ccc09">
-<area shape="rect" id="node1" title="Helper class that provides a standard way to create an ABC using" alt="" coords="5,5,77,32"/>
-<area shape="rect" id="node2" href="#Data.DT_Data.DT_Data" target="_top" title="Abstract base class representing a source of data (the &quot;Physical Twin&quot;" alt="" coords="326,5,400,32"/>
-<area shape="rect" id="node3" href="DataObserver.html#DataObserver.ObserverDataManager.ObserverDataManager" target="_top" title="Generic Subject/Publisher interface." alt="" coords="125,31,278,57"/>
-<area shape="rect" id="node4" href="#Data.DT_Data_SineValues.DT_Data_SineValues" target="_top" title="DT_Data_SineValues" alt="" coords="448,5,594,32"/>
-</map>
