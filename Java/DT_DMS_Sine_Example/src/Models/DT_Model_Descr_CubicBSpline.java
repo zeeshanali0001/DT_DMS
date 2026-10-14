@@ -18,7 +18,7 @@ import java.util.List;
  *   <li>{@code X} = {data}: a measured sine value.</li>
  *   <li>{@code Y} = {updated}: the number of control points after an update.</li>
  *   <li>{@code Σ} = {count, last}: the number of control points and the last value assimilated.</li>
- *   <li>{@code Φ} = {WAIT ⟨NIL, NIL, ∞⟩, UPDATE ⟨NIL, NIL, 0⟩}.</li>
+ *   <li>{@code Φ} = {WAIT ⟨count ≥ 0, NIL, ∞⟩, UPDATE ⟨count ≥ 1, NIL, 0⟩}.</li>
  *   <li>{@code Δ^in}: WAIT → UPDATE on {@code (data, d)}, Update: {@code count := count + 1; last := d}.</li>
  *   <li>{@code Δ^time}: UPDATE → WAIT, Send: {@code (updated, count)}.</li>
  *   <li>{@code Δ*} = ⟨WAIT, NIL, 0⟩.</li>
@@ -60,8 +60,8 @@ public class DT_Model_Descr_CubicBSpline extends DT_Model_Descriptive<Double> {
         addOutput("updated");                                                         // Y
         addStateVariable("count", 0);                                                 // Σ
         addStateVariable("last", Double.NaN);
-        addPhase(new Phase("WAIT", null, null, Double.POSITIVE_INFINITY));            // Φ
-        addPhase(new Phase("UPDATE", null, null, 0.0));
+        addPhase(new Phase("WAIT", q -> (Integer) q.get("count") >= 0, null, Double.POSITIVE_INFINITY));   // Φ
+        addPhase(new Phase("UPDATE", q -> (Integer) q.get("count") >= 1, null, 0.0));
         addTransition(new Transition(TransitionKind.IN, "WAIT", "UPDATE",             // Δ^in
                 java.util.Set.of("data"), null, null,
                 (q, x) -> {

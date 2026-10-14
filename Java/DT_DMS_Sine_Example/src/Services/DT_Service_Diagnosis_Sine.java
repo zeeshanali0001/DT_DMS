@@ -21,7 +21,7 @@ import java.util.Set;
  *   <li>{@code X} = {data}: a measured sine value.</li>
  *   <li>{@code Y} = {anomaly}: the residual of an anomalous value.</li>
  *   <li>{@code Σ} = {residual}: the residual of the last value checked.</li>
- *   <li>{@code Φ} = {IDLE ⟨NIL, NIL, ∞⟩, CHECK ⟨NIL, NIL, 0⟩}.</li>
+ *   <li>{@code Φ} = {IDLE ⟨residual ≥ 0, NIL, ∞⟩, CHECK ⟨residual ≥ 0, NIL, 0⟩}.</li>
  *   <li>{@code Δ^in}: IDLE → CHECK on {@code (data, d)}, Update: {@code residual := |d − m(t)|}.</li>
  *   <li>{@code Δ^time}: CHECK → IDLE, Guard: {@code residual > threshold}, Send: {@code (anomaly, residual)}.</li>
  *   <li>{@code Δ^time}: CHECK → IDLE, Guard: {@code residual ≤ threshold}, no output.</li>
@@ -57,8 +57,8 @@ public class DT_Service_Diagnosis_Sine extends DT_Service_Diagnosis<Double> {
         addInput("data");                                                             // X
         addOutput("anomaly");                                                         // Y
         addStateVariable("residual", 0.0);                                            // Σ
-        addPhase(new Phase("IDLE", null, null, Double.POSITIVE_INFINITY));            // Φ
-        addPhase(new Phase("CHECK", null, null, 0.0));
+        addPhase(new Phase("IDLE", q -> (Double) q.get("residual") >= 0, null, Double.POSITIVE_INFINITY)); // Φ
+        addPhase(new Phase("CHECK", q -> (Double) q.get("residual") >= 0, null, 0.0));
         addTransition(new Transition(TransitionKind.IN, "IDLE", "CHECK",              // Δ^in
                 Set.of("data"), null, null,
                 (q, x) -> {
