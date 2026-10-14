@@ -1,2 +1,6 @@
 # CMake build folder (build.bat, build.sh)
 build/
+# written by the example at each run
+docs/DT_DMS_Sine.dot
+docs/DT_DMS_Sine_Chart.svg
+docs/DT_DMS_Sine_Chart.csv

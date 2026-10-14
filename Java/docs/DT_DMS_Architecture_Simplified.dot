@@ -1,8 +1,8 @@
 // Black-and-white overview class diagram of the DT-DMS framework for the paper:
 // class names and formal symbols only, packages marked as frames.
 // All positions are fixed (inches). Render it with the script (from the docs folder, in Git Bash):
-//   sh make_overview.sh DT_DMS_Overview_bw
-digraph DT_DMS_Overview_bw {
+//   sh make_overview.sh DT_DMS_Architecture_Simplified
+digraph DT_DMS_Architecture_Simplified {
   graph [splines=true, fontname="Arial", margin=0, pad=0.08, bgcolor=white, outputorder=edgesfirst];
   node  [shape=box, style=filled, fillcolor=white, color=black, fontname="Arial", fontsize=13, fixedsize=true, height=0.62];
   edge  [fontname="Arial", fontsize=11, arrowsize=0.9, color=black, fontcolor=black];

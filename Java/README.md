@@ -65,7 +65,8 @@ coupled to a model (`DT_DMS.addService(s, m)`) is notified each time μ updates 
   data source.
 
 `DT_DMS.dumpGraphviz` writes the Data-Models-Services diagram of the DT (the example writes
-`docs/DT_DMS_Temperature.dot`, rendered in `docs/DT_DMS_Temperature.png`).
+`docs/DT_DMS_Temperature.dot` when it runs; render it with `dot -Tpng docs/DT_DMS_Temperature.dot -o
+DT_DMS_Temperature.png`).
 
 These features come from the first C++ version of the framework; the C++ version of this project is in
 `C++`.
@@ -81,5 +82,9 @@ From this folder (Git Bash):
 The documentation is generated in `docs/html/index.html`. The architecture image is the collaboration
 diagram of `DT_DMS_Architecture`; a copy is kept in `docs/DT_DMS_Architecture.svg` and
 `docs/DT_DMS_Architecture.png`.
+
+`docs/DT_DMS_Architecture_Simplified` (PNG and SVG) is the simplified architecture: the classes by name, with
+their formal symbols, grouped by package. It is drawn from `docs/DT_DMS_Architecture_Simplified.dot` (from the
+`docs` folder, in Git Bash: `sh make_overview.sh DT_DMS_Architecture_Simplified`).
 
 Authors: ALI Zeeshan, Mamadou Kaba TRAORÉ. Version 2.0.

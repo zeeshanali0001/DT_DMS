@@ -1,8 +1,8 @@
 // Black-and-white class diagram of the DT-DMS sine example: class names only, packages marked as frames.
 // Thick boxes are the classes of the example; thin boxes are the classes of the DT-DMS framework.
 // All positions are fixed (inches). Render it with the script (from the docs folder, in Git Bash):
-//   sh make_overview.sh DT_DMS_Sine_Overview
-digraph DT_DMS_Sine_Overview {
+//   sh make_overview.sh DT_DMS_Sine_Architecture_Simplified
+digraph DT_DMS_Sine_Architecture_Simplified {
   graph [splines=line, fontname="Arial", margin=0, pad=0.08, bgcolor=white, outputorder=edgesfirst];
   node  [shape=box, style=filled, fillcolor=white, color=black, fontname="Arial", fontsize=13, fixedsize=true, height=0.62];
   edge  [fontname="Arial", fontsize=11, arrowsize=0.9, color=black, fontcolor=black];

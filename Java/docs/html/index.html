@@ -138,7 +138,8 @@ Validity of the DT</h1>
 <li><span class="tt">checkModelsVersusData</span>: for every model that gives values in time (<span class="tt">DT_Model.evaluate</span>), the deviation δ = |ω(t) − m(t)| over the real-time data: the model fits very well if δ &lt; ε for every datum, and does not fit (it should be updated, re-parameterized or discarded) if the mean deviation is greater than M;</li>
 <li><span class="tt">checkDataVersusServices</span>: the data sources are valid and have a unit, and every monitored entity has a data source.</li>
 </ul>
-<p><span class="tt"><a class="el" href="class_d_t___d_m_s.html#ada99f65624e181031350c343aa7578cd" title="Writes the Data-Models-Services diagram of the DT in the Graphviz format (toGraphviz).">DT_DMS.dumpGraphviz</a></span> writes the Data-Models-Services diagram of the DT (the example writes <span class="tt">docs/DT_DMS_Temperature.dot</span>, rendered in <span class="tt">docs/DT_DMS_Temperature.png</span>).</p>
+<p><span class="tt"><a class="el" href="class_d_t___d_m_s.html#ada99f65624e181031350c343aa7578cd" title="Writes the Data-Models-Services diagram of the DT in the Graphviz format (toGraphviz).">DT_DMS.dumpGraphviz</a></span> writes the Data-Models-Services diagram of the DT (the example writes <span class="tt">docs/DT_DMS_Temperature.dot</span> when it runs; render it with <span class="tt">dot -Tpng docs/DT_DMS_Temperature.dot -o
+DT_DMS_Temperature.png</span>).</p>
 <p>These features come from the first C++ version of the framework; the C++ version of this project is in <span class="tt">C++</span>.</p>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
 Build, run and document</h1>
@@ -146,6 +147,7 @@ Build, run and document</h1>
 java -cp out DT_DMS_Architecture
 doxygen Doxyfile
 </pre><p>The documentation is generated in <span class="tt">docs/html/index.html</span>. The architecture image is the collaboration diagram of <span class="tt"><a class="el" href="class_d_t___d_m_s___architecture.html" title="The DT_DMS_Architecture class connects all classes of the DT-DMS framework.">DT_DMS_Architecture</a></span>; a copy is kept in <span class="tt">docs/DT_DMS_Architecture.svg</span> and <span class="tt">docs/DT_DMS_Architecture.png</span>.</p>
+<p><span class="tt">docs/DT_DMS_Architecture_Simplified</span> (PNG and SVG) is the simplified architecture: the classes by name, with their formal symbols, grouped by package. It is drawn from <span class="tt">docs/DT_DMS_Architecture_Simplified.dot</span> (from the <span class="tt">docs</span> folder, in Git Bash: <span class="tt">sh make_overview.sh DT_DMS_Architecture_Simplified</span>).</p>
 <p>Authors: ALI Zeeshan, Mamadou Kaba TRAORÉ. Version 2.0. </p>
 </div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"></a>

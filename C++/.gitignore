@@ -1,2 +1,4 @@
 # CMake build folder (build.bat, build.sh)
 build/
+# written by the example at each run
+docs/DT_DMS_Temperature.dot

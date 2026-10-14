@@ -81,8 +81,8 @@ hand:
 
 The build produces the static library `build/lib/dtdms` and the executable
 `build/bin/DT_DMS_Architecture` (`.exe` on Windows). The example writes the Data-Models-Services diagram of
-its Digital Twin in `docs/DT_DMS_Temperature.dot` (`dot -Tpng docs/DT_DMS_Temperature.dot -o
-docs/DT_DMS_Temperature.png`).
+its Digital Twin in `docs/DT_DMS_Temperature.dot` when it runs (`dot -Tpng docs/DT_DMS_Temperature.dot -o
+DT_DMS_Temperature.png`).
 
 To generate the documentation (Doxygen and Graphviz must be installed):
 
@@ -91,6 +91,10 @@ To generate the documentation (Doxygen and Graphviz must be installed):
 The documentation is generated in `docs/html/index.html` (`docs/index.html` opens it). The architecture image
 is the collaboration diagram of `DT_DMS_Architecture`; a copy is kept in `docs/DT_DMS_Architecture.svg` and
 `docs/DT_DMS_Architecture.png`.
+
+`docs/DT_DMS_Architecture_Simplified` (PNG and SVG) is the simplified architecture: the classes by name, with
+their formal symbols, grouped by package. It is drawn from `docs/DT_DMS_Architecture_Simplified.dot` (from the
+`docs` folder, in Git Bash: `sh make_overview.sh DT_DMS_Architecture_Simplified`).
 
 ## Use the framework in your own project
 

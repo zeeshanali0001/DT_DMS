@@ -41,7 +41,7 @@ At the end of the run:
 - the Data-Models-Services diagram of the Digital Twin is written in `docs/DT_DMS_Sine.dot`;
 - the chart is written in `docs/DT_DMS_Sine_Chart.svg` (open it in a web browser) and its data in
   `docs/DT_DMS_Sine_Chart.csv`. (The Java version shows a live window with XChart; the C++ version needs no
-  graphics library.)
+  graphics library.) These files are written again at each run and are not kept in the repository.
 
 ## The model as an automaton ℳ = ⟨Λ, X, Y, Σ, Φ, Δ, Δ*⟩
 
@@ -85,18 +85,16 @@ Graphviz must be installed):
 
     doxygen Doxyfile                          (or: cmake --build build --target doc, or: build.bat doc)
 
-The documentation is generated in `docs/html/index.html` (`docs/index.html` opens it). The architecture image
-is the collaboration diagram of `DT_DMS_SineCubicBP`; a copy is kept in `docs/DT_DMS_Sine_Architecture.svg` and
-`docs/DT_DMS_Sine_Architecture.png`. To regenerate it after `doxygen Doxyfile` (from the `docs` folder):
+The documentation is generated in `docs/html/index.html` (`docs/index.html` opens it). The diagrams of the
+example (the same classes and automata as in the Java version) are:
 
-    perl merge_template_nodes.pl html/class_d_t___d_m_s___sine_cubic_b_p__coll__graph.dot > DT_DMS_Sine_Architecture.dot
-    dot -Tpng -Gdpi=110 -Gbgcolor=white DT_DMS_Sine_Architecture.dot -o DT_DMS_Sine_Architecture.png
-    perl shorten_architecture.pl DT_DMS_Sine_Architecture.dot > DT_DMS_Sine_Architecture_short.dot
-    dot -Tpdf -Gbgcolor=white DT_DMS_Sine_Architecture_short.dot -o DT_DMS_Sine_Architecture_short.pdf
-
-The other diagrams are the same as in the Java version, since the classes and the automata are the same:
-`docs/DT_DMS_Sine_Overview` (classes by name only), `docs/DT_DMS_Sine_HiLLS` (the two automata in the HiLLS
-notation) and `docs/DT_DMS_Sine_Automata` (the two automata as a state diagram).
+- `docs/DT_DMS_Sine_Architecture` (PNG and SVG): the full architecture with all fields and methods, generated
+  by Doxygen and Graphviz from `DT_DMS_SineCubicBP` (to regenerate it after `doxygen Doxyfile`, from the
+  `docs` folder: `dot -Tpng -Gdpi=110 -Gbgcolor=white html/class_d_t___d_m_s___sine_cubic_b_p__coll__graph.dot
+  -o DT_DMS_Sine_Architecture.png`);
+- `docs/DT_DMS_Sine_Architecture_Simplified` (PNG and SVG): the classes by name only, drawn from
+  `docs/DT_DMS_Sine_Architecture_Simplified.dot` (`sh make_overview.sh DT_DMS_Sine_Architecture_Simplified`);
+- `docs/DT_DMS_Sine_HiLLS` (PNG and SVG): the two automata in the HiLLS graphical notation.
 
 Authors: Vincent DELOS (first C++ version), Zeeshan ALI, Mamadou Kaba TRAORE. Version 2.0.
 License: GNU General Public License v3 (see `License.txt`).

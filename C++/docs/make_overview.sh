@@ -1,7 +1,7 @@
 #!/bin/sh
-# Renders a hand-positioned overview diagram (PDF, SVG and PNG) with Graphviz.
+# Renders a hand-positioned diagram (PDF, SVG and PNG) with Graphviz.
 #
-# Usage (from the docs folder, in Git Bash):   sh make_overview.sh DT_DMS_Overview_bw
+# Usage (from the docs folder, in Git Bash):   sh make_overview.sh DT_DMS_Architecture_Simplified
 #
 # The .dot file fixes the position of every node (in inches). Graphviz routes the lines, except the
 # lines that the .dot file redraws by hand with comments of the form
