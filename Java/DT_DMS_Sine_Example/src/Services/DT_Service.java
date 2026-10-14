@@ -4,6 +4,7 @@ import Automaton.DT_Automaton;
 import Data.DT_DataSegment;
 import Models.DT_Model;
 import Mu.ObserverData;
+import Mu.ObserverModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,10 +25,14 @@ import java.util.Objects;
  * class of automata {@code 𝒜} ({@code S ⊆ 𝒜}); hence this class extends {@link DT_Automaton} and inherits
  * the 7-tuple {@code 𝒮 = ⟨Λ, X, Y, Σ, Φ, Δ, Δ*⟩}.
  * </p>
+ * <p>
+ * A service observes the data ({@link ObserverData}) and the model it is coupled to ({@link ObserverModel}):
+ * {@link #updateWithModel} is called each time {@code μ} has updated that model.
+ * </p>
  *
  * @param <T> the type of a datum {@code d ∈ D}.
  */
-public abstract class DT_Service<T> extends DT_Automaton implements ObserverData<T> {
+public abstract class DT_Service<T> extends DT_Automaton implements ObserverData<T>, ObserverModel<T> {
 
     /** The name of the service (e.g., "Temperature Monitoring"). */
     protected String serviceName;
@@ -60,6 +65,17 @@ public abstract class DT_Service<T> extends DT_Automaton implements ObserverData
     @Override
     public void update(T data) {
         consumedData.add(data);
+    }
+
+    /**
+     * Called each time the model the service is coupled to has been updated by {@code μ}. By default it does
+     * nothing; a service that must react to every new version of its model (e.g., re-check an interpolation)
+     * overrides it.
+     *
+     * @param m the updated model {@code m'}.
+     */
+    @Override
+    public void updateWithModel(DT_Model<T> m) {
     }
 
     /**

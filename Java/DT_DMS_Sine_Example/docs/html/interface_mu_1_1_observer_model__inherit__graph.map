@@ -1,0 +1,19 @@
+<map id="Mu.ObserverModel&lt; T &gt;" name="Mu.ObserverModel&lt; T &gt;">
+<area shape="rect" id="Node000001" title="Observer of the model observer pattern: an object (typically a service s ∈ S) that wants to be told w..." alt="" coords="521,5,674,91"/>
+<area shape="rect" id="Node000002" href="$class_services_1_1_d_t___service.html" title="Abstract base class representing a generic DT service s ∈ S of DT = ⟨D, M, S, μ⟩." alt="" coords="490,140,705,737"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="598,103,600,141,595,140,597,108"/>
+<area shape="rect" id="Node000003" href="$class_services_1_1_d_t___service___control.html" title="Class representing a Control Service (s ∈ S_cont) of the Digital Twin." alt="" coords="5,867,210,1123"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="477,535,351,650,285,718,225,788,172,868,167,866,220,785,281,714,347,646,480,530"/>
+<area shape="rect" id="Node000004" href="$class_services_1_1_d_t___service___diagnosis.html" title="Class representing a Diagnosis Service (s ∈ S_diag) of the Digital Twin." alt="" coords="234,877,442,1112"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="482,686,395,879,390,876,484,681"/>
+<area shape="rect" id="Node000007" href="$class_services_1_1_d_t___service___monitoring.html" title="Class representing a Monitoring Service (s ∈ S_moni) of the Digital Twin." alt="" coords="467,787,727,1203"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="598,750,600,787,595,786,596,755"/>
+<area shape="rect" id="Node000008" href="$class_services_1_1_d_t___service___optimization.html" title="Class representing an Optimization Service (s ∈ S_opti) of the Digital Twin." alt="" coords="752,885,968,1104"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="712,677,811,886,806,886,711,683"/>
+<area shape="rect" id="Node000009" href="$class_services_1_1_d_t___service___prediction.html" title="Class representing a Prediction Service (s ∈ S_pred) of the Digital Twin." alt="" coords="991,915,1176,1075"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="716,526,783,580,852,643,920,712,982,785,1023,849,1055,915,1050,914,1018,852,978,788,916,715,848,647,780,584,717,531"/>
+<area shape="rect" id="Node000005" href="$class_services_1_1_d_t___service___diagnosis.html" title=" " alt="" coords="234,1275,442,1509"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="339,1125,341,1275,336,1274,338,1130"/>
+<area shape="rect" id="Node000006" href="$class_services_1_1_d_t___service___diagnosis___sine.html" title="Diagnosis service of the sine example (s ∈ S_diag): it detects the anomalies of the measured sine wav..." alt="" coords="240,1559,437,1873"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="340,1521,341,1560,336,1558,337,1526"/>
+</map>

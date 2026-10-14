@@ -6,7 +6,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="Mu.ObserverDataManager\< T \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$interface_mu_1_1_observer_data_manager.html",tooltip="Subject of the data observer pattern: an object that produces data and manages its observers."];
-  Node0 -> Node1 [id="edge18_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 [id="Node000001",label="Data.DT_Data\< T \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_data_1_1_d_t___data.html",tooltip="Class representing a source of data collected from the ToI, i.e., a part of D in DT = ⟨D,..."];
+  Node0 [id="Node000000",label="Mu.DT_Mu\< T \>.MixedPolicy",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$enum_mu_1_1_d_t___mu_1_1_mixed_policy.html",tooltip="How a mixed segment ω ∈ Ω_D^mix(t_now) is assimilated, depending on the DT requirements."];
 }

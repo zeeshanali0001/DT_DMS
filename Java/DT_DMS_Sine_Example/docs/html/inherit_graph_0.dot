@@ -32,4 +32,6 @@ digraph "Graphical Class Hierarchy"
   Node5 -> Node6 [id="edge12_Node000005_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node6 [id="Node000006",label="Mu.DT_Mu\< T \>.Assimilator",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_mu_1_1_d_t___mu_1_1_assimilator.html",tooltip="Observer registered on one data source: forwards every new datum of that source to μ."];
   Node5 -> Node7 [id="edge13_Node000005_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node13 [id="Node000013",label="Mu.ObserverModel\< T \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$interface_mu_1_1_observer_model.html",tooltip="Observer of the model observer pattern: an object (typically a service s ∈ S) that wants to be told w..."];
+  Node13 -> Node7 [id="edge14_Node000013_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }

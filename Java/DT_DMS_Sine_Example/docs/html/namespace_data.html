@@ -102,6 +102,8 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing a source of data collected from the ToI, i.e., a part of <code class="JavaDocCode">D</code> in <code class="JavaDocCode">DT = ⟨D, M, S, μ⟩</code>.  <a href="class_data_1_1_d_t___data.html#details">More...</a><br /></td></tr>
 <tr class="memitem:DT_5FData_5FSineValues" id="r_DT_5FData_5FSineValues"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="class_data_1_1_d_t___data___sine_values.html">DT_Data_SineValues</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespace_data.html" title="This package contains the Data (D) of the DT-DMS framework.">Data</a> source of the sine example: it plays the role of the ToI (the "physical twin") and produces the sine wave values measured over time.  <a href="class_data_1_1_d_t___data___sine_values.html#details">More...</a><br /></td></tr>
+<tr class="memitem:DT_5FDataCharacterization" id="r_DT_5FDataCharacterization"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="class_data_1_1_d_t___data_characterization.html">DT_DataCharacterization</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing the characterization of a data source of the ToI: the metadata that tell how the data of <code class="JavaDocCode">D</code> were produced and how they must be interpreted.  <a href="class_data_1_1_d_t___data_characterization.html#details">More...</a><br /></td></tr>
 <tr class="memitem:DT_5FDataSegment" id="r_DT_5FDataSegment"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="class_data_1_1_d_t___data_segment.html">DT_DataSegment</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing a measured data segment <code class="JavaDocCode">ω ∈ Ω_D</code> of the Digital Twin.  <a href="class_data_1_1_d_t___data_segment.html#details">More...</a><br /></td></tr>
 </table>
@@ -113,6 +115,8 @@ Classes</h2></td></tr>
 <code class="JavaDocCode">DT_Data</code>: a source of data of the ToI. It records every datum with its measurement time and notifies its observers (the data assimilation function <code class="JavaDocCode">μ</code>). </li>
 <li>
 <code class="JavaDocCode">DT_DataSegment</code>: a measured data segment <code class="JavaDocCode">ω : T_U ⇀ D</code>, classified at <code class="JavaDocCode">t_now</code> as real-time, historical or mixed. </li>
+<li>
+<code class="JavaDocCode">DT_DataCharacterization</code>: the characterization of a data source (unit, signal type, data flow type, sensor precision, location, calibration status and last maintenance date). </li>
 </ul>
 <dl class="section author"><dt>Author</dt><dd>[ALI Zeeshan, Mamadou Kaba TRAORÉ] </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>2.0 </dd></dl>

@@ -1,0 +1,31 @@
+<map id="src/Automaton/DT_Automaton.cpp" name="src/Automaton/DT_Automaton.cpp">
+<area shape="rect" id="Node000001" title="Implementation of the class of automata 𝒜." alt="" coords="483,5,706,32"/>
+<area shape="rect" id="Node000002" href="$_d_t___automaton_8hpp.html" title="The class of automata 𝒜 of the DT&#45;DMS framework." alt="" coords="287,80,488,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="561,32,439,77,437,72,556,33"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="512,80,586,107"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="589,31,567,69,564,65,584,34"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="611,80,671,107"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="604,30,628,68,622,66,602,35"/>
+<area shape="rect" id="Node000015" title=" " alt="" coords="695,80,774,107"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="619,30,699,73,694,72,618,35"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,155,48,181"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="291,108,186,128,63,157,62,151,185,123,296,106"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="71,155,128,181"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="334,110,144,157,143,152,332,105"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="153,155,230,181"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="356,107,241,151,240,146,351,108"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="255,155,307,181"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="372,106,314,148,311,143,367,108"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="331,155,378,181"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="384,106,368,143,365,139,380,109"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="402,155,441,181"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="395,105,412,142,407,139,392,109"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="464,155,533,181"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="408,105,469,146,464,146,406,110"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="557,155,610,181"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="422,105,545,152,540,152,421,110"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="635,155,717,181"/>
+<area shape="poly" id="edge10_Node000002_Node000011" title=" " alt="" coords="438,105,622,152,617,153,438,110"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="740,155,798,181"/>
+<area shape="poly" id="edge11_Node000002_Node000012" title=" " alt="" coords="477,105,592,124,728,154,723,154,591,129,476,110"/>
+</map>

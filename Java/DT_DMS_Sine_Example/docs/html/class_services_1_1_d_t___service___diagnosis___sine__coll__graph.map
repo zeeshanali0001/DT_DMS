@@ -1,15 +1,17 @@
 <map id="Services.DT_Service_Diagnosis_Sine" name="Services.DT_Service_Diagnosis_Sine">
-<area shape="rect" id="Node000001" title="Diagnosis service of the sine example (s ∈ S_diag): it detects the anomalies of the measured sine wav..." alt="" coords="145,2495,328,2756"/>
-<area shape="rect" id="Node000002" href="$class_services_1_1_d_t___service___diagnosis.html" title=" " alt="" coords="133,2211,341,2445"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="238,2458,239,2496,234,2494,236,2463"/>
-<area shape="rect" id="Node000003" href="$class_services_1_1_d_t___service___diagnosis.html" title="Class representing a Diagnosis Service (s ∈ S_diag) of the Digital Twin." alt="" coords="133,1904,341,2139"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="237,2151,239,2211,234,2210,236,2156"/>
-<area shape="rect" id="Node000004" href="$class_services_1_1_d_t___service.html" title="Abstract base class representing a generic DT service s ∈ S of DT = ⟨D, M, S, μ⟩." alt="" coords="129,1295,344,1855"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="237,1867,239,1904,234,1904,236,1872"/>
+<area shape="rect" id="Node000001" title="Diagnosis service of the sine example (s ∈ S_diag): it detects the anomalies of the measured sine wav..." alt="" coords="252,2532,448,2847"/>
+<area shape="rect" id="Node000002" href="$class_services_1_1_d_t___service___diagnosis.html" title=" " alt="" coords="246,2248,454,2483"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="351,2495,352,2533,348,2531,349,2500"/>
+<area shape="rect" id="Node000003" href="$class_services_1_1_d_t___service___diagnosis.html" title="Class representing a Diagnosis Service (s ∈ S_diag) of the Digital Twin." alt="" coords="246,1941,454,2176"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="351,2188,353,2249,347,2247,349,2193"/>
+<area shape="rect" id="Node000004" href="$class_services_1_1_d_t___service.html" title="Abstract base class representing a generic DT service s ∈ S of DT = ⟨D, M, S, μ⟩." alt="" coords="242,1295,458,1892"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="351,1904,353,1942,347,1941,349,1909"/>
 <area shape="rect" id="Node000005" href="$class_automaton_1_1_d_t___automaton.html" title="Abstract base class representing the class of automata 𝒜 of the DT&#45;DMS framework." alt="" coords="16,269,233,1245"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="194,1257,201,1295,196,1295,194,1263"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="237,1209,249,1245,263,1295,257,1295,243,1246,237,1215"/>
 <area shape="rect" id="Node000006" href="$class_automaton_1_1_d_t___automaton_1_1_initialization.html" title="The initialization Δ* = ⟨φ_0, Update_0, τ_0⟩." alt="" coords="5,5,244,197"/>
 <area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="125,195,127,253,122,252,125,200"/>
 <area shape="rect" id="Node000007" href="$interface_mu_1_1_observer_data.html" title="Observer of the data observer pattern: an object that wants to be told when new data arrives." alt="" coords="258,723,442,792"/>
-<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="344,804,278,1296,273,1295,343,809"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="350,804,353,1295,347,1295,350,810"/>
+<area shape="rect" id="Node000008" href="$interface_mu_1_1_observer_model.html" title="Observer of the model observer pattern: an object (typically a service s ∈ S) that wants to be told w..." alt="" coords="467,715,620,800"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="536,812,506,1006,457,1246,444,1295,439,1294,451,1245,501,1005,535,817"/>
 </map>

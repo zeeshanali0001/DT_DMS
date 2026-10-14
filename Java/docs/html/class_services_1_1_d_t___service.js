@@ -15,6 +15,7 @@ var class_services_1_1_d_t___service =
     [ "setServiceName", "class_services_1_1_d_t___service.html#a72c186213324a0a5e1bccbc4ab20c2ce", null ],
     [ "toString", "class_services_1_1_d_t___service.html#aa05a7e839afeeb4eaaf8bd8ccdbe6c7e", null ],
     [ "update", "class_services_1_1_d_t___service.html#afeda7b8f00fdfb08d9cda28faffb522c", null ],
+    [ "updateWithModel", "class_services_1_1_d_t___service.html#a3f1f916a164f133db9c9612d31e316ac", null ],
     [ "consumedData", "class_services_1_1_d_t___service.html#a04421745e4f16e3c7280966208d035db", null ],
     [ "model", "class_services_1_1_d_t___service.html#a54c4d918bda9517388f34b2bf57f3c0a", null ],
     [ "serviceDescription", "class_services_1_1_d_t___service.html#aa8dd74520add92aa36750326694b8923", null ],

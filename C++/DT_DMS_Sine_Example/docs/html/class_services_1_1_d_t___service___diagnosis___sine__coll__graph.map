@@ -1,0 +1,33 @@
+<map id="Services::DT_Service_Diagnosis_Sine" name="Services::DT_Service_Diagnosis_Sine">
+<area shape="rect" id="Node000001" title="Diagnosis service of the sine example (s ∈ S_diag): it detects the anomalies of the measured sine wav..." alt="" coords="463,3745,715,4284"/>
+<area shape="rect" id="Node000002" href="$class_services_1_1_d_t___service___diagnosis.html" title=" " alt="" coords="485,3397,693,3696"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="590,3709,592,3747,587,3745,588,3714"/>
+<area shape="rect" id="Node000003" href="$class_services_1_1_d_t___service.html" title=" " alt="" coords="349,2445,585,3325"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="552,3337,564,3398,559,3397,551,3342"/>
+<area shape="rect" id="Node000004" href="$class_automaton_1_1_d_t___automaton.html" title="Abstract base class representing the class of automata 𝒜 of the DT&#45;DMS framework." alt="" coords="461,237,654,1469"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="496,1481,495,1541,476,2008,469,2446,464,2445,471,2008,489,1541,495,1486"/>
+<area shape="rect" id="Node000010" href="$class_services_1_1_d_t___service.html" title="Abstract base class representing a generic DT service s ∈ S of DT = ⟨D, M, S, μ⟩." alt="" coords="504,1541,723,2373"/>
+<area shape="poly" id="edge10_Node000010_Node000004" title=" " alt="" coords="590,1481,595,1542,590,1541,589,1487"/>
+<area shape="rect" id="Node000014" href="$class_services_1_1_d_t___service.html" title="Abstract base class representing a generic DT service s ∈ S of DT = ⟨D, M, S, μ⟩." alt="" coords="746,1541,966,2373"/>
+<area shape="poly" id="edge15_Node000014_Node000004" title=" " alt="" coords="660,1453,669,1468,685,1490,702,1504,719,1518,737,1540,749,1563,744,1564,732,1543,716,1521,698,1508,681,1494,664,1471,660,1458"/>
+<area shape="rect" id="Node000005" href="$struct_automaton_1_1_d_t___automaton_1_1_initialization.html" title="The initialization Δ* = ⟨φ_0, Update_0, τ_0⟩." alt="" coords="464,5,650,165"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="558,163,560,220,555,220,557,168"/>
+<area shape="rect" id="Node000006" href="$class_mu_1_1_observer_data.html" title=" " alt="" coords="5,1896,213,2019"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="126,2030,169,2190,197,2282,228,2372,287,2517,352,2656,346,2657,282,2519,223,2374,192,2284,164,2192,126,2036"/>
+<area shape="rect" id="Node000007" href="$class_mu_1_1_observer_data.html" title="Observer of the data observer pattern: an object that wants to be told when new data arrives." alt="" coords="21,792,198,915"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="109,927,112,1896,107,1896,109,932"/>
+<area shape="rect" id="Node000008" href="$class_mu_1_1_observer_model.html" title=" " alt="" coords="237,1880,429,2035"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="347,2047,406,2446,401,2446,346,2052"/>
+<area shape="rect" id="Node000009" href="$class_mu_1_1_observer_model.html" title="Observer of the model observer pattern: an object (typically a service s ∈ S) that wants to be told w..." alt="" coords="225,792,437,915"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="331,927,336,1880,330,1880,331,932"/>
+<area shape="poly" id="edge9_Node000003_Node000010" title=" " alt="" coords="546,2385,539,2446,534,2445,545,2391"/>
+<area shape="rect" id="Node000011" href="$class_mu_1_1_observer_data.html" title="Observer of the data observer pattern: an object that wants to be told when new data arrives." alt="" coords="678,792,855,915"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="757,927,674,1542,668,1541,756,932"/>
+<area shape="poly" id="edge16_Node000014_Node000011" title=" " alt="" coords="773,927,825,1542,820,1541,772,932"/>
+<area shape="rect" id="Node000012" href="$class_mu_1_1_observer_model.html" title="Observer of the model observer pattern: an object (typically a service s ∈ S) that wants to be told w..." alt="" coords="879,792,1091,915"/>
+<area shape="poly" id="edge12_Node000010_Node000012" title=" " alt="" coords="991,927,992,1044,987,1112,978,1185,962,1260,940,1334,909,1405,869,1471,853,1488,836,1498,802,1509,768,1518,752,1528,737,1543,725,1558,720,1556,733,1540,749,1523,766,1513,801,1503,834,1494,850,1484,865,1468,904,1403,935,1333,957,1259,972,1184,982,1112,987,1043,990,932"/>
+<area shape="poly" id="edge17_Node000014_Node000012" title=" " alt="" coords="977,927,907,1542,902,1541,976,932"/>
+<area shape="rect" id="Node000013" href="$class_services_1_1_d_t___service___diagnosis.html" title="Class representing a Diagnosis Service (s ∈ S_diag) of the Digital Twin." alt="" coords="680,2744,888,3027"/>
+<area shape="poly" id="edge13_Node000002_Node000013" title=" " alt="" coords="740,3038,635,3399,630,3397,737,3043"/>
+<area shape="poly" id="edge14_Node000013_Node000014" title=" " alt="" coords="823,2386,797,2745,792,2744,822,2391"/>
+</map>

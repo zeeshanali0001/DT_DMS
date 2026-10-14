@@ -1,0 +1,25 @@
+<map id="Mu::ObserverModel&lt; T &gt;" name="Mu::ObserverModel&lt; T &gt;">
+<area shape="rect" id="Node000001" title="Observer of the model observer pattern: an object (typically a service s ∈ S) that wants to be told w..." alt="" coords="810,5,1022,128"/>
+<area shape="rect" id="Node000002" href="$class_services_1_1_d_t___service.html" title="Abstract base class representing a generic DT service s ∈ S of DT = ⟨D, M, S, μ⟩." alt="" coords="693,200,912,1032"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="901,140,891,201,886,199,900,145"/>
+<area shape="rect" id="Node000011" href="$class_mu_1_1_observer_model.html" title=" " alt="" coords="1005,539,1197,693"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="941,139,1078,539,1073,539,940,144"/>
+<area shape="rect" id="Node000003" href="$class_services_1_1_d_t___service___control.html" title="Class representing a Control Service (s ∈ S_cont) of the Digital Twin." alt="" coords="5,1368,207,1720"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="679,689,570,763,445,859,383,914,324,974,270,1038,222,1105,189,1168,162,1235,143,1303,129,1369,123,1368,138,1302,157,1233,184,1166,217,1103,265,1035,320,971,380,911,442,855,567,759,682,685"/>
+<area shape="rect" id="Node000004" href="$class_services_1_1_d_t___service___diagnosis.html" title="Class representing a Diagnosis Service (s ∈ S_diag) of the Digital Twin." alt="" coords="232,1403,440,1685"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="682,755,626,831,564,917,505,1010,454,1105,423,1179,398,1257,362,1403,356,1402,393,1255,418,1177,449,1103,500,1007,560,914,622,828,685,751"/>
+<area shape="rect" id="Node000007" href="$class_services_1_1_d_t___service___monitoring.html" title="Class representing a Monitoring Service (s ∈ S_moni) of the Digital Twin." alt="" coords="464,1272,668,1816"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="694,1044,638,1273,633,1271,692,1049"/>
+<area shape="rect" id="Node000008" href="$class_services_1_1_d_t___service___optimization.html" title="Class representing an Optimization Service (s ∈ S_opti) of the Digital Twin." alt="" coords="693,1379,912,1709"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="803,1045,805,1380,800,1379,802,1050"/>
+<area shape="rect" id="Node000009" href="$class_services_1_1_d_t___service___prediction.html" title="Class representing a Prediction Service (s ∈ S_pred) of the Digital Twin." alt="" coords="936,1448,1138,1640"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="912,1044,1016,1448,1010,1448,910,1049"/>
+<area shape="rect" id="Node000010" href="$class_services_1_1_d_t___service.html" title=" " alt="" coords="1162,1104,1398,1984"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="919,933,956,985,995,1030,1015,1046,1034,1055,1074,1064,1113,1073,1133,1084,1152,1102,1164,1118,1159,1118,1148,1106,1130,1089,1111,1078,1073,1069,1033,1061,1012,1051,991,1034,951,988,920,939"/>
+<area shape="rect" id="Node000005" href="$class_services_1_1_d_t___service___diagnosis.html" title=" " alt="" coords="704,2056,912,2355"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="348,1697,364,1770,385,1844,414,1916,454,1982,479,2013,508,2042,573,2091,641,2132,707,2164,701,2166,638,2136,570,2096,505,2046,476,2017,449,1986,409,1919,380,1846,359,1771,348,1702"/>
+<area shape="rect" id="Node000006" href="$class_services_1_1_d_t___service___diagnosis___sine.html" title="Diagnosis service of the sine example (s ∈ S_diag): it detects the anomalies of the measured sine wav..." alt="" coords="682,2404,934,2943"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="809,2367,810,2406,805,2403,806,2372"/>
+<area shape="poly" id="edge10_Node000010_Node000005" title=" " alt="" coords="1155,1978,1152,1986,1100,2043,1038,2092,974,2132,913,2164,910,2159,971,2128,1035,2088,1096,2039,1148,1982,1151,1982"/>
+<area shape="poly" id="edge12_Node000011_Node000010" title=" " alt="" coords="1127,705,1171,869,1213,1055,1222,1105,1217,1104,1208,1057,1166,870,1126,710"/>
+</map>

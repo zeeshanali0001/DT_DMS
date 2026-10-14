@@ -1,49 +1,53 @@
 <map id="DT_DMS_SineCubicBP" name="DT_DMS_SineCubicBP">
-<area shape="rect" id="Node000001" title="Main class of the Sine Wave Cubic B&#45;Spline Digital Twin example: a minimal &quot;Hello World&quot; Digital Twin..." alt="" coords="607,5741,788,5981"/>
-<area shape="rect" id="Node000002" href="$class_d_t___d_m_s.html" title=" " alt="" coords="16,4283,246,5669"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="254,5635,280,5668,313,5704,352,5735,394,5762,439,5785,528,5819,610,5844,605,5844,526,5824,436,5789,392,5766,349,5739,310,5707,276,5671,254,5640"/>
-<area shape="rect" id="Node000003" href="$class_d_t___d_m_s.html" title="The DT_DMS class is the general class of the Digital Twin Data&#45;Models&#45;Services (DT&#45;DMS) framework." alt="" coords="5,2803,235,4211"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="126,4222,129,4283,123,4283,125,4228"/>
-<area shape="rect" id="Node000004" href="$class_data_1_1_d_t___data___sine_values.html" title="Data source of the sine example: it plays the role of the ToI (the &quot;physical twin&quot;) and produces the ..." alt="" coords="290,4885,460,5067"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="371,5064,374,5191,378,5266,387,5346,401,5429,421,5511,449,5592,484,5668,507,5703,534,5735,597,5793,591,5792,530,5739,502,5706,479,5671,444,5594,416,5513,396,5430,382,5347,373,5267,368,5191,369,5069"/>
-<area shape="rect" id="Node000005" href="$class_data_1_1_d_t___data.html" title=" " alt="" coords="260,3112,458,3901"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="365,3914,377,4886,371,4886,362,3919"/>
-<area shape="rect" id="Node000006" href="$class_data_1_1_d_t___data.html" title="Class representing a source of data collected from the ToI, i.e., a part of D in DT = ⟨D,..." alt="" coords="260,1904,458,2731"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="359,2743,362,3112,356,3112,359,2748"/>
-<area shape="rect" id="Node000007" href="$interface_mu_1_1_observer_data_manager.html" title="Subject of the data observer pattern: an object that produces data and manages its observers." alt="" coords="260,1503,458,1647"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="359,1659,362,1904,356,1904,359,1664"/>
-<area shape="rect" id="Node000008" href="$class_models_1_1_d_t___model___descr___cubic_b_spline.html" title="Cubic B&#45;Spline model of the sine example: a descriptive model (m ∈ M_desc) that represents the measur..." alt="" coords="701,4805,919,5147"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="791,5145,717,5725,712,5724,786,5148"/>
-<area shape="rect" id="Node000009" href="$class_models_1_1_d_t___model___descriptive.html" title=" " alt="" coords="722,3320,911,3693"/>
-<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="817,3706,813,4806,808,4805,814,3710"/>
-<area shape="rect" id="Node000010" href="$class_models_1_1_d_t___model___descriptive.html" title="Represents a descriptive model (m ∈ M_desc) of the Digital Twin." alt="" coords="714,2139,935,2496"/>
-<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="824,2508,820,3321,815,3320,822,2513"/>
-<area shape="rect" id="Node000011" href="$class_models_1_1_d_t___model.html" title="Abstract base class representing a generic DT model m ∈ M of DT = ⟨D, M, S, μ⟩." alt="" coords="723,1431,923,1719"/>
-<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="824,1731,827,2139,821,2139,823,1736"/>
-<area shape="rect" id="Node000012" href="$class_automaton_1_1_d_t___automaton.html" title="Abstract base class representing the class of automata 𝒜 of the DT&#45;DMS framework." alt="" coords="486,269,704,1245"/>
-<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="707,1207,720,1245,778,1431,772,1431,715,1246,708,1212"/>
-<area shape="rect" id="Node000018" href="$class_services_1_1_d_t___service.html" title="Abstract base class representing a generic DT service s ∈ S of DT = ⟨D, M, S, μ⟩." alt="" coords="484,1295,698,1855"/>
-<area shape="poly" id="edge18_Node000018_Node000012" title=" " alt="" coords="593,1258,595,1295,590,1295,592,1263"/>
-<area shape="rect" id="Node000013" href="$class_automaton_1_1_d_t___automaton_1_1_initialization.html" title="The initialization Δ* = ⟨φ_0, Update_0, τ_0⟩." alt="" coords="476,5,714,197"/>
-<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="595,195,598,253,592,252,595,200"/>
-<area shape="rect" id="Node000014" href="$interface_mu_1_1_observer_data.html" title="Observer of the data observer pattern: an object that wants to be told when new data arrives." alt="" coords="729,723,914,792"/>
-<area shape="poly" id="edge13_Node000011_Node000014" title=" " alt="" coords="822,804,825,1431,820,1431,821,810"/>
-<area shape="poly" id="edge19_Node000018_Node000014" title=" " alt="" coords="813,809,779,1000,751,1123,718,1246,701,1298,696,1297,712,1245,746,1122,774,999,814,804"/>
-<area shape="rect" id="Node000015" href="$class_services_1_1_d_t___service___diagnosis___sine.html" title="Diagnosis service of the sine example (s ∈ S_diag): it detects the anomalies of the measured sine wav..." alt="" coords="494,4845,677,5107"/>
-<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="584,5104,588,5235,596,5389,613,5554,626,5636,643,5717,644,5726,639,5724,637,5718,621,5637,608,5555,590,5389,582,5235,582,5109"/>
-<area shape="rect" id="Node000016" href="$class_services_1_1_d_t___service___diagnosis.html" title=" " alt="" coords="482,3389,690,3624"/>
-<area shape="poly" id="edge15_Node000015_Node000016" title=" " alt="" coords="588,3637,588,4846,583,4846,584,3640"/>
-<area shape="rect" id="Node000017" href="$class_services_1_1_d_t___service___diagnosis.html" title="Class representing a Diagnosis Service (s ∈ S_diag) of the Digital Twin." alt="" coords="482,2200,690,2435"/>
-<area shape="poly" id="edge16_Node000016_Node000017" title=" " alt="" coords="586,2447,588,3390,583,3389,585,2452"/>
-<area shape="poly" id="edge17_Node000017_Node000018" title=" " alt="" coords="589,1867,589,2200,584,2200,589,1872"/>
-<area shape="rect" id="Node000019" href="$class_mu_1_1_d_t___mu.html" title=" " alt="" coords="943,4629,1154,5323"/>
-<area shape="poly" id="edge20_Node000001_Node000019" title=" " alt="" coords="1040,5320,1026,5412,1004,5501,974,5589,933,5671,907,5709,874,5744,803,5801,801,5797,871,5740,902,5706,929,5668,969,5587,999,5500,1021,5411,1037,5325"/>
-<area shape="rect" id="Node000020" href="$class_mu_1_1_d_t___mu.html" title="Class representing the model inference or data assimilation function μ : Ω_D × M → M of DT = ⟨D,..." alt="" coords="944,3171,1155,3843"/>
-<area shape="poly" id="edge21_Node000019_Node000020" title=" " alt="" coords="1051,3856,1051,4630,1046,4629,1048,3860"/>
-<area shape="rect" id="Node000021" href="$enum_mu_1_1_d_t___mu_1_1_mixed_policy.html" title="How a mixed segment ω ∈ Ω_D^mix(t_now) is assimilated, depending on the DT requirements." alt="" coords="959,2261,1140,2373"/>
-<area shape="poly" id="edge22_Node000020_Node000021" title=" " alt="" coords="1050,2371,1052,3154,1047,3154,1049,2376"/>
-<area shape="rect" id="Node000022" href="$class_visualization_1_1_d_t___chart_panel.html" title="Live chart of the sine example: it plots the raw sine data measured on the ToI (real space) and the v..." alt="" coords="1178,4859,1374,5093"/>
-<area shape="poly" id="edge23_Node000001_Node000022" title=" " alt="" coords="1291,5091,1296,5223,1293,5298,1284,5375,1268,5454,1245,5531,1212,5604,1168,5671,1131,5710,1089,5744,1042,5772,994,5795,895,5829,805,5849,804,5844,894,5824,992,5790,1040,5767,1086,5739,1127,5706,1164,5668,1207,5602,1240,5529,1263,5453,1279,5375,1288,5297,1291,5223,1289,5095"/>
-<area shape="rect" id="Node000023" title=" " alt="" coords="1249,3472,1304,3541"/>
-<area shape="poly" id="edge24_Node000022_Node000023" title=" " alt="" coords="1278,3555,1279,4859,1274,4858,1274,3558"/>
+<area shape="rect" id="Node000001" title="Main class of the Sine Wave Cubic B&#45;Spline Digital Twin example: a minimal &quot;Hello World&quot; Digital Twin..." alt="" coords="644,6271,826,6532"/>
+<area shape="rect" id="Node000002" href="$class_d_t___d_m_s.html" title=" " alt="" coords="51,4759,286,6199"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="294,6175,312,6197,346,6234,385,6267,428,6295,473,6319,564,6356,647,6382,642,6383,562,6361,470,6324,425,6300,382,6271,342,6238,308,6200,294,6180"/>
+<area shape="rect" id="Node000003" href="$class_d_t___d_m_s.html" title="The DT_DMS class is the general class of the Digital Twin Data&#45;Models&#45;Services (DT&#45;DMS) framework." alt="" coords="43,3215,273,4687"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="163,4699,166,4759,161,4759,163,4704"/>
+<area shape="rect" id="Node000004" href="$class_data_1_1_d_t___data___sine_values.html" title="Data source of the sine example: it plays the role of the ToI (the &quot;physical twin&quot;) and produces the ..." alt="" coords="322,5388,492,5569"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="402,5566,403,5698,406,5776,415,5860,428,5946,448,6033,476,6118,512,6197,537,6236,566,6271,634,6333,629,6332,562,6274,532,6239,507,6200,471,6120,443,6034,423,5947,409,5860,401,5777,397,5698,400,5571"/>
+<area shape="rect" id="Node000005" href="$class_data_1_1_d_t___data.html" title=" " alt="" coords="297,3492,495,4409"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="401,4422,409,5388,404,5388,398,4427"/>
+<area shape="rect" id="Node000006" href="$class_data_1_1_d_t___data.html" title="Class representing a source of data collected from the ToI, i.e., a part of D in DT = ⟨D,..." alt="" coords="260,2225,458,3143"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="373,3155,385,3492,380,3492,373,3160"/>
+<area shape="rect" id="Node000007" href="$interface_mu_1_1_observer_data_manager.html" title="Subject of the data observer pattern: an object that produces data and manages its observers." alt="" coords="5,1652,203,1796"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="126,1808,218,2153,263,2321,257,2322,212,2154,126,1813"/>
+<area shape="rect" id="Node000008" href="$class_data_1_1_d_t___data_characterization.html" title="Class representing the characterization of a data source of the ToI: the metadata that tell how the d..." alt="" coords="227,1295,491,2153"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="359,2151,362,2209,356,2209,359,2156"/>
+<area shape="rect" id="Node000009" href="$class_models_1_1_d_t___model___descr___cubic_b_spline.html" title="Cubic B&#45;Spline model of the sine example: a descriptive model (m ∈ M_desc) that represents the measur..." alt="" coords="743,5297,961,5660"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="852,5657,848,5790,837,5938,819,6094,792,6247,790,6256,786,6252,787,6246,814,6093,832,5937,843,5789,850,5662"/>
+<area shape="rect" id="Node000010" href="$class_models_1_1_d_t___model___descriptive.html" title=" " alt="" coords="760,3764,950,4137"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="856,4150,855,5298,850,5297,853,4154"/>
+<area shape="rect" id="Node000011" href="$class_models_1_1_d_t___model___descriptive.html" title="Represents a descriptive model (m ∈ M_desc) of the Digital Twin." alt="" coords="754,2505,975,2863"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="863,2875,859,3764,854,3764,862,2880"/>
+<area shape="rect" id="Node000012" href="$class_models_1_1_d_t___model.html" title="Abstract base class representing a generic DT model m ∈ M of DT = ⟨D, M, S, μ⟩." alt="" coords="755,1484,982,1964"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="868,1976,868,2506,862,2505,867,1981"/>
+<area shape="rect" id="Node000013" href="$class_automaton_1_1_d_t___automaton.html" title="Abstract base class representing the class of automata 𝒜 of the DT&#45;DMS framework." alt="" coords="760,269,977,1245"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="869,1258,871,1485,866,1484,868,1263"/>
+<area shape="rect" id="Node000019" href="$class_services_1_1_d_t___service.html" title="Abstract base class representing a generic DT service s ∈ S of DT = ⟨D, M, S, μ⟩." alt="" coords="516,1425,730,2023"/>
+<area shape="poly" id="edge19_Node000019_Node000013" title=" " alt="" coords="756,1212,750,1246,703,1426,698,1425,744,1245,757,1207"/>
+<area shape="rect" id="Node000014" href="$class_automaton_1_1_d_t___automaton_1_1_initialization.html" title="The initialization Δ* = ⟨φ_0, Update_0, τ_0⟩." alt="" coords="749,5,988,197"/>
+<area shape="poly" id="edge13_Node000013_Node000014" title=" " alt="" coords="869,195,871,253,866,252,868,200"/>
+<area shape="rect" id="Node000015" href="$interface_mu_1_1_observer_data.html" title="Observer of the data observer pattern: an object that wants to be told when new data arrives." alt="" coords="550,723,736,792"/>
+<area shape="poly" id="edge14_Node000012_Node000015" title=" " alt="" coords="653,804,751,1245,809,1484,804,1485,746,1246,653,809"/>
+<area shape="poly" id="edge20_Node000019_Node000015" title=" " alt="" coords="642,804,632,1426,627,1425,642,810"/>
+<area shape="rect" id="Node000016" href="$class_services_1_1_d_t___service___diagnosis___sine.html" title="Diagnosis service of the sine example (s ∈ S_diag): it detects the anomalies of the measured sine wav..." alt="" coords="522,5321,719,5636"/>
+<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="642,5634,719,6254,714,6254,638,5637"/>
+<area shape="rect" id="Node000017" href="$class_services_1_1_d_t___service___diagnosis.html" title=" " alt="" coords="519,3833,727,4068"/>
+<area shape="poly" id="edge16_Node000016_Node000017" title=" " alt="" coords="625,4081,623,5322,618,5321,621,4085"/>
+<area shape="rect" id="Node000018" href="$class_services_1_1_d_t___service___diagnosis.html" title="Class representing a Diagnosis Service (s ∈ S_diag) of the Digital Twin." alt="" coords="519,2567,727,2801"/>
+<area shape="poly" id="edge17_Node000017_Node000018" title=" " alt="" coords="623,2813,626,3834,620,3833,623,2819"/>
+<area shape="poly" id="edge18_Node000018_Node000019" title=" " alt="" coords="623,2035,626,2567,620,2567,623,2040"/>
+<area shape="rect" id="Node000020" href="$interface_mu_1_1_observer_model.html" title="Observer of the model observer pattern: an object (typically a service s ∈ S) that wants to be told w..." alt="" coords="373,715,526,800"/>
+<area shape="poly" id="edge21_Node000019_Node000020" title=" " alt="" coords="460,812,572,1425,567,1426,460,817"/>
+<area shape="rect" id="Node000021" href="$class_mu_1_1_d_t___mu.html" title=" " alt="" coords="986,5132,1196,5825"/>
+<area shape="poly" id="edge22_Node000001_Node000021" title=" " alt="" coords="1085,5823,1072,5921,1050,6017,1018,6111,976,6200,948,6241,915,6278,878,6311,840,6340,838,6335,875,6307,911,6274,944,6237,971,6197,1013,6109,1044,6016,1067,5920,1082,5827"/>
+<area shape="rect" id="Node000022" href="$class_mu_1_1_d_t___mu.html" title="Class representing the model inference or data assimilation function μ : Ω_D × M → M of DT = ⟨D,..." alt="" coords="986,3615,1196,4287"/>
+<area shape="poly" id="edge23_Node000021_Node000022" title=" " alt="" coords="1092,4299,1094,5133,1088,5132,1090,4304"/>
+<area shape="rect" id="Node000023" href="$enum_mu_1_1_d_t___mu_1_1_mixed_policy.html" title="How a mixed segment ω ∈ Ω_D^mix(t_now) is assimilated, depending on the DT requirements." alt="" coords="1000,2628,1182,2740"/>
+<area shape="poly" id="edge24_Node000022_Node000023" title=" " alt="" coords="1092,2737,1094,3598,1088,3598,1090,2742"/>
+<area shape="rect" id="Node000024" href="$class_visualization_1_1_d_t___chart_panel.html" title="Live chart of the sine example: it plots the raw sine data measured on the ToI (real space) and the v..." alt="" coords="1221,5361,1417,5596"/>
+<area shape="poly" id="edge25_Node000001_Node000024" title=" " alt="" coords="1335,5594,1341,5731,1338,5808,1329,5890,1314,5972,1290,6053,1256,6130,1210,6200,1173,6241,1131,6275,1084,6305,1034,6329,934,6366,843,6388,842,6382,932,6360,1032,6324,1081,6300,1127,6271,1170,6237,1206,6197,1251,6128,1285,6051,1308,5971,1324,5889,1333,5808,1336,5731,1332,5598"/>
+<area shape="rect" id="Node000025" title=" " alt="" coords="1292,3916,1346,3985"/>
+<area shape="poly" id="edge26_Node000024_Node000025" title=" " alt="" coords="1321,3999,1322,5362,1316,5361,1317,4002"/>
 </map>

@@ -17,6 +17,7 @@ var hierarchy =
     [ "Data.DT_Data&lt; Double &gt;", "class_data_1_1_d_t___data.html", [
       [ "Data.DT_Data_SineValues", "class_data_1_1_d_t___data___sine_values.html", null ]
     ] ],
+    [ "Data.DT_DataCharacterization", "class_data_1_1_d_t___data_characterization.html", null ],
     [ "Data.DT_DataSegment&lt; T &gt;", "class_data_1_1_d_t___data_segment.html", null ],
     [ "DT_DMS&lt; T &gt;", "class_d_t___d_m_s.html", null ],
     [ "DT_DMS&lt; Double &gt;", "class_d_t___d_m_s.html", [
@@ -43,6 +44,9 @@ var hierarchy =
     ] ],
     [ "Mu.ObserverDataManager&lt; T &gt;", "interface_mu_1_1_observer_data_manager.html", [
       [ "Data.DT_Data< T >", "class_data_1_1_d_t___data.html", null ]
+    ] ],
+    [ "Mu.ObserverModel&lt; T &gt;", "interface_mu_1_1_observer_model.html", [
+      [ "Services.DT_Service< T >", "class_services_1_1_d_t___service.html", null ]
     ] ],
     [ "Automaton.DT_Automaton.Phase", "class_automaton_1_1_d_t___automaton_1_1_phase.html", null ],
     [ "Automaton.DT_Automaton.Transition", "class_automaton_1_1_d_t___automaton_1_1_transition.html", null ],

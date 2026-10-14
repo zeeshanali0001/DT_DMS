@@ -112,6 +112,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a912c5949cf920421100004b1b7f6d8d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor to initialize the model's name.  <br /></td></tr>
 <tr class="memitem:acc184234ef9116aa0d12f175e15337ce" id="r_acc184234ef9116aa0d12f175e15337ce"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#acc184234ef9116aa0d12f175e15337ce">assimilate</a> (<a class="el" href="class_data_1_1_d_t___data_segment.html">DT_DataSegment</a>&lt; T &gt; omega)</td></tr>
 <tr class="memdesc:acc184234ef9116aa0d12f175e15337ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assimilates a data segment into this model: the model side of <code class="JavaDocCode">μ(ω, m) = m'</code>.  <br /></td></tr>
+<tr class="memitem:a3951ddc5403afce1d1500e3e6479ae43" id="r_a3951ddc5403afce1d1500e3e6479ae43"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a3951ddc5403afce1d1500e3e6479ae43">evaluate</a> (double t)</td></tr>
+<tr class="memdesc:a3951ddc5403afce1d1500e3e6479ae43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value of the model at time <code class="JavaDocCode">t</code>, <code class="JavaDocCode">m(t)</code>, to be compared with the datum <code class="JavaDocCode">ω(t)</code> measured at the same time (<code class="JavaDocCode">DT_DMS.checkModelsVersusData</code>).  <br /></td></tr>
+<tr class="memitem:a81973aa008ae4680042882b0e467fcfc" id="r_a81973aa008ae4680042882b0e467fcfc"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a81973aa008ae4680042882b0e467fcfc">addServiceToBeUpdated</a> (<a class="el" href="interface_mu_1_1_observer_model.html">ObserverModel</a>&lt; T &gt; service)</td></tr>
+<tr class="memdesc:a81973aa008ae4680042882b0e467fcfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a service to be notified each time this model is updated.  <br /></td></tr>
+<tr class="memitem:a438eb78d87da4b7d9361477f88c0f073" id="r_a438eb78d87da4b7d9361477f88c0f073"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a438eb78d87da4b7d9361477f88c0f073">removeServiceToBeUpdated</a> (<a class="el" href="interface_mu_1_1_observer_model.html">ObserverModel</a>&lt; T &gt; service)</td></tr>
+<tr class="memdesc:a438eb78d87da4b7d9361477f88c0f073"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops notifying a service when this model is updated.  <br /></td></tr>
+<tr class="memitem:a0cda7fe54d6a87ad00eff17bd62301b9" id="r_a0cda7fe54d6a87ad00eff17bd62301b9"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a0cda7fe54d6a87ad00eff17bd62301b9">notifyServices</a> ()</td></tr>
+<tr class="memdesc:a0cda7fe54d6a87ad00eff17bd62301b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notifies the services coupled to this model that it has been updated.  <br /></td></tr>
+<tr class="memitem:a5f93446956c42aff2517cc210160ff45" id="r_a5f93446956c42aff2517cc210160ff45"><td class="memItemLeft">List&lt; <a class="el" href="interface_mu_1_1_observer_model.html">ObserverModel</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a5f93446956c42aff2517cc210160ff45">getServicesToBeUpdated</a> ()</td></tr>
 <tr class="memitem:a0a931742845a647c725f44f7bc7e455f" id="r_a0a931742845a647c725f44f7bc7e455f"><td class="memItemLeft">abstract void&#160;</td><td class="memItemRight"><a class="el" href="#a0a931742845a647c725f44f7bc7e455f">executeModel</a> ()</td></tr>
 <tr class="memdesc:a0a931742845a647c725f44f7bc7e455f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the core logic of the model.  <br /></td></tr>
 <tr class="memitem:ad7334f661500060adc1c36808d62d138" id="r_ad7334f661500060adc1c36808d62d138"><td class="memItemLeft">String&#160;</td><td class="memItemRight"><a class="el" href="#ad7334f661500060adc1c36808d62d138">getModelName</a> ()</td></tr>
@@ -182,11 +191,17 @@ Protected Attributes</h2></td></tr>
 <tr class="memdesc:ac6c1969bc992d3719d170f4078344416 inherit pro_attribs_class_automaton_1_1_d_t___automaton"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current phase <code class="JavaDocCode">φ ∈ Φ</code>.  <br /></td></tr>
 <tr class="memitem:a7d506226951828ef135ab8d168df11c6 inherit pro_attribs_class_automaton_1_1_d_t___automaton" id="r_a7d506226951828ef135ab8d168df11c6"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="class_automaton_1_1_d_t___automaton.html#a7d506226951828ef135ab8d168df11c6">elapsed</a></td></tr>
 <tr class="memdesc:a7d506226951828ef135ab8d168df11c6 inherit pro_attribs_class_automaton_1_1_d_t___automaton"><td class="mdescLeft">&#160;</td><td class="mdescRight">The time elapsed in the current phase.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ad5f2fbadc9fe560517a8549c0a4e48e2" id="r_ad5f2fbadc9fe560517a8549c0a4e48e2"><td class="memItemLeft">final List&lt; <a class="el" href="interface_mu_1_1_observer_model.html">ObserverModel</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ad5f2fbadc9fe560517a8549c0a4e48e2">servicesToBeUpdated</a> = new ArrayList&lt;&gt;()</td></tr>
+<tr class="memdesc:ad5f2fbadc9fe560517a8549c0a4e48e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The services to be notified when the model is updated (model observer pattern).  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Abstract base class representing a generic DT model <code class="JavaDocCode">m ∈ M</code> of <code class="JavaDocCode">DT = ⟨D, M, S, μ⟩</code>. </p>
 <p><code class="JavaDocCode">M</code> is the set of DT models that represent the ToI virtually: <code class="JavaDocCode">M = M_desc ∪ M_pred ∪ M_presc</code>, the descriptive (<code><a class="el" href="class_models_1_1_d_t___model___descriptive.html">DT_Model_Descriptive</a></code>), predictive (<code><a class="el" href="class_models_1_1_d_t___model___predictive.html">DT_Model_Predictive</a></code>) and prescriptive (<code><a class="el" href="class_models_1_1_d_t___model___prescriptive.html">DT_Model_Prescriptive</a></code>) models. </p>
 <p>Every model belongs to the class of automata <code class="JavaDocCode">𝒜</code> (<code class="JavaDocCode">M ⊆ 𝒜</code>); hence this class extends <code><a class="el" href="class_automaton_1_1_d_t___automaton.html">DT_Automaton</a></code> and inherits the 7-tuple <code class="JavaDocCode">ℳ = ⟨Λ, X, Y, Σ, Φ, Δ, Δ*⟩</code>. A model is updated by the data assimilation function <code class="JavaDocCode">μ</code> through <code><a class="el" href="#acc184234ef9116aa0d12f175e15337ce">assimilate</a></code>. </p>
+<p>A model is also the subject of the model observer pattern: the services coupled to it (<code><a class="el" href="#a81973aa008ae4680042882b0e467fcfc">addServiceToBeUpdated</a></code>) are notified after each assimilation (<code><a class="el" href="#a0cda7fe54d6a87ad00eff17bd62301b9">notifyServices</a></code>). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">&lt;T&gt;</td><td>the type of a datum <code class="JavaDocCode">d ∈ D</code>. </td></tr>
@@ -220,6 +235,31 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a81973aa008ae4680042882b0e467fcfc" name="a81973aa008ae4680042882b0e467fcfc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81973aa008ae4680042882b0e467fcfc">&#9670;&#160;</a></span>addServiceToBeUpdated()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_models_1_1_d_t___model.html">Models.DT_Model</a>&lt; T &gt;.addServiceToBeUpdated </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="interface_mu_1_1_observer_model.html">ObserverModel</a>&lt; T &gt;</td>          <td class="paramname"><span class="paramname"><em>service</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds a service to be notified each time this model is updated. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">service</td><td>the service (or any model observer). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="acc184234ef9116aa0d12f175e15337ce" name="acc184234ef9116aa0d12f175e15337ce"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acc184234ef9116aa0d12f175e15337ce">&#9670;&#160;</a></span>assimilate()</h2>
 
@@ -236,7 +276,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Assimilates a data segment into this model: the model side of <code class="JavaDocCode">μ(ω, m) = m'</code>. </p>
-<p>The model is updated in place, so <code class="JavaDocCode">m'</code> keeps the type of <code class="JavaDocCode">m</code>. By default each datum of <code class="JavaDocCode">ω</code> is passed to <code><a class="el" href="interface_mu_1_1_observer_data.html#ae9f0800d3c852f322aed1192dc695078">update</a></code> in time order; subclasses can override it (e.g., to re-train a predictive model on a whole historical segment). </p>
+<p>The model is updated in place, so <code class="JavaDocCode">m'</code> keeps the type of <code class="JavaDocCode">m</code>. By default each datum of <code class="JavaDocCode">ω</code> is passed to <code><a class="el" href="interface_mu_1_1_observer_data.html#ae9f0800d3c852f322aed1192dc695078">update</a></code> in time order, then the coupled services are notified (<code><a class="el" href="#a0cda7fe54d6a87ad00eff17bd62301b9">notifyServices</a></code>); subclasses can override it (e.g., to re-train a predictive model on a whole historical segment) and should then call <code><a class="el" href="#a0cda7fe54d6a87ad00eff17bd62301b9">notifyServices</a></code> too. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">omega</td><td>the data segment <code class="JavaDocCode">ω</code>. </td></tr>
@@ -269,6 +309,33 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the objects are equal, false otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="a3951ddc5403afce1d1500e3e6479ae43" name="a3951ddc5403afce1d1500e3e6479ae43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3951ddc5403afce1d1500e3e6479ae43">&#9670;&#160;</a></span>evaluate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="class_models_1_1_d_t___model.html">Models.DT_Model</a>&lt; T &gt;.evaluate </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>t</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the value of the model at time <code class="JavaDocCode">t</code>, <code class="JavaDocCode">m(t)</code>, to be compared with the datum <code class="JavaDocCode">ω(t)</code> measured at the same time (<code class="JavaDocCode">DT_DMS.checkModelsVersusData</code>). </p>
+<p>By default a model gives no value in time and this method returns <code class="JavaDocCode">NaN</code>; a model that describes or predicts the measured signal (e.g., an interpolation) overrides it. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>the time. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code class="JavaDocCode">m(t)</code>, or <code class="JavaDocCode">NaN</code> if the model gives no value at <code class="JavaDocCode">t</code>. </dd></dl>
 
 </div>
 </div>
@@ -320,6 +387,24 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a5f93446956c42aff2517cc210160ff45" name="a5f93446956c42aff2517cc210160ff45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f93446956c42aff2517cc210160ff45">&#9670;&#160;</a></span>getServicesToBeUpdated()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt; <a class="el" href="interface_mu_1_1_observer_model.html">ObserverModel</a>&lt; T &gt; &gt; <a class="el" href="class_models_1_1_d_t___model.html">Models.DT_Model</a>&lt; T &gt;.getServicesToBeUpdated </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>the services notified when this model is updated (read-only). </dd></dl>
+
+</div>
+</div>
 <a id="a910c736f7e0e850583a2de4a9190fa74" name="a910c736f7e0e850583a2de4a9190fa74"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a910c736f7e0e850583a2de4a9190fa74">&#9670;&#160;</a></span>hashCode()</h2>
 
@@ -335,6 +420,25 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>the hash code of the model, based on its name. </dd></dl>
+
+</div>
+</div>
+<a id="a0cda7fe54d6a87ad00eff17bd62301b9" name="a0cda7fe54d6a87ad00eff17bd62301b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cda7fe54d6a87ad00eff17bd62301b9">&#9670;&#160;</a></span>notifyServices()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_models_1_1_d_t___model.html">Models.DT_Model</a>&lt; T &gt;.notifyServices </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Notifies the services coupled to this model that it has been updated. </p>
 
 </div>
 </div>
@@ -369,6 +473,31 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>its numeric value, or <code class="JavaDocCode">NaN</code> if the datum is not a number. </dd></dl>
+
+</div>
+</div>
+<a id="a438eb78d87da4b7d9361477f88c0f073" name="a438eb78d87da4b7d9361477f88c0f073"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a438eb78d87da4b7d9361477f88c0f073">&#9670;&#160;</a></span>removeServiceToBeUpdated()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_models_1_1_d_t___model.html">Models.DT_Model</a>&lt; T &gt;.removeServiceToBeUpdated </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="interface_mu_1_1_observer_model.html">ObserverModel</a>&lt; T &gt;</td>          <td class="paramname"><span class="paramname"><em>service</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Stops notifying a service when this model is updated. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">service</td><td>the service to remove. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -439,6 +568,30 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The name of the model, which uniquely identifies it. </p>
+
+</div>
+</div>
+<a id="ad5f2fbadc9fe560517a8549c0a4e48e2" name="ad5f2fbadc9fe560517a8549c0a4e48e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5f2fbadc9fe560517a8549c0a4e48e2">&#9670;&#160;</a></span>servicesToBeUpdated</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final List&lt;<a class="el" href="interface_mu_1_1_observer_model.html">ObserverModel</a>&lt;T&gt; &gt; <a class="el" href="class_models_1_1_d_t___model.html">Models.DT_Model</a>&lt; T &gt;.servicesToBeUpdated = new ArrayList&lt;&gt;()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The services to be notified when the model is updated (model observer pattern). </p>
 
 </div>
 </div>

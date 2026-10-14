@@ -110,8 +110,12 @@ Collaboration diagram for DT_DMS&lt; T &gt;:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ae52ee27ea0b2e179e5f166b0cb8bf2c0" id="r_ae52ee27ea0b2e179e5f166b0cb8bf2c0"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ae52ee27ea0b2e179e5f166b0cb8bf2c0">DT_DMS</a> (double <a class="el" href="#a486f122884dadd76517c6faabc24b890">delta</a>)</td></tr>
 <tr class="memdesc:ae52ee27ea0b2e179e5f166b0cb8bf2c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an empty Digital Twin <code class="JavaDocCode">⟨D, M, S, μ⟩</code>.  <br /></td></tr>
+<tr class="memitem:a1fc09837643b2a005da83f1b8faf9127" id="r_a1fc09837643b2a005da83f1b8faf9127"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a1fc09837643b2a005da83f1b8faf9127">DT_DMS</a> (String <a class="el" href="#a49f5b03f080bd518693f8391632f62aa">name</a>, double <a class="el" href="#a486f122884dadd76517c6faabc24b890">delta</a>)</td></tr>
+<tr class="memdesc:a1fc09837643b2a005da83f1b8faf9127"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an empty named Digital Twin <code class="JavaDocCode">⟨D, M, S, μ⟩</code>.  <br /></td></tr>
 <tr class="memitem:aa0ab9aaafa595e4a6cb99690de4da153" id="r_aa0ab9aaafa595e4a6cb99690de4da153"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa0ab9aaafa595e4a6cb99690de4da153">DT_DMS</a> (<a class="el" href="class_d_t___d_m_s.html">DT_DMS</a>&lt; T &gt; DT)</td></tr>
 <tr class="memdesc:aa0ab9aaafa595e4a6cb99690de4da153"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor: the new Digital Twin has the same data, models and services as <code class="JavaDocCode">DT</code>.  <br /></td></tr>
+<tr class="memitem:a24810d41da123fce9b41bbec2e371fb9" id="r_a24810d41da123fce9b41bbec2e371fb9"><td class="memItemLeft">String&#160;</td><td class="memItemRight"><a class="el" href="#a24810d41da123fce9b41bbec2e371fb9">getName</a> ()</td></tr>
+<tr class="memitem:ac74694cb234446051d6e770078509003" id="r_ac74694cb234446051d6e770078509003"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac74694cb234446051d6e770078509003">setName</a> (String <a class="el" href="#a49f5b03f080bd518693f8391632f62aa">name</a>)</td></tr>
 <tr class="memitem:a863dace3248212268e16861323c0b756" id="r_a863dace3248212268e16861323c0b756"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a863dace3248212268e16861323c0b756">tNow</a> ()</td></tr>
 <tr class="memitem:a31ff317a70f0bcd63002f74c96618927" id="r_a31ff317a70f0bcd63002f74c96618927"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a31ff317a70f0bcd63002f74c96618927">setClock</a> (DoubleSupplier <a class="el" href="#a9340c922eb9ac96c2b934f198e6277b4">clock</a>)</td></tr>
 <tr class="memdesc:a31ff317a70f0bcd63002f74c96618927"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces the clock giving <code class="JavaDocCode">t_now</code> (e.g., a simulated clock).  <br /></td></tr>
@@ -126,7 +130,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a19d4cd5b3cdfe7d930ffefc4765c5b84" id="r_a19d4cd5b3cdfe7d930ffefc4765c5b84"><td class="memItemLeft">List&lt; <a class="el" href="class_models_1_1_d_t___model___predictive.html">DT_Model_Predictive</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a19d4cd5b3cdfe7d930ffefc4765c5b84">getPredictiveModels</a> ()</td></tr>
 <tr class="memitem:af4b795c5bf781cc7a5475dfa91ef2c96" id="r_af4b795c5bf781cc7a5475dfa91ef2c96"><td class="memItemLeft">List&lt; <a class="el" href="class_models_1_1_d_t___model___prescriptive.html">DT_Model_Prescriptive</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight"><a class="el" href="#af4b795c5bf781cc7a5475dfa91ef2c96">getPrescriptiveModels</a> ()</td></tr>
 <tr class="memitem:a7877e1eab7e5dfb1a774df2bf28b2f76" id="r_a7877e1eab7e5dfb1a774df2bf28b2f76"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a7877e1eab7e5dfb1a774df2bf28b2f76">addService</a> (<a class="el" href="class_services_1_1_d_t___service.html">DT_Service</a>&lt; T &gt; s, <a class="el" href="class_models_1_1_d_t___model.html">DT_Model</a>&lt; T &gt; m)</td></tr>
-<tr class="memdesc:a7877e1eab7e5dfb1a774df2bf28b2f76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a service to <code class="JavaDocCode">S</code> and couples it to the model <code class="JavaDocCode">m</code>.  <br /></td></tr>
+<tr class="memdesc:a7877e1eab7e5dfb1a774df2bf28b2f76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a service to <code class="JavaDocCode">S</code> and couples it to the model <code class="JavaDocCode">m</code>: the service will be notified each time <code class="JavaDocCode">μ</code> updates <code class="JavaDocCode">m</code> (<code class="JavaDocCode">DT_Model.addServiceToBeUpdated</code>).  <br /></td></tr>
 <tr class="memitem:a625b841f9ad27bff2dbe1791f3c0e71d" id="r_a625b841f9ad27bff2dbe1791f3c0e71d"><td class="memItemLeft">Object&#160;</td><td class="memItemRight"><a class="el" href="#a625b841f9ad27bff2dbe1791f3c0e71d">runService</a> (<a class="el" href="class_services_1_1_d_t___service.html">DT_Service</a>&lt; T &gt; s, <a class="el" href="class_data_1_1_d_t___data_segment.html">DT_DataSegment</a>&lt; T &gt; omega)</td></tr>
 <tr class="memdesc:a625b841f9ad27bff2dbe1791f3c0e71d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs a service with the model it is coupled to: <code class="JavaDocCode">s(m, ω) ∈ Y_s</code>.  <br /></td></tr>
 <tr class="memitem:abd325fc9264822a6935e22793881f604" id="r_abd325fc9264822a6935e22793881f604"><td class="memItemLeft">List&lt; <a class="el" href="class_services_1_1_d_t___service___monitoring.html">DT_Service_Monitoring</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight"><a class="el" href="#abd325fc9264822a6935e22793881f604">getMonitoringServices</a> ()</td></tr>
@@ -137,6 +141,22 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a05617dea98f6178b90f073f072cd7e09" id="r_a05617dea98f6178b90f073f072cd7e09"><td class="memItemLeft"><a class="el" href="class_mu_1_1_d_t___mu.html">DT_Mu</a>&lt; T &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a05617dea98f6178b90f073f072cd7e09">getMu</a> ()</td></tr>
 <tr class="memitem:ac064c79c7e18c5773c92e8dad9229c3e" id="r_ac064c79c7e18c5773c92e8dad9229c3e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac064c79c7e18c5773c92e8dad9229c3e">assimilate</a> (<a class="el" href="class_data_1_1_d_t___data_segment.html">DT_DataSegment</a>&lt; T &gt; omega)</td></tr>
 <tr class="memdesc:ac064c79c7e18c5773c92e8dad9229c3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assimilates a data segment into the models of the DT, according to its kind at <code class="JavaDocCode">t_now</code> (real-time, historical or mixed).  <br /></td></tr>
+<tr class="memitem:a0374e7ee10057c65296c2f8f1a64f041" id="r_a0374e7ee10057c65296c2f8f1a64f041"><td class="memItemLeft">boolean&#160;</td><td class="memItemRight"><a class="el" href="#a0374e7ee10057c65296c2f8f1a64f041">checkServicesVersusModels</a> (PrintStream out)</td></tr>
+<tr class="memdesc:a0374e7ee10057c65296c2f8f1a64f041"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks the consistency of the services with respect to the models they are coupled to.  <br /></td></tr>
+<tr class="memitem:a19338a71a8754021914809bf490c81ee" id="r_a19338a71a8754021914809bf490c81ee"><td class="memItemLeft">boolean&#160;</td><td class="memItemRight"><a class="el" href="#a19338a71a8754021914809bf490c81ee">checkModelsVersusData</a> (PrintStream out, double epsilon, double bigM)</td></tr>
+<tr class="memdesc:a19338a71a8754021914809bf490c81ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks the fitting of the data versus the models: for every data source <code class="JavaDocCode">D_i</code> and every model <code class="JavaDocCode">M_j</code> that gives values in time (<code class="JavaDocCode">DT_Model.evaluate</code>), computes <code class="JavaDocCode">δ = |ω(t) − m(t)|</code> over the real-time data of the source.  <br /></td></tr>
+<tr class="memitem:a3d3431be2e29f8d1385c4dfb050e5e5e" id="r_a3d3431be2e29f8d1385c4dfb050e5e5e"><td class="memItemLeft">boolean&#160;</td><td class="memItemRight"><a class="el" href="#a3d3431be2e29f8d1385c4dfb050e5e5e">checkModelsVersusData</a> (PrintStream out)</td></tr>
+<tr class="memdesc:a3d3431be2e29f8d1385c4dfb050e5e5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks the fitting of the data versus the models with <code class="JavaDocCode">ε = 1e-3</code> and <code class="JavaDocCode">M = 0.1</code>.  <br /></td></tr>
+<tr class="memitem:afc2ad15474fedfd9210f00f8887a3653" id="r_afc2ad15474fedfd9210f00f8887a3653"><td class="memItemLeft">boolean&#160;</td><td class="memItemRight"><a class="el" href="#afc2ad15474fedfd9210f00f8887a3653">checkDataVersusServices</a> (PrintStream out)</td></tr>
+<tr class="memdesc:afc2ad15474fedfd9210f00f8887a3653"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks the data characteristics (formats, units, ...) with respect to the services of the DT.  <br /></td></tr>
+<tr class="memitem:a47a2d64e062ca4ea0dbbb5283c514f7e" id="r_a47a2d64e062ca4ea0dbbb5283c514f7e"><td class="memItemLeft">boolean&#160;</td><td class="memItemRight"><a class="el" href="#a47a2d64e062ca4ea0dbbb5283c514f7e">checkConsistency</a> (PrintStream out)</td></tr>
+<tr class="memdesc:a47a2d64e062ca4ea0dbbb5283c514f7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs the three validity checks of the DT: services versus models, models versus data (with the default tolerances) and data versus services.  <br /></td></tr>
+<tr class="memitem:a661994176595e7841b690403c79e89d4" id="r_a661994176595e7841b690403c79e89d4"><td class="memItemLeft">String&#160;</td><td class="memItemRight"><a class="el" href="#a661994176595e7841b690403c79e89d4">toGraphviz</a> ()</td></tr>
+<tr class="memdesc:a661994176595e7841b690403c79e89d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the Data-Models-Services diagram of the DT in the Graphviz format: one node lists the data sources, one the models and one the services; <code class="JavaDocCode">μ</code> links the data to the models.  <br /></td></tr>
+<tr class="memitem:ada99f65624e181031350c343aa7578cd" id="r_ada99f65624e181031350c343aa7578cd"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ada99f65624e181031350c343aa7578cd">dumpGraphviz</a> (PrintStream out)</td></tr>
+<tr class="memdesc:ada99f65624e181031350c343aa7578cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the Data-Models-Services diagram of the DT in the Graphviz format (<code><a class="el" href="#a661994176595e7841b690403c79e89d4">toGraphviz</a></code>).  <br /></td></tr>
+<tr class="memitem:a59422ff3fa26aaaa530576c77be6be02" id="r_a59422ff3fa26aaaa530576c77be6be02"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a59422ff3fa26aaaa530576c77be6be02">dumpGraphviz</a> (String fileName)  throws IOException </td></tr>
+<tr class="memdesc:a59422ff3fa26aaaa530576c77be6be02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the Data-Models-Services diagram of the DT in a Graphviz file (<code><a class="el" href="#a661994176595e7841b690403c79e89d4">toGraphviz</a></code>).  <br /></td></tr>
 <tr class="memitem:ac6504639baea6741989ff96238fdb0d9" id="r_ac6504639baea6741989ff96238fdb0d9"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac6504639baea6741989ff96238fdb0d9">beginModels</a> ()</td></tr>
 <tr class="memdesc:ac6504639baea6741989ff96238fdb0d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">For the design pattern iterator: initialize the list of models to run.  <br /></td></tr>
 <tr class="memitem:a0112cfe5086e4f834996b69004d7e68f" id="r_a0112cfe5086e4f834996b69004d7e68f"><td class="memItemLeft"><a class="el" href="class_models_1_1_d_t___model.html">DT_Model</a>&lt; T &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a0112cfe5086e4f834996b69004d7e68f">currentModel</a> ()</td></tr>
@@ -172,6 +192,8 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
+<tr class="memitem:a49f5b03f080bd518693f8391632f62aa" id="r_a49f5b03f080bd518693f8391632f62aa"><td class="memItemLeft">String&#160;</td><td class="memItemRight"><a class="el" href="#a49f5b03f080bd518693f8391632f62aa">name</a> = &quot;Digital Twin&quot;</td></tr>
+<tr class="memdesc:a49f5b03f080bd518693f8391632f62aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">The name of the Digital Twin.  <br /></td></tr>
 <tr class="memitem:ab8c3da7006892dbbfd3dba3b42c73bb8" id="r_ab8c3da7006892dbbfd3dba3b42c73bb8"><td class="memItemLeft">List&lt; <a class="el" href="class_data_1_1_d_t___data.html">DT_Data</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ab8c3da7006892dbbfd3dba3b42c73bb8">dataList</a> = new ArrayList&lt;&gt;()</td></tr>
 <tr class="memdesc:ab8c3da7006892dbbfd3dba3b42c73bb8"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code class="JavaDocCode">D</code>: the data sources of the ToI.  <br /></td></tr>
 <tr class="memitem:a23e5a47c1fb25ac01b8fb9732940f08a" id="r_a23e5a47c1fb25ac01b8fb9732940f08a"><td class="memItemLeft">List&lt; <a class="el" href="class_models_1_1_d_t___model.html">DT_Model</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a23e5a47c1fb25ac01b8fb9732940f08a">modelList</a> = new ArrayList&lt;&gt;()</td></tr>
@@ -184,6 +206,13 @@ Protected Attributes</h2></td></tr>
 <tr class="memdesc:a486f122884dadd76517c6faabc24b890"><td class="mdescLeft">&#160;</td><td class="mdescRight">The freshness threshold <code class="JavaDocCode">δ ∈ ℝ+</code>: the data scope during which data is considered real-time.  <br /></td></tr>
 <tr class="memitem:a9340c922eb9ac96c2b934f198e6277b4" id="r_a9340c922eb9ac96c2b934f198e6277b4"><td class="memItemLeft">DoubleSupplier&#160;</td><td class="memItemRight"><a class="el" href="#a9340c922eb9ac96c2b934f198e6277b4">clock</a> = () -&gt; System.currentTimeMillis() / 1000.0</td></tr>
 <tr class="memdesc:a9340c922eb9ac96c2b934f198e6277b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gives the current time <code class="JavaDocCode">t_now ∈ T_U</code> (default: system time in seconds).  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-static-methods" class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:a279bd24063946f20f3670e444f5495cf" id="r_a279bd24063946f20f3670e444f5495cf"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a279bd24063946f20f3670e444f5495cf">appendBlock</a> (StringBuilder dot, String id, String title, List&lt; String &gt; lines, String color)</td></tr>
+<tr class="memdesc:a279bd24063946f20f3670e444f5495cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends one node of the diagram: a title and one line per element ("(none)" if there is none).  <br /></td></tr>
+<tr class="memitem:a176e363aaf93d9fafd8f31d0afd267c9" id="r_a176e363aaf93d9fafd8f31d0afd267c9"><td class="memItemLeft">static String&#160;</td><td class="memItemRight"><a class="el" href="#a176e363aaf93d9fafd8f31d0afd267c9">escape</a> (String s)</td></tr>
+<tr class="memdesc:a176e363aaf93d9fafd8f31d0afd267c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Escapes the backslashes and double quotes of a name for a Graphviz label.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -211,6 +240,10 @@ Private Attributes</h2></td></tr>
 It connects the <a class="el" href="namespace_data.html" title="This package contains the Data (D) of the DT-DMS framework.">Data</a>, <a class="el" href="namespace_models.html" title="This package contains the Models (M) of the DT-DMS framework.">Models</a> and <a class="el" href="namespace_services.html" title="This package contains the Services (S) of the DT-DMS framework.">Services</a> of the Digital Twin and manages the information flow between them: <code class="JavaDocCode">μ</code> observes every data source and updates every model. </li>
 <li>
 The iterator design pattern over the data, the models and the services (<code class="JavaDocCode">begin…()</code>, <code class="JavaDocCode">current…()</code>, <code class="JavaDocCode">next…()</code>, <code class="JavaDocCode">end…()</code>). </li>
+<li>
+Validity checks of the DT: services versus models, models versus data and data versus services (<code><a class="el" href="#a47a2d64e062ca4ea0dbbb5283c514f7e">checkConsistency</a></code>). </li>
+<li>
+The export of its own Data-Models-Services diagram in the Graphviz format (<code><a class="el" href="#ada99f65624e181031350c343aa7578cd">dumpGraphviz</a></code>). </li>
 </ul>
 <p>The components are held by composition: data, models, services and <code class="JavaDocCode">μ</code> are parts of the DT. </p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -221,7 +254,7 @@ The iterator design pattern over the data, the models and the services (<code cl
 </dl>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ae52ee27ea0b2e179e5f166b0cb8bf2c0" name="ae52ee27ea0b2e179e5f166b0cb8bf2c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae52ee27ea0b2e179e5f166b0cb8bf2c0">&#9670;&#160;</a></span>DT_DMS() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae52ee27ea0b2e179e5f166b0cb8bf2c0">&#9670;&#160;</a></span>DT_DMS() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -245,8 +278,38 @@ The iterator design pattern over the data, the models and the services (<code cl
 
 </div>
 </div>
+<a id="a1fc09837643b2a005da83f1b8faf9127" name="a1fc09837643b2a005da83f1b8faf9127"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fc09837643b2a005da83f1b8faf9127">&#9670;&#160;</a></span>DT_DMS() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_d_t___d_m_s.html">DT_DMS</a>&lt; T &gt;.<a class="el" href="class_d_t___d_m_s.html">DT_DMS</a> </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>delta</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs an empty named Digital Twin <code class="JavaDocCode">⟨D, M, S, μ⟩</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="#a49f5b03f080bd518693f8391632f62aa" title="The name of the Digital Twin.">name</a></td><td>the name of the Digital Twin. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#a486f122884dadd76517c6faabc24b890" title="The freshness threshold δ ∈ ℝ+: the data scope during which data is considered real-time.">delta</a></td><td>the freshness threshold <code class="JavaDocCode">δ</code> (same time unit as the data measurement times). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="aa0ab9aaafa595e4a6cb99690de4da153" name="aa0ab9aaafa595e4a6cb99690de4da153"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa0ab9aaafa595e4a6cb99690de4da153">&#9670;&#160;</a></span>DT_DMS() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0ab9aaafa595e4a6cb99690de4da153">&#9670;&#160;</a></span>DT_DMS() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -347,7 +410,7 @@ The iterator design pattern over the data, the models and the services (<code cl
       </table>
 </div><div class="memdoc">
 
-<p>Adds a service to <code class="JavaDocCode">S</code> and couples it to the model <code class="JavaDocCode">m</code>. </p>
+<p>Adds a service to <code class="JavaDocCode">S</code> and couples it to the model <code class="JavaDocCode">m</code>: the service will be notified each time <code class="JavaDocCode">μ</code> updates <code class="JavaDocCode">m</code> (<code class="JavaDocCode">DT_Model.addServiceToBeUpdated</code>). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">s</td><td>the service. </td></tr>
@@ -361,6 +424,52 @@ The iterator design pattern over the data, the models and the services (<code cl
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a279bd24063946f20f3670e444f5495cf" name="a279bd24063946f20f3670e444f5495cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a279bd24063946f20f3670e444f5495cf">&#9670;&#160;</a></span>appendBlock()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_d_t___d_m_s.html">DT_DMS</a>&lt; T &gt;.appendBlock </td>
+          <td>(</td>
+          <td class="paramtype">StringBuilder</td>          <td class="paramname"><span class="paramname"><em>dot</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>title</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">List&lt; String &gt;</td>          <td class="paramname"><span class="paramname"><em>lines</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>color</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Appends one node of the diagram: a title and one line per element ("(none)" if there is none). </p>
 
 </div>
 </div>
@@ -446,6 +555,175 @@ The iterator design pattern over the data, the models and the services (<code cl
 
 </div>
 </div>
+<a id="a47a2d64e062ca4ea0dbbb5283c514f7e" name="a47a2d64e062ca4ea0dbbb5283c514f7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47a2d64e062ca4ea0dbbb5283c514f7e">&#9670;&#160;</a></span>checkConsistency()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean <a class="el" href="class_d_t___d_m_s.html">DT_DMS</a>&lt; T &gt;.checkConsistency </td>
+          <td>(</td>
+          <td class="paramtype">PrintStream</td>          <td class="paramname"><span class="paramname"><em>out</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Runs the three validity checks of the DT: services versus models, models versus data (with the default tolerances) and data versus services. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">out</td><td>where the report is written. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code class="JavaDocCode">true</code> if all the checks succeed. </dd></dl>
+
+</div>
+</div>
+<a id="afc2ad15474fedfd9210f00f8887a3653" name="afc2ad15474fedfd9210f00f8887a3653"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc2ad15474fedfd9210f00f8887a3653">&#9670;&#160;</a></span>checkDataVersusServices()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean <a class="el" href="class_d_t___d_m_s.html">DT_DMS</a>&lt; T &gt;.checkDataVersusServices </td>
+          <td>(</td>
+          <td class="paramtype">PrintStream</td>          <td class="paramname"><span class="paramname"><em>out</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks the data characteristics (formats, units, ...) with respect to the services of the DT. </p>
+<ul>
+<li>
+<a class="el" href="namespace_services.html" title="This package contains the Services (S) of the DT-DMS framework.">Services</a> need data: <code class="JavaDocCode">S ≠ ∅ ⇒ D ≠ ∅</code>. </li>
+<li>
+Every data source must be valid (<code class="JavaDocCode">DT_Data.validateData</code>). </li>
+<li>
+Warnings (not errors): a data source without unit, and a monitoring service whose monitored entity is neither the source nor the type of a data source. </li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">out</td><td>where the report is written. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code class="JavaDocCode">true</code> if the data can be consumed by the services. </dd></dl>
+
+</div>
+</div>
+<a id="a3d3431be2e29f8d1385c4dfb050e5e5e" name="a3d3431be2e29f8d1385c4dfb050e5e5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d3431be2e29f8d1385c4dfb050e5e5e">&#9670;&#160;</a></span>checkModelsVersusData() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean <a class="el" href="class_d_t___d_m_s.html">DT_DMS</a>&lt; T &gt;.checkModelsVersusData </td>
+          <td>(</td>
+          <td class="paramtype">PrintStream</td>          <td class="paramname"><span class="paramname"><em>out</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks the fitting of the data versus the models with <code class="JavaDocCode">ε = 1e-3</code> and <code class="JavaDocCode">M = 0.1</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">out</td><td>where the report is written. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code class="JavaDocCode">false</code> if some model does not fit some data source. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="#a19338a71a8754021914809bf490c81ee" title="Checks the fitting of the data versus the models: for every data source D_i and every model M_j that ...">checkModelsVersusData(PrintStream, double, double)</a> </dd></dl>
+
+</div>
+</div>
+<a id="a19338a71a8754021914809bf490c81ee" name="a19338a71a8754021914809bf490c81ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19338a71a8754021914809bf490c81ee">&#9670;&#160;</a></span>checkModelsVersusData() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean <a class="el" href="class_d_t___d_m_s.html">DT_DMS</a>&lt; T &gt;.checkModelsVersusData </td>
+          <td>(</td>
+          <td class="paramtype">PrintStream</td>          <td class="paramname"><span class="paramname"><em>out</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>epsilon</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>bigM</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks the fitting of the data versus the models: for every data source <code class="JavaDocCode">D_i</code> and every model <code class="JavaDocCode">M_j</code> that gives values in time (<code class="JavaDocCode">DT_Model.evaluate</code>), computes <code class="JavaDocCode">δ = |ω(t) − m(t)|</code> over the real-time data of the source. </p>
+<ul>
+<li>
+If <code class="JavaDocCode">δ &lt; ε</code> for every datum, the model fits the data very well. </li>
+<li>
+If the mean of <code class="JavaDocCode">δ</code> is greater than <code class="JavaDocCode">bigM</code>, the model does not fit the data well and should be updated, re-parameterized or discarded. </li>
+<li>
+Otherwise the fitting is acceptable. </li>
+</ul>
+<p><a class="el" href="namespace_models.html" title="This package contains the Models (M) of the DT-DMS framework.">Models</a> that give no value in time are skipped.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">out</td><td>where the report is written. </td></tr>
+    <tr><td class="paramname">epsilon</td><td>the tolerance <code class="JavaDocCode">ε</code> under which a datum is fitted very well. </td></tr>
+    <tr><td class="paramname">bigM</td><td>the mean deviation <code class="JavaDocCode">M</code> over which the model does not fit the data. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code class="JavaDocCode">false</code> if some model does not fit some data source. </dd></dl>
+
+</div>
+</div>
+<a id="a0374e7ee10057c65296c2f8f1a64f041" name="a0374e7ee10057c65296c2f8f1a64f041"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0374e7ee10057c65296c2f8f1a64f041">&#9670;&#160;</a></span>checkServicesVersusModels()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean <a class="el" href="class_d_t___d_m_s.html">DT_DMS</a>&lt; T &gt;.checkServicesVersusModels </td>
+          <td>(</td>
+          <td class="paramtype">PrintStream</td>          <td class="paramname"><span class="paramname"><em>out</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks the consistency of the services with respect to the models they are coupled to. </p>
+<ul>
+<li>
+A coupled model must belong to <code class="JavaDocCode">M</code>. </li>
+<li>
+A prediction service coupled to a model needs a predictive model. </li>
+<li>
+An optimization or a control service needs a prescriptive model (it cannot run without it). </li>
+<li>
+Monitoring and diagnosis services can use any model, or none (data-driven services). </li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">out</td><td>where the report is written. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code class="JavaDocCode">true</code> if every service is consistent with its model. </dd></dl>
+
+</div>
+</div>
 <a id="a371e9eb1b0c8aed4131d05809ad42a34" name="a371e9eb1b0c8aed4131d05809ad42a34"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a371e9eb1b0c8aed4131d05809ad42a34">&#9670;&#160;</a></span>currentData()</h2>
 
@@ -515,6 +793,62 @@ for (dt.beginServices(); !dt.<a class="el" href="#a0b1f19c23becbdfc42a74fe67d71e
 
 </div>
 </div>
+<a id="ada99f65624e181031350c343aa7578cd" name="ada99f65624e181031350c343aa7578cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada99f65624e181031350c343aa7578cd">&#9670;&#160;</a></span>dumpGraphviz() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_d_t___d_m_s.html">DT_DMS</a>&lt; T &gt;.dumpGraphviz </td>
+          <td>(</td>
+          <td class="paramtype">PrintStream</td>          <td class="paramname"><span class="paramname"><em>out</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Writes the Data-Models-Services diagram of the DT in the Graphviz format (<code><a class="el" href="#a661994176595e7841b690403c79e89d4">toGraphviz</a></code>). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">out</td><td>where the diagram is written. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a59422ff3fa26aaaa530576c77be6be02" name="a59422ff3fa26aaaa530576c77be6be02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59422ff3fa26aaaa530576c77be6be02">&#9670;&#160;</a></span>dumpGraphviz() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_d_t___d_m_s.html">DT_DMS</a>&lt; T &gt;.dumpGraphviz </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>fileName</em></span></td><td>)</td>
+          <td> throws IOException</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Writes the Data-Models-Services diagram of the DT in a Graphviz file (<code><a class="el" href="#a661994176595e7841b690403c79e89d4">toGraphviz</a></code>). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fileName</td><td>the name of the <code class="JavaDocCode">.dot</code> file. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">IOException</td><td>if the file cannot be written. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ad703426c6a41b3df8ab55e24b20c21a1" name="ad703426c6a41b3df8ab55e24b20c21a1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad703426c6a41b3df8ab55e24b20c21a1">&#9670;&#160;</a></span>endData()</h2>
 
@@ -572,6 +906,33 @@ for (dt.beginServices(); !dt.<a class="el" href="#a0b1f19c23becbdfc42a74fe67d71e
 
 <p>For the design pattern iterator: test whether the end of the services is reached. </p>
 <dl class="section return"><dt>Returns</dt><dd><code class="JavaDocCode">true</code> if no other service exists. </dd></dl>
+
+</div>
+</div>
+<a id="a176e363aaf93d9fafd8f31d0afd267c9" name="a176e363aaf93d9fafd8f31d0afd267c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a176e363aaf93d9fafd8f31d0afd267c9">&#9670;&#160;</a></span>escape()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String <a class="el" href="class_d_t___d_m_s.html">DT_DMS</a>&lt; T &gt;.escape </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>s</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Escapes the backslashes and double quotes of a name for a Graphviz label. </p>
 
 </div>
 </div>
@@ -734,6 +1095,24 @@ for (dt.beginServices(); !dt.<a class="el" href="#a0b1f19c23becbdfc42a74fe67d71e
       </table>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>the model inference or data assimilation function <code class="JavaDocCode">μ</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a24810d41da123fce9b41bbec2e371fb9" name="a24810d41da123fce9b41bbec2e371fb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24810d41da123fce9b41bbec2e371fb9">&#9670;&#160;</a></span>getName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String <a class="el" href="class_d_t___d_m_s.html">DT_DMS</a>&lt; T &gt;.getName </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>the name of the Digital Twin. </dd></dl>
 
 </div>
 </div>
@@ -1012,6 +1391,29 @@ for (dt.beginServices(); !dt.<a class="el" href="#a0b1f19c23becbdfc42a74fe67d71e
 
 </div>
 </div>
+<a id="ac74694cb234446051d6e770078509003" name="ac74694cb234446051d6e770078509003"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac74694cb234446051d6e770078509003">&#9670;&#160;</a></span>setName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_d_t___d_m_s.html">DT_DMS</a>&lt; T &gt;.setName </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="#a49f5b03f080bd518693f8391632f62aa" title="The name of the Digital Twin.">name</a></td><td>the new name of the Digital Twin. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a863dace3248212268e16861323c0b756" name="a863dace3248212268e16861323c0b756"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a863dace3248212268e16861323c0b756">&#9670;&#160;</a></span>tNow()</h2>
 
@@ -1027,6 +1429,27 @@ for (dt.beginServices(); !dt.<a class="el" href="#a0b1f19c23becbdfc42a74fe67d71e
       </table>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>the current time <code class="JavaDocCode">t_now</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a661994176595e7841b690403c79e89d4" name="a661994176595e7841b690403c79e89d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a661994176595e7841b690403c79e89d4">&#9670;&#160;</a></span>toGraphviz()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String <a class="el" href="class_d_t___d_m_s.html">DT_DMS</a>&lt; T &gt;.toGraphviz </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the Data-Models-Services diagram of the DT in the Graphviz format: one node lists the data sources, one the models and one the services; <code class="JavaDocCode">μ</code> links the data to the models. </p>
+<p>Render it with <code class="JavaDocCode">dot -Tpng file.dot -o file.png</code>.</p>
+<dl class="section return"><dt>Returns</dt><dd>the diagram, in the dot language. </dd></dl>
 
 </div>
 </div>
@@ -1216,6 +1639,30 @@ for (dt.beginServices(); !dt.<a class="el" href="#a0b1f19c23becbdfc42a74fe67d71e
 </div><div class="memdoc">
 
 <p><code class="JavaDocCode">μ</code>: the model inference or data assimilation function. </p>
+
+</div>
+</div>
+<a id="a49f5b03f080bd518693f8391632f62aa" name="a49f5b03f080bd518693f8391632f62aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49f5b03f080bd518693f8391632f62aa">&#9670;&#160;</a></span>name</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String <a class="el" href="class_d_t___d_m_s.html">DT_DMS</a>&lt; T &gt;.name = &quot;Digital Twin&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The name of the Digital Twin. </p>
 
 </div>
 </div>

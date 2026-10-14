@@ -1,0 +1,9 @@
+<map id="src/Mu/DT_Mu.hpp" name="src/Mu/DT_Mu.hpp">
+<area shape="rect" id="Node000001" title="The model inference or data assimilation function μ : Ω_D × M → M." alt="" coords="39,5,172,32"/>
+<area shape="rect" id="Node000002" href="$_d_t___d_m_s_8hpp.html" title="The general class of the DT&#45;DMS framework: DT = ⟨D, M, S, μ⟩." alt="" coords="44,80,167,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,45,108,80,103,79,105,50"/>
+<area shape="rect" id="Node000003" href="$_d_t___d_m_s___architecture_8hpp.html" title="A Digital Twin that connects one component of each kind of the DT&#45;DMS framework." alt="" coords="5,155,206,181"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="107,120,108,155,103,154,104,125"/>
+<area shape="rect" id="Node000004" href="$_d_t___d_m_s___architecture_8cpp.html" title="Example run of the framework on a temperature Digital Twin." alt="" coords="5,229,206,256"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="107,195,108,230,103,228,104,199"/>
+</map>

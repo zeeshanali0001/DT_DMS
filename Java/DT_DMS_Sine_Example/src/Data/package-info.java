@@ -13,6 +13,8 @@
  *       notifies its observers (the data assimilation function {@code μ}).</li>
  *   <li>{@code DT_DataSegment}: a measured data segment {@code ω : T_U ⇀ D}, classified at {@code t_now} as
  *       real-time, historical or mixed.</li>
+ *   <li>{@code DT_DataCharacterization}: the characterization of a data source (unit, signal type, data flow
+ *       type, sensor precision, location, calibration status and last maintenance date).</li>
  * </ul>
  *
  * @author [ALI Zeeshan, Mamadou Kaba TRAORÉ]

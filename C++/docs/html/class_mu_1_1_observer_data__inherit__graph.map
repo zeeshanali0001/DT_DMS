@@ -1,0 +1,25 @@
+<map id="Mu::ObserverData&lt; T &gt;" name="Mu::ObserverData&lt; T &gt;">
+<area shape="rect" id="Node000001" title="Observer of the data observer pattern: an object that wants to be told when new data arrives." alt="" coords="633,5,810,128"/>
+<area shape="rect" id="Node000002" href="$class_models_1_1_d_t___model.html" title="Abstract base class representing a generic DT model m ∈ M of DT = ⟨D, M, S, μ⟩." alt="" coords="376,301,598,883"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="643,142,620,177,588,238,561,303,557,301,583,236,615,175,646,137"/>
+<area shape="rect" id="Node000006" href="$class_mu_1_1_d_t___mu_1_1_assimilator.html" title="Observer registered on one data source: forwards every new datum of that source to μ." alt="" coords="630,488,814,696"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="723,141,724,489,719,488,721,146"/>
+<area shape="rect" id="Node000007" href="$class_services_1_1_d_t___service.html" title="Abstract base class representing a generic DT service s ∈ S of DT = ⟨D, M, S, μ⟩." alt="" coords="1083,176,1302,1008"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="790,136,828,174,1086,464,1080,465,824,178,791,141"/>
+<area shape="rect" id="Node000003" href="$class_models_1_1_d_t___model___descriptive.html" title="Represents a descriptive model (m ∈ M_desc) of the Digital Twin." alt="" coords="5,1101,230,1555"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="368,813,245,1057,223,1103,218,1100,241,1055,370,809"/>
+<area shape="rect" id="Node000004" href="$class_models_1_1_d_t___model___predictive.html" title="Represents a predictive model (m ∈ M_pred) of the Digital Twin." alt="" coords="255,1083,471,1573"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="437,895,407,1084,402,1082,434,900"/>
+<area shape="rect" id="Node000005" href="$class_models_1_1_d_t___model___prescriptive.html" title="Represents a prescriptive model (m ∈ M_presc) of the Digital Twin." alt="" coords="496,1080,724,1576"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="539,895,571,1080,566,1080,537,900"/>
+<area shape="rect" id="Node000008" href="$class_services_1_1_d_t___service___control.html" title="Class representing a Control Service (s ∈ S_cont) of the Digital Twin." alt="" coords="747,1152,949,1504"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="1078,817,964,1057,921,1154,917,1151,959,1055,1074,821"/>
+<area shape="rect" id="Node000009" href="$class_services_1_1_d_t___service___diagnosis.html" title="Class representing a Diagnosis Service (s ∈ S_diag) of the Digital Twin." alt="" coords="974,1187,1182,1469"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="1127,1021,1102,1188,1097,1185,1123,1025"/>
+<area shape="rect" id="Node000010" href="$class_services_1_1_d_t___service___monitoring.html" title="Class representing a Monitoring Service (s ∈ S_moni) of the Digital Twin." alt="" coords="1206,1056,1410,1600"/>
+<area shape="poly" id="edge9_Node000007_Node000010" title=" " alt="" coords="1262,1020,1268,1058,1263,1055,1259,1025"/>
+<area shape="rect" id="Node000011" href="$class_services_1_1_d_t___service___optimization.html" title="Class representing an Optimization Service (s ∈ S_opti) of the Digital Twin." alt="" coords="1435,1163,1654,1493"/>
+<area shape="poly" id="edge10_Node000007_Node000011" title=" " alt="" coords="1309,819,1425,1055,1475,1164,1470,1162,1421,1057,1307,824"/>
+<area shape="rect" id="Node000012" href="$class_services_1_1_d_t___service___prediction.html" title="Class representing a Prediction Service (s ∈ S_pred) of the Digital Twin." alt="" coords="1678,1232,1880,1424"/>
+<area shape="poly" id="edge11_Node000007_Node000012" title=" " alt="" coords="1313,685,1400,759,1493,848,1586,948,1668,1054,1694,1097,1717,1143,1752,1234,1748,1231,1712,1145,1689,1100,1663,1058,1582,951,1489,851,1396,763,1312,690"/>
+</map>

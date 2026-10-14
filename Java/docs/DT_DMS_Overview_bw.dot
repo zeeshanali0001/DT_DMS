@@ -16,7 +16,8 @@ digraph DT_DMS_Overview_bw {
   subgraph cluster_mu {
     label=<<b>Mu</b>>; labelloc=t; fontname="Arial"; fontsize=13; style="rounded"; color=gray55; penwidth=1.2;
     mu_a [pos="3.6,5.7!", shape=point, width=0.01, style=invis];
-    mu_b [pos="6.8,8.85!", shape=point, width=0.01, style=invis];
+    mu_b [pos="6.8,9.65!", shape=point, width=0.01, style=invis];
+    ObserverModel [pos="5.2,8.8!", width=2.0, label=<<i>«interface»</i><br/><b>ObserverModel</b>>];
     ObserverDataManager [pos="5.2,7.95!", width=2.8, label=<<i>«interface»</i><br/><b>ObserverDataManager</b>>];
     DT_Mu [pos="5.2,6.25!", width=2.2,
            label=<<b>DT_Mu</b><br/><font face="Cambria Math" point-size="12">μ : Ω<sub>D</sub> × M → M</font>>];
@@ -38,11 +39,12 @@ digraph DT_DMS_Overview_bw {
   subgraph cluster_data {
     label=<<b>Data</b>>; labelloc=t; fontname="Arial"; fontsize=13; style="rounded"; color=gray55; penwidth=1.2;
     da_a [pos="8.6,8.1!", shape=point, width=0.01, style=invis];
-    da_b [pos="15.05,9.6!", shape=point, width=0.01, style=invis];
+    da_b [pos="15.05,10.15!", shape=point, width=0.01, style=invis];
     DT_Data [pos="9.9,8.7!", width=2.0,
              label=<<b>DT_Data</b><br/><font face="Cambria Math" point-size="12">D = D<sub>hist</sub> ∪ D<sub>rt</sub></font>>];
     DT_DataSegment [pos="12.7,8.7!", width=2.2,
                     label=<<b>DT_DataSegment</b><br/><font face="Cambria Math" point-size="12">ω : T<sub>U</sub> ⇀ D</font>>];
+    DT_DataCharacterization [pos="12.85,9.6!", width=2.9, height=0.45, label=<<b>DT_DataCharacterization</b>>];
   }
 
   subgraph cluster_models {
@@ -89,21 +91,24 @@ digraph DT_DMS_Overview_bw {
   ObserverData -> DT_Model;
   ObserverData -> DT_Service [id=edgeI];
   ObserverDataManager -> DT_Data;
+  ObserverModel -> DT_Service [id=edgeO];
 
   // ---------------------------------------------------------------- composition (filled diamond at the whole)
   edge [dir=back, arrowtail=diamond, style=solid];
-  // these three lines are redrawn as hand-made curves by make_overview.sh (see the ids)
+  // these lines are redrawn as hand-made curves by make_overview.sh (see the ids)
   // anchor DT_DMS 1.6,4.2
-  // curve edgeD 2.7,4.51 | 2.7,4.68 2.7,6.9 2.4,9.3 4.4,9.3 6.2,9.3 7.6,9.05 8.9,8.75
+  // curve edgeD 2.7,4.51 | 2.7,4.68 2.7,7.2 2.4,9.95 4.4,9.95 6.4,9.95 7.6,9.6 8.9,8.85
   // curve edgeM 3.1,4.2 | 3.27,4.2 5.4,4.2 6.8,5.8 8.9,5.8
   // curve edgeS 1.9,3.89 | 1.9,3.72 1.9,1.8 2.6,0.45 4.6,0.45 6.6,0.45 7.8,1.3 8.9,2.05
   // curve edgeI 6.2,6.95 | 6.38,6.92 7.9,6.8 8.35,6.5 8.35,5.6 8.35,4.2 8.6,3.2 9.2,2.63
   // curve edgeA 1.25,4.51 | 1.25,4.69 1.25,4.8 1.25,4.92 1.25,5.025
+  // curve edgeO 6.2,8.8 | 6.38,8.8 7.7,8.8 8.15,8.6 8.15,7.6 8.15,5.5 8.15,4.3 8.15,3.6 8.15,3.0 8.4,2.4 8.9,2.4
   DT_DMS -> DT_Data    [id=edgeD];
   DT_DMS -> DT_Model   [id=edgeM];
   DT_DMS -> DT_Service [id=edgeS];
   DT_DMS -> DT_Mu [tailport=ne];
   DT_Data -> DT_DataSegment [label="1"];
+  DT_Data -> DT_DataCharacterization [label="1"];
 
   // ---------------------------------------------------------------- associations
   edge [dir=forward, arrowhead=vee, arrowtail=none, style=solid];

@@ -28,7 +28,8 @@ var NAVTREE =
     [ "Data (D)", "index.html#autotoc_md1", null ],
     [ "Models (M) and Services (S)", "index.html#autotoc_md2", null ],
     [ "Model inference (μ)", "index.html#autotoc_md3", null ],
-    [ "Build, run and document", "index.html#autotoc_md4", null ],
+    [ "Validity of the DT", "index.html#autotoc_md4", null ],
+    [ "Build, run and document", "index.html#autotoc_md5", null ],
     [ "Packages", "namespaces.html", [
       [ "Package List", "namespaces.html", "namespaces_dup" ]
     ] ],
@@ -38,7 +39,7 @@ var NAVTREE =
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", "functions_dup" ],
-        [ "Functions", "functions_func.html", null ],
+        [ "Functions", "functions_func.html", "functions_func" ],
         [ "Variables", "functions_vars.html", null ]
       ] ]
     ] ],
@@ -51,8 +52,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_automaton_2package-info_8java.html",
-"class_data_1_1_d_t___data.html#afda44a49dd981dfc61513e20d80d6ac2",
-"class_services_1_1_d_t___service___control.html#abafa1fdfb71077fd11bb718128bac521"
+"class_data_1_1_d_t___data.html#abe146453d8578a0ecb5810e97abbdbd1",
+"class_mu_1_1_d_t___mu.html#a4969831f0289f1d820b88d3f043375a6",
+"interface_mu_1_1_observer_data_manager.html#a07f841527d3177d675c8be8760391057"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

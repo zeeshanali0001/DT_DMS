@@ -114,6 +114,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a1a3e8c0378eda8a33a91944681b24ab3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the model with a new sine value: it becomes the next control point, and the automaton goes WAIT → UPDATE → WAIT.  <br /></td></tr>
 <tr class="memitem:acdd219344aee8504c982071afeb70fb3" id="r_acdd219344aee8504c982071afeb70fb3"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#acdd219344aee8504c982071afeb70fb3">getSineModelValue</a> (double x)</td></tr>
 <tr class="memdesc:acdd219344aee8504c982071afeb70fb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value of the model at position <code class="JavaDocCode">x</code>: the uniform cubic B-spline of the control points.  <br /></td></tr>
+<tr class="memitem:a781434dc295149f278bfff53c5ce9e62" id="r_a781434dc295149f278bfff53c5ce9e62"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a781434dc295149f278bfff53c5ce9e62">evaluate</a> (double t)</td></tr>
+<tr class="memdesc:a781434dc295149f278bfff53c5ce9e62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value of the model at time <code class="JavaDocCode">t</code>: the B-spline, compared with the measured sine values by <code class="JavaDocCode">DT_DMS.checkModelsVersusData</code>.  <br /></td></tr>
 <tr class="memitem:ad89f8d9af91bcda4113a9418c4c5846c" id="r_ad89f8d9af91bcda4113a9418c4c5846c"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#ad89f8d9af91bcda4113a9418c4c5846c">getLastTime</a> ()</td></tr>
 <tr class="memitem:a409c79fa0f33b330be7ae3bdc7216bae" id="r_a409c79fa0f33b330be7ae3bdc7216bae"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a409c79fa0f33b330be7ae3bdc7216bae">getLeftEndpoint</a> ()</td></tr>
 <tr class="memitem:a2180f3f23e566543fa008c8ac37f6993" id="r_a2180f3f23e566543fa008c8ac37f6993"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a2180f3f23e566543fa008c8ac37f6993">getStep</a> ()</td></tr>
@@ -214,6 +216,32 @@ Private Member Functions</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a781434dc295149f278bfff53c5ce9e62" name="a781434dc295149f278bfff53c5ce9e62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a781434dc295149f278bfff53c5ce9e62">&#9670;&#160;</a></span>evaluate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Models.DT_Model_Descr_CubicBSpline.evaluate </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>t</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the value of the model at time <code class="JavaDocCode">t</code>: the B-spline, compared with the measured sine values by <code class="JavaDocCode">DT_DMS.checkModelsVersusData</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>the time. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code><a class="el" href="#acdd219344aee8504c982071afeb70fb3">getSineModelValue</a></code><code class="JavaDocCode">(t)</code>. </dd></dl>
+
+</div>
+</div>
 <a id="ad89f8d9af91bcda4113a9418c4c5846c" name="ad89f8d9af91bcda4113a9418c4c5846c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad89f8d9af91bcda4113a9418c4c5846c">&#9670;&#160;</a></span>getLastTime()</h2>
 

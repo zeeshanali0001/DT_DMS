@@ -4,6 +4,11 @@ import Models.*;
 import Mu.DT_Mu;
 import Services.*;
 
+import java.io.IOException;
+import java.io.PrintStream;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.DoubleSupplier;
@@ -27,6 +32,9 @@ import java.util.function.DoubleSupplier;
  *       between them: {@code μ} observes every data source and updates every model.</li>
  *   <li>The iterator design pattern over the data, the models and the services
  *       ({@code begin…()}, {@code current…()}, {@code next…()}, {@code end…()}).</li>
+ *   <li>Validity checks of the DT: services versus models, models versus data and data versus services
+ *       ({@link #checkConsistency}).</li>
+ *   <li>The export of its own Data-Models-Services diagram in the Graphviz format ({@link #dumpGraphviz}).</li>
  * </ul>
  * </p>
  *
@@ -37,6 +45,9 @@ import java.util.function.DoubleSupplier;
  * @param <T> the type of a datum {@code d ∈ D}.
  */
 public class DT_DMS<T> {
+
+    /** The name of the Digital Twin. */
+    protected String name = "Digital Twin";
 
     /** {@code D}: the data sources of the ToI. */
     protected List<DT_Data<T>> dataList = new ArrayList<>();
@@ -78,6 +89,17 @@ public class DT_DMS<T> {
     }
 
     /**
+     * Constructs an empty named Digital Twin {@code ⟨D, M, S, μ⟩}.
+     *
+     * @param name  the name of the Digital Twin.
+     * @param delta the freshness threshold {@code δ} (same time unit as the data measurement times).
+     */
+    public DT_DMS(String name, double delta) {
+        this(delta);
+        this.name = name;
+    }
+
+    /**
      * Copy constructor: the new Digital Twin has the same data, models and services as {@code DT}.
      * <p>
      * The lists are copied but the components themselves are shared, and so are {@code μ}, {@code δ} and the
@@ -93,6 +115,19 @@ public class DT_DMS<T> {
         this.mu = DT.mu;
         this.delta = DT.delta;
         this.clock = DT.clock;
+        this.name = DT.name;
+    }
+
+    // ---------------------------------------------------------------- name
+
+    /** @return the name of the Digital Twin. */
+    public String getName() {
+        return name;
+    }
+
+    /** @param name the new name of the Digital Twin. */
+    public void setName(String name) {
+        this.name = name;
     }
 
     // ---------------------------------------------------------------- time
@@ -198,7 +233,8 @@ public class DT_DMS<T> {
     // ---------------------------------------------------------------- S
 
     /**
-     * Adds a service to {@code S} and couples it to the model {@code m}.
+     * Adds a service to {@code S} and couples it to the model {@code m}: the service will be notified each
+     * time {@code μ} updates {@code m} ({@code DT_Model.addServiceToBeUpdated}).
      *
      * @param s the service.
      * @param m the model the service is coupled to (added to {@code M} if needed), or {@code null} for a
@@ -212,8 +248,12 @@ public class DT_DMS<T> {
             throw new IllegalArgumentException(
                     "A service must be monitoring, prediction, diagnosis, optimization or control: " + s);
         }
+        if (s.getModel() != null && s.getModel() != m) {
+            s.getModel().removeServiceToBeUpdated(s);
+        }
         if (m != null) {
             addModel(m);
+            m.addServiceToBeUpdated(s);
         }
         s.setModel(m);
         if (!serviceList.contains(s)) {
@@ -292,6 +332,234 @@ public class DT_DMS<T> {
      */
     public void assimilate(DT_DataSegment<T> omega) {
         mu.assimilate(omega);
+    }
+
+    // ---------------------------------------------------------------- validity
+
+    /**
+     * Checks the consistency of the services with respect to the models they are coupled to.
+     * <ul>
+     *   <li>A coupled model must belong to {@code M}.</li>
+     *   <li>A prediction service coupled to a model needs a predictive model.</li>
+     *   <li>An optimization or a control service needs a prescriptive model (it cannot run without it).</li>
+     *   <li>Monitoring and diagnosis services can use any model, or none (data-driven services).</li>
+     * </ul>
+     *
+     * @param out where the report is written.
+     * @return {@code true} if every service is consistent with its model.
+     */
+    public boolean checkServicesVersusModels(PrintStream out) {
+        boolean ok = true;
+        out.println("Services versus models:");
+        for (DT_Service<T> s : serviceList) {
+            DT_Model<T> m = s.getModel();
+            String problem = null;
+            if (m != null && !modelList.contains(m)) {
+                problem = "its model " + m.getModelName() + " is not in M";
+            } else if ((s instanceof DT_Service_Optimization || s instanceof DT_Service_Control)
+                    && !(m instanceof DT_Model_Prescriptive)) {
+                problem = "it needs a prescriptive model";
+            } else if (s instanceof DT_Service_Prediction && m != null && !(m instanceof DT_Model_Predictive)) {
+                problem = "it is coupled to a model that is not predictive";
+            }
+            String model = m == null ? "no model (data-driven)" : m.getModelName();
+            if (problem == null) {
+                out.println("  OK    " + s.getServiceName() + " → " + model);
+            } else {
+                out.println("  ERROR " + s.getServiceName() + " → " + model + ": " + problem);
+                ok = false;
+            }
+        }
+        return ok;
+    }
+
+    /**
+     * Checks the fitting of the data versus the models: for every data source {@code D_i} and every model
+     * {@code M_j} that gives values in time ({@code DT_Model.evaluate}), computes
+     * {@code δ = |ω(t) − m(t)|} over the real-time data of the source.
+     * <ul>
+     *   <li>If {@code δ < ε} for every datum, the model fits the data very well.</li>
+     *   <li>If the mean of {@code δ} is greater than {@code bigM}, the model does not fit the data well and
+     *       should be updated, re-parameterized or discarded.</li>
+     *   <li>Otherwise the fitting is acceptable.</li>
+     * </ul>
+     * Models that give no value in time are skipped.
+     *
+     * @param out     where the report is written.
+     * @param epsilon the tolerance {@code ε} under which a datum is fitted very well.
+     * @param bigM    the mean deviation {@code M} over which the model does not fit the data.
+     * @return {@code false} if some model does not fit some data source.
+     */
+    public boolean checkModelsVersusData(PrintStream out, double epsilon, double bigM) {
+        boolean ok = true;
+        out.println("Models versus data (ε=" + epsilon + ", M=" + bigM + "):");
+        for (DT_Model<T> m : modelList) {
+            for (DT_Data<T> d : dataList) {
+                DT_DataSegment<T> omega = d.getRealTimeData(delta);
+                double max = 0.0;
+                double sum = 0.0;
+                int count = 0;
+                for (double t : omega.getDomain()) {
+                    T datum = omega.get(t);
+                    double value = datum instanceof Number n ? n.doubleValue() : Double.NaN;
+                    double expected = m.evaluate(t);
+                    if (!Double.isNaN(value) && !Double.isNaN(expected)) {
+                        double deviation = Math.abs(value - expected);
+                        max = Math.max(max, deviation);
+                        sum += deviation;
+                        count++;
+                    }
+                }
+                String pair = m.getModelName() + " / " + d.getSource();
+                if (count == 0) {
+                    out.println("  SKIP  " + pair + ": the model gives no value at the real-time data");
+                } else if (max < epsilon) {
+                    out.println("  OK    " + pair + ": fits very well (max δ=" + max + ")");
+                } else if (sum / count > bigM) {
+                    out.println("  ERROR " + pair + ": does not fit (mean δ=" + sum / count
+                            + "): update, re-parameterize or discard the model");
+                    ok = false;
+                } else {
+                    out.println("  OK    " + pair + ": acceptable (mean δ=" + sum / count + ", max δ=" + max + ")");
+                }
+            }
+        }
+        return ok;
+    }
+
+    /**
+     * Checks the fitting of the data versus the models with {@code ε = 1e-3} and {@code M = 0.1}.
+     *
+     * @param out where the report is written.
+     * @return {@code false} if some model does not fit some data source.
+     * @see #checkModelsVersusData(PrintStream, double, double)
+     */
+    public boolean checkModelsVersusData(PrintStream out) {
+        return checkModelsVersusData(out, 1e-3, 0.1);
+    }
+
+    /**
+     * Checks the data characteristics (formats, units, ...) with respect to the services of the DT.
+     * <ul>
+     *   <li>Services need data: {@code S ≠ ∅ ⇒ D ≠ ∅}.</li>
+     *   <li>Every data source must be valid ({@code DT_Data.validateData}).</li>
+     *   <li>Warnings (not errors): a data source without unit, and a monitoring service whose monitored
+     *       entity is neither the source nor the type of a data source.</li>
+     * </ul>
+     *
+     * @param out where the report is written.
+     * @return {@code true} if the data can be consumed by the services.
+     */
+    public boolean checkDataVersusServices(PrintStream out) {
+        boolean ok = true;
+        out.println("Data versus services:");
+        if (!serviceList.isEmpty() && dataList.isEmpty()) {
+            out.println("  ERROR the DT has services but no data");
+            ok = false;
+        }
+        for (DT_Data<T> d : dataList) {
+            if (!d.validateData()) {
+                out.println("  ERROR " + d + ": source or data type missing");
+                ok = false;
+            } else if (d.getCharacterization().getUnit() == null) {
+                out.println("  WARN  " + d.getSource() + ": no unit of measurement");
+            } else {
+                out.println("  OK    " + d.getSource() + " (" + d.getDataType() + ", "
+                        + d.getCharacterization().getUnit() + ")");
+            }
+        }
+        for (DT_Service_Monitoring<T> s : getMonitoringServices()) {
+            boolean found = false;
+            for (DT_Data<T> d : dataList) {
+                found |= s.getMonitoredEntity() != null && (s.getMonitoredEntity().equals(d.getSource())
+                        || s.getMonitoredEntity().equals(d.getDataType()));
+            }
+            if (!found) {
+                out.println("  WARN  " + s.getServiceName() + ": no data source for the monitored entity "
+                        + s.getMonitoredEntity());
+            }
+        }
+        return ok;
+    }
+
+    /**
+     * Runs the three validity checks of the DT: services versus models, models versus data
+     * (with the default tolerances) and data versus services.
+     *
+     * @param out where the report is written.
+     * @return {@code true} if all the checks succeed.
+     */
+    public boolean checkConsistency(PrintStream out) {
+        boolean servicesModels = checkServicesVersusModels(out);
+        boolean modelsData = checkModelsVersusData(out);
+        boolean dataServices = checkDataVersusServices(out);
+        return servicesModels && modelsData && dataServices;
+    }
+
+    // ---------------------------------------------------------------- Graphviz
+
+    /**
+     * Returns the Data-Models-Services diagram of the DT in the Graphviz format: one node lists the data
+     * sources, one the models and one the services; {@code μ} links the data to the models.
+     * Render it with {@code dot -Tpng file.dot -o file.png}.
+     *
+     * @return the diagram, in the dot language.
+     */
+    public String toGraphviz() {
+        List<String> data = new ArrayList<>();
+        for (DT_Data<T> d : dataList) data.add(d.getSource() + " (" + d.getDataType() + ")");
+        List<String> models = new ArrayList<>();
+        for (DT_Model<T> m : modelList) models.add(m.getModelName());
+        List<String> services = new ArrayList<>();
+        for (DT_Service<T> s : serviceList) services.add(s.getServiceName());
+
+        StringBuilder dot = new StringBuilder();
+        dot.append("digraph \"DMS Framework for the Digital Twin ").append(escape(name)).append("\" {\n");
+        dot.append("nodesep=0.3;\n");
+        dot.append("center=true;\n");
+        dot.append("rankdir=LR;\n");
+        dot.append("node [shape=box, style=rounded, fontname=\"Arial\"];\n");
+        appendBlock(dot, "a", "DATA", data, "red");
+        appendBlock(dot, "b", "MODELS", models, "darkgreen");
+        appendBlock(dot, "c", "SERVICES", services, "blue");
+        dot.append("a -> b [label=<&#956;>, dir=both];\n");
+        dot.append("c -> b [dir=both];\n");
+        dot.append("a -> c [dir=both];\n");
+        dot.append("}\n");
+        return dot.toString();
+    }
+
+    /**
+     * Writes the Data-Models-Services diagram of the DT in the Graphviz format ({@link #toGraphviz}).
+     *
+     * @param out where the diagram is written.
+     */
+    public void dumpGraphviz(PrintStream out) {
+        out.print(toGraphviz());
+    }
+
+    /**
+     * Writes the Data-Models-Services diagram of the DT in a Graphviz file ({@link #toGraphviz}).
+     *
+     * @param fileName the name of the {@code .dot} file.
+     * @throws IOException if the file cannot be written.
+     */
+    public void dumpGraphviz(String fileName) throws IOException {
+        Files.writeString(Path.of(fileName), toGraphviz(), StandardCharsets.UTF_8);
+    }
+
+    /** Appends one node of the diagram: a title and one line per element ("(none)" if there is none). */
+    private static void appendBlock(StringBuilder dot, String id, String title, List<String> lines, String color) {
+        List<String> escaped = new ArrayList<>();
+        for (String line : lines) escaped.add(escape(line));
+        dot.append(id).append(" [label=\" ").append(title).append(" \\n ")
+           .append(escaped.isEmpty() ? "(none)" : String.join(" \\n ", escaped))
+           .append(" \", color=\"").append(color).append("\", fontcolor=\"").append(color).append("\"];\n");
+    }
+
+    /** Escapes the backslashes and double quotes of a name for a Graphviz label. */
+    private static String escape(String s) {
+        return s == null ? "" : s.replace("\\", "\\\\").replace("\"", "\\\"");
     }
 
     //
@@ -431,7 +699,7 @@ public class DT_DMS<T> {
      */
     @Override
     public String toString() {
-        return "DT = ⟨D, M, S, μ⟩ with |D|=" + dataList.size() + ", |M|=" + modelList.size()
+        return "DT '" + name + "' = ⟨D, M, S, μ⟩ with |D|=" + dataList.size() + ", |M|=" + modelList.size()
                 + " (desc=" + getDescriptiveModels().size() + ", pred=" + getPredictiveModels().size()
                 + ", presc=" + getPrescriptiveModels().size() + "), |S|=" + serviceList.size() + ", δ=" + delta;
     }

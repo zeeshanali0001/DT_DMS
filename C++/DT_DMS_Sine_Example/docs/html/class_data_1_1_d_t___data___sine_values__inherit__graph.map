@@ -1,0 +1,13 @@
+<map id="Data::DT_Data_SineValues" name="Data::DT_Data_SineValues">
+<area shape="rect" id="Node000001" title="Data source of the sine example: it plays the role of the ToI (the &quot;physical twin&quot;) and produces the ..." alt="" coords="159,2791,331,2972"/>
+<area shape="rect" id="Node000002" href="$class_data_1_1_d_t___data.html" title=" " alt="" coords="139,1589,351,2741"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="246,2754,247,2792,243,2790,244,2759"/>
+<area shape="rect" id="Node000003" href="$class_mu_1_1_observer_data_manager.html" title=" " alt="" coords="25,781,233,1027"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="142,1039,195,1589,189,1590,141,1044"/>
+<area shape="rect" id="Node000004" href="$class_mu_1_1_observer_data_manager.html" title="Subject of the data observer pattern: an object that produces data and manages its observers." alt="" coords="5,5,239,219"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="123,231,131,781,125,781,123,236"/>
+<area shape="rect" id="Node000005" href="$class_data_1_1_d_t___data.html" title="Class representing a source of data collected from the ToI, i.e., a part of D in DT = ⟨D,..." alt="" coords="270,291,482,1517"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="311,1530,307,1590,302,1589,310,1535"/>
+<area shape="rect" id="Node000006" href="$class_mu_1_1_observer_data_manager.html" title="Subject of the data observer pattern: an object that produces data and manages its observers." alt="" coords="264,5,498,219"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="380,231,382,291,377,291,380,236"/>
+</map>

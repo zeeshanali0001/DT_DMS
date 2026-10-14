@@ -5,6 +5,7 @@ var annotated_dup =
     ] ],
     [ "Data", "namespace_data.html", [
       [ "DT_Data", "class_data_1_1_d_t___data.html", "class_data_1_1_d_t___data" ],
+      [ "DT_DataCharacterization", "class_data_1_1_d_t___data_characterization.html", "class_data_1_1_d_t___data_characterization" ],
       [ "DT_DataSegment", "class_data_1_1_d_t___data_segment.html", "class_data_1_1_d_t___data_segment" ]
     ] ],
     [ "Models", "namespace_models.html", [
@@ -16,7 +17,8 @@ var annotated_dup =
     [ "Mu", "namespace_mu.html", [
       [ "DT_Mu", "class_mu_1_1_d_t___mu.html", "class_mu_1_1_d_t___mu" ],
       [ "ObserverData", "interface_mu_1_1_observer_data.html", "interface_mu_1_1_observer_data" ],
-      [ "ObserverDataManager", "interface_mu_1_1_observer_data_manager.html", "interface_mu_1_1_observer_data_manager" ]
+      [ "ObserverDataManager", "interface_mu_1_1_observer_data_manager.html", "interface_mu_1_1_observer_data_manager" ],
+      [ "ObserverModel", "interface_mu_1_1_observer_model.html", "interface_mu_1_1_observer_model" ]
     ] ],
     [ "Services", "namespace_services.html", [
       [ "DT_Service", "class_services_1_1_d_t___service.html", "class_services_1_1_d_t___service" ],

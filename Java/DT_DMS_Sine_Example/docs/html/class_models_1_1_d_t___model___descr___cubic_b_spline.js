@@ -1,6 +1,7 @@
 var class_models_1_1_d_t___model___descr___cubic_b_spline =
 [
     [ "DT_Model_Descr_CubicBSpline", "class_models_1_1_d_t___model___descr___cubic_b_spline.html#a87aedc8a18c6031a1c36e5c676c8bd8f", null ],
+    [ "evaluate", "class_models_1_1_d_t___model___descr___cubic_b_spline.html#a781434dc295149f278bfff53c5ce9e62", null ],
     [ "getLastTime", "class_models_1_1_d_t___model___descr___cubic_b_spline.html#ad89f8d9af91bcda4113a9418c4c5846c", null ],
     [ "getLeftEndpoint", "class_models_1_1_d_t___model___descr___cubic_b_spline.html#a409c79fa0f33b330be7ae3bdc7216bae", null ],
     [ "getSineModelValue", "class_models_1_1_d_t___model___descr___cubic_b_spline.html#acdd219344aee8504c982071afeb70fb3", null ],

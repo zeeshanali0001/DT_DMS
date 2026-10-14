@@ -133,6 +133,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:acd3a32e1d6409b1488132ce86c60344a" id="r_acd3a32e1d6409b1488132ce86c60344a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#acd3a32e1d6409b1488132ce86c60344a">setSource</a> (String <a class="el" href="#aa9c5e991906cc05d00088a3dc96b2acf">source</a>)</td></tr>
 <tr class="memitem:ad704fbe9db6771add505610d2ffc230a" id="r_ad704fbe9db6771add505610d2ffc230a"><td class="memItemLeft">String&#160;</td><td class="memItemRight"><a class="el" href="#ad704fbe9db6771add505610d2ffc230a">getDataType</a> ()</td></tr>
 <tr class="memitem:a5d47ddb50c4b3e7be84736afe45fe19e" id="r_a5d47ddb50c4b3e7be84736afe45fe19e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a5d47ddb50c4b3e7be84736afe45fe19e">setDataType</a> (String <a class="el" href="#a1ffae270d5ded800379ed7d72edb72fd">dataType</a>)</td></tr>
+<tr class="memitem:af00e82f95e4991e8869db08bd8354ac6" id="r_af00e82f95e4991e8869db08bd8354ac6"><td class="memItemLeft"><a class="el" href="class_data_1_1_d_t___data_characterization.html">DT_DataCharacterization</a>&#160;</td><td class="memItemRight"><a class="el" href="#af00e82f95e4991e8869db08bd8354ac6">getCharacterization</a> ()</td></tr>
+<tr class="memitem:a9af37341c1c538696fb6367c4cccc161" id="r_a9af37341c1c538696fb6367c4cccc161"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a9af37341c1c538696fb6367c4cccc161">setCharacterization</a> (<a class="el" href="class_data_1_1_d_t___data_characterization.html">DT_DataCharacterization</a> <a class="el" href="#ae04907387501944c0fc41ec14faf442d">characterization</a>)</td></tr>
 <tr class="memitem:a69a520030386aca31d7bbcc414f1d0a8" id="r_a69a520030386aca31d7bbcc414f1d0a8"><td class="memItemLeft">String&#160;</td><td class="memItemRight"><a class="el" href="#a69a520030386aca31d7bbcc414f1d0a8">toString</a> ()</td></tr>
 <tr class="memdesc:a69a520030386aca31d7bbcc414f1d0a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the data source into a human-readable string format.  <br /></td></tr>
 <tr class="memitem:a54b353ed37c50e74102e30e536fe18d9" id="r_a54b353ed37c50e74102e30e536fe18d9"><td class="memItemLeft">boolean&#160;</td><td class="memItemRight"><a class="el" href="#a54b353ed37c50e74102e30e536fe18d9">equals</a> (Object obj)</td></tr>
@@ -145,6 +147,8 @@ Protected Attributes</h2></td></tr>
 <tr class="memdesc:aa9c5e991906cc05d00088a3dc96b2acf"><td class="mdescLeft">&#160;</td><td class="mdescRight">The source of the data (e.g., "Sensor A", "API").  <br /></td></tr>
 <tr class="memitem:a1ffae270d5ded800379ed7d72edb72fd" id="r_a1ffae270d5ded800379ed7d72edb72fd"><td class="memItemLeft">String&#160;</td><td class="memItemRight"><a class="el" href="#a1ffae270d5ded800379ed7d72edb72fd">dataType</a></td></tr>
 <tr class="memdesc:a1ffae270d5ded800379ed7d72edb72fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of the data (e.g., "Temperature", "Pressure").  <br /></td></tr>
+<tr class="memitem:ae04907387501944c0fc41ec14faf442d" id="r_ae04907387501944c0fc41ec14faf442d"><td class="memItemLeft"><a class="el" href="class_data_1_1_d_t___data_characterization.html">DT_DataCharacterization</a>&#160;</td><td class="memItemRight"><a class="el" href="#ae04907387501944c0fc41ec14faf442d">characterization</a> = new <a class="el" href="class_data_1_1_d_t___data_characterization.html">DT_DataCharacterization</a>()</td></tr>
+<tr class="memdesc:ae04907387501944c0fc41ec14faf442d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The characterization of the data: unit, signal type, sensor precision, calibration, ...  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -167,6 +171,8 @@ Private Attributes</h2></td></tr>
 Every datum is recorded with its measurement time in a segment <code class="JavaDocCode">ω</code> (<code><a class="el" href="class_data_1_1_d_t___data_segment.html">DT_DataSegment</a></code>). </li>
 <li>
 <code><a class="el" href="#ae7cb2cbc8e3457ec569cde5a30007b12">getRealTimeData</a></code> and <code><a class="el" href="#aaf4d0ea6977d7ec9e85838560f867e03">getHistoricalData</a></code> give <code class="JavaDocCode">D_rt</code> and <code class="JavaDocCode">D_hist</code> of the source. </li>
+<li>
+Its characterization (<code><a class="el" href="class_data_1_1_d_t___data_characterization.html">DT_DataCharacterization</a></code>) tells how the data must be interpreted (unit, signal type, sensor precision, calibration, ...). </li>
 <li>
 It is the subject of the observer pattern (<code><a class="el" href="interface_mu_1_1_observer_data_manager.html">ObserverDataManager</a></code>): each new datum is pushed to the registered observers, in particular to the data assimilation function <code class="JavaDocCode">μ</code>. </li>
 </ul>
@@ -231,6 +237,24 @@ It is the subject of the observer pattern (<code><a class="el" href="interface_m
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code class="JavaDocCode">true</code> if the objects are equal; <code class="JavaDocCode">false</code> otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="af00e82f95e4991e8869db08bd8354ac6" name="af00e82f95e4991e8869db08bd8354ac6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af00e82f95e4991e8869db08bd8354ac6">&#9670;&#160;</a></span>getCharacterization()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_data_1_1_d_t___data_characterization.html">DT_DataCharacterization</a> <a class="el" href="class_data_1_1_d_t___data.html">Data.DT_Data</a>&lt; T &gt;.getCharacterization </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>the characterization of the data (unit, signal type, sensor precision, ...); never <code class="JavaDocCode">null</code>. </dd></dl>
 
 </div>
 </div>
@@ -465,6 +489,29 @@ It is the subject of the observer pattern (<code><a class="el" href="interface_m
 
 </div>
 </div>
+<a id="a9af37341c1c538696fb6367c4cccc161" name="a9af37341c1c538696fb6367c4cccc161"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9af37341c1c538696fb6367c4cccc161">&#9670;&#160;</a></span>setCharacterization()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_data_1_1_d_t___data.html">Data.DT_Data</a>&lt; T &gt;.setCharacterization </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_data_1_1_d_t___data_characterization.html">DT_DataCharacterization</a></td>          <td class="paramname"><span class="paramname"><em>characterization</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="#ae04907387501944c0fc41ec14faf442d" title="The characterization of the data: unit, signal type, sensor precision, calibration,...">characterization</a></td><td>the new characterization of the data (<code class="JavaDocCode">null</code> = nothing known). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a6809f2fa8e4a8b3f3a9a664946bb2214" name="a6809f2fa8e4a8b3f3a9a664946bb2214"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6809f2fa8e4a8b3f3a9a664946bb2214">&#9670;&#160;</a></span>setClock()</h2>
 
@@ -639,6 +686,30 @@ It is the subject of the observer pattern (<code><a class="el" href="interface_m
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="ae04907387501944c0fc41ec14faf442d" name="ae04907387501944c0fc41ec14faf442d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae04907387501944c0fc41ec14faf442d">&#9670;&#160;</a></span>characterization</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_data_1_1_d_t___data_characterization.html">DT_DataCharacterization</a> <a class="el" href="class_data_1_1_d_t___data.html">Data.DT_Data</a>&lt; T &gt;.characterization = new <a class="el" href="class_data_1_1_d_t___data_characterization.html">DT_DataCharacterization</a>()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The characterization of the data: unit, signal type, sensor precision, calibration, ... </p>
+
+</div>
+</div>
 <a id="a496f98a8af8a1dfaa4e269b01e8e2aa5" name="a496f98a8af8a1dfaa4e269b01e8e2aa5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a496f98a8af8a1dfaa4e269b01e8e2aa5">&#9670;&#160;</a></span>clock</h2>
 

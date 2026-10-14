@@ -5,6 +5,9 @@ import Models.*;
 import Mu.DT_Mu;
 import Services.*;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.List;
 import java.util.Set;
 
@@ -94,10 +97,16 @@ public class DT_DMS_Architecture<T> extends DT_DMS<T> {
         // ---- DT = ⟨D, M, S, μ⟩ with a simulated clock: t_now = 100, δ = 5 → real-time window [95, 100]
         double[] now = {100.0};
         DT_DMS_Architecture<Double> dt = new DT_DMS_Architecture<>(5.0);
+        dt.setName("Temperature");
         dt.setClock(() -> now[0]);
 
-        // D
+        // D, with the characterization of its data
         DT_Data<Double> data = new DT_Data<>("Sensor A", "Temperature");
+        data.getCharacterization().setUnit("Celsius");
+        data.getCharacterization().setSignalType("digital");
+        data.getCharacterization().setDataFlowType("periodic");
+        data.getCharacterization().setSensorPrecision("±0.1 °C");
+        data.getCharacterization().setSensorCalibrationStatus("calibrated");
         // M = M_desc ∪ M_pred ∪ M_presc
         DT_Model_Descriptive<Double> descriptive = new DT_Model_Descriptive<>("Temperature summary", "Sensor A");
         DT_Model_Predictive<Double> predictive = new DT_Model_Predictive<>("Temperature forecast", "Moving average", 3);
@@ -181,5 +190,19 @@ public class DT_DMS_Architecture<T> extends DT_DMS<T> {
                 + ", state " + monitoring.getState());
         System.out.println("Output on internal transition: " + monitoring.internalTransition()
                 + ", phase: " + monitoring.getCurrentPhase());
+
+        // ---- validity of the DT: services versus models, models versus data, data versus services
+        System.out.println("\n-- Validity");
+        System.out.println("Consistent: " + dt.checkConsistency(System.out));
+
+        // ---- the DT draws its own Data-Models-Services diagram (Graphviz)
+        System.out.println("\n-- Graphviz");
+        String dotFile = Files.isDirectory(Path.of("docs")) ? "docs/DT_DMS_Temperature.dot" : "DT_DMS_Temperature.dot";
+        try {
+            dt.dumpGraphviz(dotFile);
+            System.out.println("Written " + dotFile + " (render it with: dot -Tpng " + dotFile + " -o DT_DMS_Temperature.png)");
+        } catch (IOException e) {
+            System.out.println("Cannot write " + dotFile + ": " + e.getMessage());
+        }
     }
 }

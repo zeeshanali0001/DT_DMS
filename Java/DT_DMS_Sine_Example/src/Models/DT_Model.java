@@ -3,7 +3,11 @@ package Models;
 import Automaton.DT_Automaton;
 import Data.DT_DataSegment;
 import Mu.ObserverData;
+import Mu.ObserverModel;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -18,6 +22,10 @@ import java.util.Objects;
  * {@link DT_Automaton} and inherits the 7-tuple {@code ℳ = ⟨Λ, X, Y, Σ, Φ, Δ, Δ*⟩}. A model is updated by
  * the data assimilation function {@code μ} through {@link #assimilate}.
  * </p>
+ * <p>
+ * A model is also the subject of the model observer pattern: the services coupled to it
+ * ({@link #addServiceToBeUpdated}) are notified after each assimilation ({@link #notifyServices}).
+ * </p>
  *
  * @param <T> the type of a datum {@code d ∈ D}.
  */
@@ -25,6 +33,9 @@ public abstract class DT_Model<T> extends DT_Automaton implements ObserverData<T
 
     /** The name of the model, which uniquely identifies it. */
     protected String modelName;
+
+    /** The services to be notified when the model is updated (model observer pattern). */
+    private final List<ObserverModel<T>> servicesToBeUpdated = new ArrayList<>();
 
     /**
      * Constructor to initialize the model's name.
@@ -39,8 +50,9 @@ public abstract class DT_Model<T> extends DT_Automaton implements ObserverData<T
      * Assimilates a data segment into this model: the model side of {@code μ(ω, m) = m'}.
      * <p>
      * The model is updated in place, so {@code m'} keeps the type of {@code m}. By default each datum of
-     * {@code ω} is passed to {@link #update} in time order; subclasses can override it (e.g., to re-train a
-     * predictive model on a whole historical segment).
+     * {@code ω} is passed to {@link #update} in time order, then the coupled services are notified
+     * ({@link #notifyServices}); subclasses can override it (e.g., to re-train a predictive model on a whole
+     * historical segment) and should then call {@link #notifyServices} too.
      * </p>
      *
      * @param omega the data segment {@code ω}.
@@ -49,6 +61,57 @@ public abstract class DT_Model<T> extends DT_Automaton implements ObserverData<T
         for (T d : omega.getImage()) {
             update(d);
         }
+        notifyServices();
+    }
+
+    /**
+     * Returns the value of the model at time {@code t}, {@code m(t)}, to be compared with the datum
+     * {@code ω(t)} measured at the same time ({@code DT_DMS.checkModelsVersusData}).
+     * <p>
+     * By default a model gives no value in time and this method returns {@code NaN}; a model that describes
+     * or predicts the measured signal (e.g., an interpolation) overrides it.
+     * </p>
+     *
+     * @param t the time.
+     * @return {@code m(t)}, or {@code NaN} if the model gives no value at {@code t}.
+     */
+    public double evaluate(double t) {
+        return Double.NaN;
+    }
+
+    // ---------------------------------------------------------------- model observer pattern (subject)
+
+    /**
+     * Adds a service to be notified each time this model is updated.
+     *
+     * @param service the service (or any model observer).
+     */
+    public void addServiceToBeUpdated(ObserverModel<T> service) {
+        if (!servicesToBeUpdated.contains(service)) {
+            servicesToBeUpdated.add(service);
+        }
+    }
+
+    /**
+     * Stops notifying a service when this model is updated.
+     *
+     * @param service the service to remove.
+     */
+    public void removeServiceToBeUpdated(ObserverModel<T> service) {
+        servicesToBeUpdated.remove(service);
+    }
+
+    /** Notifies the services coupled to this model that it has been updated. */
+    public void notifyServices() {
+        // Safe copy to avoid issues if a service removes itself during the update
+        for (ObserverModel<T> service : new ArrayList<>(servicesToBeUpdated)) {
+            service.updateWithModel(this);
+        }
+    }
+
+    /** @return the services notified when this model is updated (read-only). */
+    public List<ObserverModel<T>> getServicesToBeUpdated() {
+        return Collections.unmodifiableList(servicesToBeUpdated);
     }
 
     /**

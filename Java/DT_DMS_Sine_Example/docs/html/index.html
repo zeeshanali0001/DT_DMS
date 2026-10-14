@@ -117,6 +117,13 @@ Information flow</h1>
 <li>The live chart plots the raw value and the model value.</li>
 </ol>
 <p>A spike of +0.5 is injected on the ToI at t = 3.0. It is detected at t = 3.0 and again at t = 3.05, because the spike also disturbs the spline at the next sample.</p>
+<p>At the end of the run:</p>
+<ul>
+<li>the interpolation is checked at 10 random points between the samples against the exact sine function (<span class="tt">DT_Service_Diagnosis_Sine.performRandomCheck</span>, from the first C++ version);</li>
+<li>the validity of the Digital Twin is checked (<span class="tt"><a class="el" href="class_d_t___d_m_s.html#a47a2d64e062ca4ea0dbbb5283c514f7e" title="Runs the three validity checks of the DT: services versus models, models versus data (with the defaul...">DT_DMS.checkConsistency</a></span>): services versus models, models versus data (|ω(t) − m(t)| over the real-time data, with <span class="tt">DT_Model_Descr_CubicBSpline.evaluate</span>) and data versus services;</li>
+<li>the Data-Models-Services diagram of the Digital Twin is written in <span class="tt">docs/DT_DMS_Sine.dot</span>.</li>
+</ul>
+<p>The C++ version of this example is in <span class="tt">C++/DT_DMS_Sine_Example</span>.</p>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
 The model as an automaton ℳ = ⟨Λ, X, Y, Σ, Φ, Δ, Δ*⟩</h1>
 <table class="markdownTable">

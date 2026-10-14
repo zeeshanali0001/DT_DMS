@@ -1,0 +1,14 @@
+<map id="src/Data/DT_DataCharacterization.hpp" name="src/Data/DT_DataCharacterization.hpp">
+<area shape="rect" id="Node000001" title="The characterization of a data source of the ToI." alt="" coords="5,5,254,32"/>
+<area shape="rect" id="Node000002" href="$_d_t___data_8hpp.html" title="A source of data of the ToI, a part of D." alt="" coords="53,80,206,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="130,45,132,80,127,79,129,50"/>
+<area shape="rect" id="Node000003" href="$_d_t___d_m_s_8hpp.html" title="The general class of the DT&#45;DMS framework: DT = ⟨D, M, S, μ⟩." alt="" coords="68,229,191,256"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="115,118,107,150,105,181,114,206,125,229,119,229,109,208,100,182,101,149,114,123"/>
+<area shape="rect" id="Node000006" href="$_d_t___mu_8hpp.html" title="The model inference or data assimilation function μ : Ω_D × M → M." alt="" coords="115,155,248,181"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="148,117,175,154,170,155,147,122"/>
+<area shape="rect" id="Node000004" href="$_d_t___d_m_s___architecture_8hpp.html" title="A Digital Twin that connects one component of each kind of the DT&#45;DMS framework." alt="" coords="29,304,230,331"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="131,270,132,304,127,303,128,274"/>
+<area shape="rect" id="Node000005" href="$_d_t___d_m_s___architecture_8cpp.html" title="Example run of the framework on a temperature Digital Twin." alt="" coords="29,379,230,405"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="131,345,132,379,127,377,128,348"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="165,192,141,231,136,227,162,196"/>
+</map>

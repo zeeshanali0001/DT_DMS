@@ -1,0 +1,53 @@
+<map id="src/Mu/ObserverData.hpp" name="src/Mu/ObserverData.hpp">
+<area shape="rect" id="Node000001" title="Observer of the data observer pattern." alt="" coords="229,5,400,32"/>
+<area shape="rect" id="Node000002" href="$_d_t___data_8hpp.html" title="A source of data of the ToI, a part of D." alt="" coords="123,163,277,189"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="295,47,211,164,207,161,298,43"/>
+<area shape="rect" id="Node000006" href="$_d_t___mu_8hpp.html" title="The model inference or data assimilation function μ : Ω_D × M → M." alt="" coords="245,253,379,280"/>
+<area shape="poly" id="edge31_Node000001_Node000006" title=" " alt="" coords="316,46,315,254,310,253,313,50"/>
+<area shape="rect" id="Node000007" href="$_d_t___model_8hpp.html" title="Abstract base class of the DT models m ∈ M." alt="" coords="441,80,615,107"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="366,35,493,78,488,80,367,40"/>
+<area shape="rect" id="Node000014" href="$_d_t___service_8hpp.html" title="Abstract base class of the DT services s ∈ S." alt="" coords="976,163,1168,189"/>
+<area shape="poly" id="edge34_Node000001_Node000014" title=" " alt="" coords="397,33,627,77,1017,161,1012,163,626,83,398,38"/>
+<area shape="rect" id="Node000017" href="$_observer_data_manager_8hpp.html" title="Subject of the data observer pattern." alt="" coords="5,80,227,107"/>
+<area shape="poly" id="edge32_Node000001_Node000017" title=" " alt="" coords="264,40,152,81,149,77,268,35"/>
+<area shape="rect" id="Node000003" href="$_d_t___d_m_s_8hpp.html" title="The general class of the DT&#45;DMS framework: DT = ⟨D, M, S, μ⟩." alt="" coords="566,336,690,363"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="201,202,211,248,221,269,235,286,259,300,293,312,381,329,479,339,568,346,563,347,479,344,380,334,291,317,256,305,232,290,216,271,206,249,200,208"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="228,196,299,252,293,253,227,202"/>
+<area shape="rect" id="Node000004" href="$_d_t___d_m_s___architecture_8hpp.html" title="A Digital Twin that connects one component of each kind of the DT&#45;DMS framework." alt="" coords="528,411,728,437"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="630,376,630,412,626,409,626,380"/>
+<area shape="rect" id="Node000005" href="$_d_t___d_m_s___architecture_8cpp.html" title="Example run of the framework on a temperature Digital Twin." alt="" coords="528,485,728,512"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="630,451,630,487,626,483,626,455"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="376,282,581,334,576,336,376,287"/>
+<area shape="poly" id="edge8_Node000007_Node000003" title=" " alt="" coords="481,116,461,134,444,156,438,176,444,196,456,221,472,244,513,283,558,313,599,335,594,335,555,317,510,287,468,248,451,224,439,198,433,176,439,153,458,130,485,113"/>
+<area shape="poly" id="edge21_Node000007_Node000006" title=" " alt="" coords="472,114,436,133,399,157,374,181,352,208,321,254,317,251,347,205,370,177,396,153,434,128,476,111"/>
+<area shape="rect" id="Node000008" href="$_d_t___model___descriptive_8hpp.html" title="A descriptive model m ∈ M_desc." alt="" coords="453,155,603,197"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="529,120,530,156,526,153,527,125"/>
+<area shape="rect" id="Node000009" href="$_d_t___model___predictive_8hpp.html" title="A predictive model m ∈ M_pred." alt="" coords="627,155,776,197"/>
+<area shape="poly" id="edge11_Node000007_Node000009" title=" " alt="" coords="569,111,659,154,654,154,569,116"/>
+<area shape="rect" id="Node000011" href="$_d_t___model___prescriptive_8hpp.html" title="A prescriptive model m ∈ M_presc." alt="" coords="801,155,951,197"/>
+<area shape="poly" id="edge15_Node000007_Node000011" title=" " alt="" coords="597,108,803,157,798,158,598,113"/>
+<area shape="poly" id="edge22_Node000007_Node000014" title=" " alt="" coords="630,105,963,152,1008,162,1003,162,962,157,631,110"/>
+<area shape="poly" id="edge10_Node000008_Node000003" title=" " alt="" coords="525,210,528,250,532,269,540,287,551,302,565,314,598,336,593,335,562,318,547,305,535,289,527,271,522,251,522,215"/>
+<area shape="poly" id="edge12_Node000009_Node000003" title=" " alt="" coords="621,204,579,226,562,237,552,247,545,266,552,287,561,301,574,314,603,336,598,335,571,318,557,305,547,289,540,266,547,244,559,232,577,221,626,202"/>
+<area shape="rect" id="Node000010" href="$_d_t___service___prediction_8hpp.html" title="A prediction service s ∈ S_pred." alt="" coords="606,245,773,288"/>
+<area shape="poly" id="edge13_Node000009_Node000010" title=" " alt="" coords="698,211,694,247,690,243,695,215"/>
+<area shape="poly" id="edge14_Node000010_Node000003" title=" " alt="" coords="667,299,639,338,636,333,662,302"/>
+<area shape="poly" id="edge16_Node000011_Node000003" title=" " alt="" coords="784,199,595,247,590,257,588,268,593,292,605,315,619,336,614,335,601,318,588,294,583,268,585,255,592,243,789,197"/>
+<area shape="rect" id="Node000012" href="$_d_t___service___control_8hpp.html" title="A control service s ∈ S_cont." alt="" coords="990,245,1157,288"/>
+<area shape="poly" id="edge17_Node000011_Node000012" title=" " alt="" coords="936,201,1030,245,1024,245,936,207"/>
+<area shape="rect" id="Node000013" href="$_d_t___service___optimization_8hpp.html" title="An optimization service s ∈ S_opti." alt="" coords="798,245,965,288"/>
+<area shape="poly" id="edge19_Node000011_Node000013" title=" " alt="" coords="880,211,882,246,878,244,877,215"/>
+<area shape="poly" id="edge18_Node000012_Node000003" title=" " alt="" coords="972,289,690,341,689,335,977,288"/>
+<area shape="poly" id="edge20_Node000013_Node000003" title=" " alt="" coords="805,292,669,338,667,333,799,294"/>
+<area shape="poly" id="edge23_Node000014_Node000003" title=" " alt="" coords="1111,195,1141,214,1167,237,1176,250,1180,263,1179,277,1171,290,1146,303,1101,314,969,331,818,342,690,348,690,343,817,337,968,325,1100,308,1144,298,1168,286,1174,275,1175,264,1171,252,1163,241,1138,218,1110,200"/>
+<area shape="poly" id="edge30_Node000014_Node000010" title=" " alt="" coords="1000,194,774,249,773,243,1005,193"/>
+<area shape="poly" id="edge24_Node000014_Node000012" title=" " alt="" coords="1074,203,1075,246,1071,243,1071,207"/>
+<area shape="poly" id="edge29_Node000014_Node000013" title=" " alt="" coords="1033,195,927,247,925,242,1028,197"/>
+<area shape="rect" id="Node000015" href="$_d_t___service___diagnosis_8hpp.html" title="A diagnosis service s ∈ S_diag." alt="" coords="1232,245,1400,288"/>
+<area shape="poly" id="edge25_Node000014_Node000015" title=" " alt="" coords="1122,192,1262,245,1256,245,1121,198"/>
+<area shape="rect" id="Node000016" href="$_d_t___service___monitoring_8hpp.html" title="A monitoring service s ∈ S_moni." alt="" coords="1424,245,1592,288"/>
+<area shape="poly" id="edge27_Node000014_Node000016" title=" " alt="" coords="1151,190,1413,243,1426,248,1421,248,1411,248,1151,196"/>
+<area shape="poly" id="edge26_Node000015_Node000003" title=" " alt="" coords="1215,288,1214,291,921,326,691,346,690,341,921,321,1213,285,1220,287"/>
+<area shape="poly" id="edge28_Node000016_Node000003" title=" " alt="" coords="1406,289,1199,315,995,332,691,349,690,343,995,327,1198,310,1411,288"/>
+<area shape="poly" id="edge33_Node000017_Node000002" title=" " alt="" coords="140,115,190,162,185,163,140,120"/>
+</map>

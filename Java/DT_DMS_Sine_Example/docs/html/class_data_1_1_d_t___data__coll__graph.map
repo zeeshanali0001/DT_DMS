@@ -1,5 +1,7 @@
 <map id="Data.DT_Data&lt; T &gt;" name="Data.DT_Data&lt; T &gt;">
-<area shape="rect" id="Node000001" title="Class representing a source of data collected from the ToI, i.e., a part of D in DT = ⟨D,..." alt="" coords="5,197,203,1024"/>
-<area shape="rect" id="Node000002" href="$interface_mu_1_1_observer_data_manager.html" title="Subject of the data observer pattern: an object that produces data and manages its observers." alt="" coords="5,5,203,149"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="104,162,107,198,102,197,104,167"/>
+<area shape="rect" id="Node000001" title="Class representing a source of data collected from the ToI, i.e., a part of D in DT = ⟨D,..." alt="" coords="132,936,330,1853"/>
+<area shape="rect" id="Node000002" href="$interface_mu_1_1_observer_data_manager.html" title="Subject of the data observer pattern: an object that produces data and manages its observers." alt="" coords="5,363,203,507"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="116,518,173,936,168,936,115,524"/>
+<area shape="rect" id="Node000003" href="$class_data_1_1_d_t___data_characterization.html" title="Class representing the characterization of a data source of the ToI: the metadata that tell how the d..." alt="" coords="227,5,491,864"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="302,861,297,920,292,919,301,867"/>
 </map>

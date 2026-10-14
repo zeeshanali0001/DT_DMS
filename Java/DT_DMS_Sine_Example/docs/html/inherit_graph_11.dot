@@ -6,7 +6,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="JFrame",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
-  Node0 -> Node1 [id="edge16_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 [id="Node000001",label="Visualization.DT_ChartPanel",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_visualization_1_1_d_t___chart_panel.html",tooltip="Live chart of the sine example: it plots the raw sine data measured on the ToI (real space) and the v..."];
+  Node0 [id="Node000000",label="DT_DMS\< T \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_d_t___d_m_s.html",tooltip="The DT_DMS class is the general class of the Digital Twin Data-Models-Services (DT-DMS) framework."];
 }

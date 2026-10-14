@@ -1,0 +1,10 @@
+<map id="src/Models/DT_Model_Descr_CubicBSpline.hpp" name="src/Models/DT_Model_Descr_CubicBSpline.hpp">
+<area shape="rect" id="Node000001" title="Cubic B&#45;Spline model of the sine example." alt="" coords="21,5,196,48"/>
+<area shape="rect" id="Node000002" href="$_d_t___d_m_s___sine_cubic_b_p_8hpp.html" title="Main class of the Sine Wave Cubic B&#45;Spline Digital Twin example." alt="" coords="5,187,212,213"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="86,64,76,97,73,117,76,138,87,164,101,186,96,186,83,166,71,139,68,117,71,95,88,59"/>
+<area shape="rect" id="Node000004" href="$_d_t___service___diagnosis___sine_8hpp.html" title="Diagnosis service of the sine example." alt="" coords="86,96,254,139"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="132,58,158,95,153,96,131,64"/>
+<area shape="rect" id="Node000003" href="$_d_t___d_m_s___sine_cubic_b_p_8cpp.html" title="Implementation and main of the Sine Wave Cubic B&#45;Spline Digital Twin example." alt="" coords="5,261,212,288"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="110,227,111,262,106,260,107,231"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="147,149,120,188,116,184,143,153"/>
+</map>

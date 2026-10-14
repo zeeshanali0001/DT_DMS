@@ -1,0 +1,10 @@
+digraph "Graphical Class Hierarchy"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node0 [id="Node000000",label="DT_Automaton::Event",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$struct_d_t___automaton_1_1_event.html",tooltip="An event (port, v): an input event of X_V or an output event of Y_V, where port ∈ X (resp."];
+}

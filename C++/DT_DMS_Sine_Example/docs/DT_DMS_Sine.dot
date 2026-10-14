@@ -1,0 +1,12 @@
+digraph "DMS Framework for the Digital Twin Sine" {
+nodesep=0.3;
+center=true;
+rankdir=LR;
+node [shape=box, style=rounded, fontname="Arial"];
+a [label=" DATA \n Sine values (Sine) ", color="red", fontcolor="red"];
+b [label=" MODELS \n Cubic B-Spline ", color="darkgreen", fontcolor="darkgreen"];
+c [label=" SERVICES \n Sine diagnosis ", color="blue", fontcolor="blue"];
+a -> b [label=<&#956;>, dir=both];
+c -> b [dir=both];
+a -> c [dir=both];
+}

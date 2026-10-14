@@ -1,7 +1,7 @@
 <map id="DT_DMS_SineCubicBP" name="DT_DMS_SineCubicBP">
-<area shape="rect" id="Node000001" title="Main class of the Sine Wave Cubic B&#45;Spline Digital Twin example: a minimal &quot;Hello World&quot; Digital Twin..." alt="" coords="14,2921,226,3316"/>
-<area shape="rect" id="Node000002" href="$class_d_t___d_m_s.html" title=" " alt="" coords="5,1485,235,2872"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="121,2884,123,2922,118,2921,120,2890"/>
-<area shape="rect" id="Node000003" href="$class_d_t___d_m_s.html" title="The DT_DMS class is the general class of the Digital Twin Data&#45;Models&#45;Services (DT&#45;DMS) framework." alt="" coords="5,5,235,1413"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="120,1425,123,1486,118,1486,120,1430"/>
+<area shape="rect" id="Node000001" title="Main class of the Sine Wave Cubic B&#45;Spline Digital Twin example: a minimal &quot;Hello World&quot; Digital Twin..." alt="" coords="17,3039,229,3455"/>
+<area shape="rect" id="Node000002" href="$class_d_t___d_m_s.html" title=" " alt="" coords="5,1549,240,2989"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="123,3002,125,3039,120,3039,122,3007"/>
+<area shape="rect" id="Node000003" href="$class_d_t___d_m_s.html" title="The DT_DMS class is the general class of the Digital Twin Data&#45;Models&#45;Services (DT&#45;DMS) framework." alt="" coords="8,5,238,1477"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="123,1490,125,1550,120,1549,123,1495"/>
 </map>

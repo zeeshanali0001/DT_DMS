@@ -1,5 +1,5 @@
 <map id="Mu.ObserverDataManager&lt; T &gt;" name="Mu.ObserverDataManager&lt; T &gt;">
 <area shape="rect" id="Node000001" title="Subject of the data observer pattern: an object that produces data and manages its observers." alt="" coords="5,5,203,149"/>
-<area shape="rect" id="Node000002" href="$class_data_1_1_d_t___data.html" title="Class representing a source of data collected from the ToI, i.e., a part of D in DT = ⟨D,..." alt="" coords="5,197,203,1024"/>
+<area shape="rect" id="Node000002" href="$class_data_1_1_d_t___data.html" title="Class representing a source of data collected from the ToI, i.e., a part of D in DT = ⟨D,..." alt="" coords="5,197,203,1152"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="104,162,107,198,102,197,104,167"/>
 </map>

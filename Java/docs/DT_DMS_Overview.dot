@@ -22,6 +22,7 @@ digraph DT_DMS_Overview {
     label=<<b>Data</b>>; margin=16; fontname="Arial"; fontsize=12; style="rounded,filled"; fillcolor="#E3F2FD"; color="#1565C0";
     DT_Data [label=<<b>DT_Data</b><br/><font face="Cambria Math" point-size="12">D = D<sub>hist</sub> ∪ D<sub>rt</sub></font>>];
     DT_DataSegment [label=<<b>DT_DataSegment</b><br/><font face="Cambria Math" point-size="12">ω : T<sub>U</sub> ⇀ D</font>>];
+    DT_DataCharacterization [label=<<b>DT_DataCharacterization</b><br/><font point-size="11">unit, signal, sensor, ...</font>>];
   }
 
   // ---------------------------------------------------------------- Models
@@ -50,6 +51,7 @@ digraph DT_DMS_Overview {
     DT_Mu [label=<<b>DT_Mu</b><br/><font face="Cambria Math" point-size="12">μ : Ω<sub>D</sub> × M → M</font>>];
     ObserverData [label=<<i>«interface»</i><br/><b>ObserverData</b>>];
     ObserverDataManager [label=<<i>«interface»</i><br/><b>ObserverDataManager</b>>];
+    ObserverModel [label=<<i>«interface»</i><br/><b>ObserverModel</b>>];
   }
 
   // ---------------------------------------------------------------- inheritance (hollow triangle at the parent)
@@ -71,6 +73,7 @@ digraph DT_DMS_Overview {
   ObserverData -> DT_Model;
   ObserverData -> DT_Service;
   ObserverDataManager -> DT_Data;
+  ObserverModel -> DT_Service;
 
   // ---------------------------------------------------------------- composition (filled diamond at the whole)
   edge [dir=back, arrowtail=diamond, style=solid, color="#E65100", fontcolor="#E65100"];
@@ -79,12 +82,14 @@ digraph DT_DMS_Overview {
   DT_DMS -> DT_Service [label=" S  0..*"];
   DT_DMS -> DT_Mu      [label=" μ  1"];
   DT_Data -> DT_DataSegment [label=" 1", color="#1565C0", fontcolor="#1565C0"];
+  DT_Data -> DT_DataCharacterization [label=" 1", color="#1565C0", fontcolor="#1565C0"];
 
   // ---------------------------------------------------------------- associations
   edge [dir=forward, arrowhead=vee, arrowtail=none, style=solid, color="#555555", fontcolor="#333333"];
   DT_Service -> DT_Model [label="coupled model  0..1", constraint=false];
   DT_Mu -> DT_Data       [label="observes", constraint=false];
   DT_Mu -> DT_Model      [label=<updates: μ(ω, m) = m′>, constraint=false];
+  DT_Model -> ObserverModel [label="notifies  0..*", constraint=false, style=dashed];
 
   // keep the general classes together on the left
   { rank=same; DT_DMS; DT_DMS_Architecture; }

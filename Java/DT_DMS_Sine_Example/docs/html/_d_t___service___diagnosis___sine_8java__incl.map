@@ -1,11 +1,13 @@
 <map id="src/Services/DT_Service_Diagnosis_Sine.java" name="src/Services/DT_Service_Diagnosis_Sine.java">
-<area shape="rect" id="Node000001" title=" " alt="" coords="241,5,408,48"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="306,5,474,48"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,96,175,139"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="272,48,160,93,158,88,267,49"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="322,48,176,94,174,89,317,49"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="198,104,320,131"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="312,47,279,93,276,89,307,50"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="362,48,292,97,289,93,357,49"/>
 <area shape="rect" id="Node000004" title=" " alt="" coords="344,104,436,131"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="341,46,374,92,369,91,339,51"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="460,104,550,131"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="367,46,468,97,462,97,366,51"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="392,46,392,90,388,87,388,50"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="460,104,579,131"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="421,46,491,95,486,95,419,51"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="604,104,694,131"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="452,46,592,93,601,99,596,98,590,99,451,51"/>
 </map>

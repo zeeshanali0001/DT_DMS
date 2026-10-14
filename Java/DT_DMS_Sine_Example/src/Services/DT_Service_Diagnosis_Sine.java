@@ -4,6 +4,7 @@ import Models.DT_Model_Descr_CubicBSpline;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.Set;
 
 /**
@@ -117,6 +118,40 @@ public class DT_Service_Diagnosis_Sine extends DT_Service_Diagnosis<Double> {
                     + ", residual=" + outputs.get(0).value;
         }
         return diagnosisReport;
+    }
+
+    /**
+     * Checks the interpolation of the sine function at random points: draws {@code numberOfPointsToCheck}
+     * abscissas {@code x} uniformly in the domain of the model and compares {@code sin(x)} with the value
+     * of the B-spline at {@code x}. Unlike {@link #executeService()}, which checks the measured values, this
+     * check uses the exact sine function and points between the samples.
+     *
+     * @param numberOfPointsToCheck the number of random points.
+     * @param seed                  the seed of the random generator (the same seed gives the same points).
+     * @param verbose               {@code true} to print one line per point.
+     * @return the largest deviation {@code |sin(x) − m(x)|} found ({@code NaN} if no Cubic B-Spline model
+     *         with data is coupled to the service).
+     */
+    public double performRandomCheck(int numberOfPointsToCheck, long seed, boolean verbose) {
+        if (!(model instanceof DT_Model_Descr_CubicBSpline spline) || Double.isNaN(spline.getLastTime())) {
+            return Double.NaN;
+        }
+        Random random = new Random(seed);
+        double from = spline.getLeftEndpoint();
+        double to = spline.getLastTime();
+        double maxDeviation = 0.0;
+        for (int i = 0; i < numberOfPointsToCheck; i++) {
+            double x = from + random.nextDouble() * (to - from);
+            double expected = Math.sin(x);
+            double interpolated = spline.getSineModelValue(x);
+            double deviation = Math.abs(expected - interpolated);
+            maxDeviation = Math.max(maxDeviation, deviation);
+            if (verbose) {
+                System.out.printf("     sin(%.6f) = %+.9f    spline interpolation gives %+.9f    delta = %.3e%n",
+                        x, expected, interpolated, expected - interpolated);
+            }
+        }
+        return maxDeviation;
     }
 
     /** @return the threshold for anomaly detection. */

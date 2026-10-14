@@ -1,0 +1,12 @@
+digraph "DMS Framework for the Digital Twin Temperature" {
+nodesep=0.3;
+center=true;
+rankdir=LR;
+node [shape=box, style=rounded, fontname="Arial"];
+a [label=" DATA \n Sensor A (Temperature) ", color="red", fontcolor="red"];
+b [label=" MODELS \n Temperature summary \n Temperature forecast \n Temperature setpoint ", color="darkgreen", fontcolor="darkgreen"];
+c [label=" SERVICES \n Temperature monitoring \n Temperature prediction \n Temperature diagnosis \n Setpoint optimization \n Heater control ", color="blue", fontcolor="blue"];
+a -> b [label=<&#956;>, dir=both];
+c -> b [dir=both];
+a -> c [dir=both];
+}

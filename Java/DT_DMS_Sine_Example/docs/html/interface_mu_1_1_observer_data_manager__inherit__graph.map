@@ -1,9 +1,9 @@
 <map id="Mu.ObserverDataManager&lt; T &gt;" name="Mu.ObserverDataManager&lt; T &gt;">
 <area shape="rect" id="Node000001" title="Subject of the data observer pattern: an object that produces data and manages its observers." alt="" coords="5,5,203,149"/>
-<area shape="rect" id="Node000002" href="$class_data_1_1_d_t___data.html" title="Class representing a source of data collected from the ToI, i.e., a part of D in DT = ⟨D,..." alt="" coords="5,199,203,1025"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="104,162,107,199,102,199,104,167"/>
-<area shape="rect" id="Node000003" href="$class_data_1_1_d_t___data.html" title=" " alt="" coords="5,1097,203,1887"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="104,1037,107,1098,102,1098,104,1042"/>
-<area shape="rect" id="Node000004" href="$class_data_1_1_d_t___data___sine_values.html" title="Data source of the sine example: it plays the role of the ToI (the &quot;physical twin&quot;) and produces the ..." alt="" coords="19,1936,189,2117"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="105,1899,107,1937,102,1936,104,1904"/>
+<area shape="rect" id="Node000002" href="$class_data_1_1_d_t___data.html" title="Class representing a source of data collected from the ToI, i.e., a part of D in DT = ⟨D,..." alt="" coords="5,199,203,1153"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="104,161,107,199,102,199,104,167"/>
+<area shape="rect" id="Node000003" href="$class_data_1_1_d_t___data.html" title=" " alt="" coords="5,1225,203,2143"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="104,1166,107,1226,102,1225,104,1171"/>
+<area shape="rect" id="Node000004" href="$class_data_1_1_d_t___data___sine_values.html" title="Data source of the sine example: it plays the role of the ToI (the &quot;physical twin&quot;) and produces the ..." alt="" coords="19,2192,189,2373"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="105,2155,107,2193,102,2192,104,2160"/>
 </map>

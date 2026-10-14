@@ -7,6 +7,9 @@ import Services.DT_Service_Diagnosis_Sine;
 import Visualization.DT_ChartPanel;
 
 import java.awt.GraphicsEnvironment;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 /**
  * Main class of the Sine Wave Cubic B-Spline Digital Twin example: a minimal "Hello World" Digital Twin
@@ -59,11 +62,14 @@ public class DT_DMS_SineCubicBP extends DT_DMS<Double> {
      * @param showChart {@code true} to show the live chart.
      */
     public DT_DMS_SineCubicBP(boolean showChart) {
-        super(DELTA);
+        super("Sine", DELTA);
         setClock(() -> now);
         assimilation = mu;
 
         sineData = new DT_Data_SineValues("Sine values");
+        sineData.getCharacterization().setUnit("dimensionless");
+        sineData.getCharacterization().setSignalType("digital");
+        sineData.getCharacterization().setDataFlowType("periodic");
         splineModel = new DT_Model_Descr_CubicBSpline(STEP, 0.0);
         diagnosis = new DT_Service_Diagnosis_Sine(ANOMALY_THRESHOLD);
 
@@ -112,6 +118,29 @@ public class DT_DMS_SineCubicBP extends DT_DMS<Double> {
         System.out.println("D_hist (t < t_now − δ): " + sineData.getHistoricalData(DELTA).size() + " values");
         System.out.println("Model automaton:   phase " + splineModel.getCurrentPhase() + ", state " + splineModel.getState());
         System.out.println("Service automaton: phase " + diagnosis.getCurrentPhase() + ", state " + diagnosis.getState());
+
+        // check of the interpolation between the samples, against the exact sine function
+        System.out.println("\nRandom check of the interpolation (10 points between the samples):");
+        double maxDeviation = diagnosis.performRandomCheck(10, 42L, true);
+        System.out.println("Largest deviation |sin(x) − m(x)| = " + maxDeviation);
+
+        // validity of the DT
+        System.out.println();
+        System.out.println("Consistent: " + checkConsistency(System.out));
+    }
+
+    /**
+     * Writes the Data-Models-Services diagram of the Digital Twin ({@code dumpGraphviz(String)}) in the
+     * {@code docs} folder if it exists, else in the current folder.
+     */
+    public void writeGraphviz() {
+        String dotFile = Files.isDirectory(Path.of("docs")) ? "docs/DT_DMS_Sine.dot" : "DT_DMS_Sine.dot";
+        try {
+            dumpGraphviz(dotFile);
+            System.out.println("Written " + dotFile + " (render it with: dot -Tpng " + dotFile + " -o DT_DMS_Sine.png)");
+        } catch (IOException e) {
+            System.out.println("Cannot write " + dotFile + ": " + e.getMessage());
+        }
     }
 
     /**
@@ -126,5 +155,6 @@ public class DT_DMS_SineCubicBP extends DT_DMS<Double> {
         DT_DMS_SineCubicBP dtSystem = new DT_DMS_SineCubicBP(showChart);
         dtSystem.sineData.injectAnomaly(3.0, 0.5);      // a spike on the ToI, to be found by the diagnosis
         dtSystem.execute(100);
+        dtSystem.writeGraphviz();
     }
 }

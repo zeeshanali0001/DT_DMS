@@ -112,6 +112,18 @@ public class DT_Model_Descr_CubicBSpline extends DT_Model_Descriptive<Double> {
                 + u3 * point(i + 2)) / 6.0;
     }
 
+    /**
+     * Returns the value of the model at time {@code t}: the B-spline, compared with the measured sine values
+     * by {@code DT_DMS.checkModelsVersusData}.
+     *
+     * @param t the time.
+     * @return {@link #getSineModelValue}{@code (t)}.
+     */
+    @Override
+    public double evaluate(double t) {
+        return getSineModelValue(t);
+    }
+
     /** @return the control point of index {@code i}; the first and last points are repeated at the ends. */
     private double point(int i) {
         return controlPoints.get(Math.max(0, Math.min(controlPoints.size() - 1, i)));

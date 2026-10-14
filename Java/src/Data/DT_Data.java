@@ -22,6 +22,8 @@ import java.util.function.DoubleSupplier;
  * <ul>
  *   <li>Every datum is recorded with its measurement time in a segment {@code ω} ({@link DT_DataSegment}).</li>
  *   <li>{@link #getRealTimeData} and {@link #getHistoricalData} give {@code D_rt} and {@code D_hist} of the source.</li>
+ *   <li>Its characterization ({@link DT_DataCharacterization}) tells how the data must be interpreted
+ *       (unit, signal type, sensor precision, calibration, ...).</li>
  *   <li>It is the subject of the observer pattern ({@link ObserverDataManager}): each new datum is pushed to
  *       the registered observers, in particular to the data assimilation function {@code μ}.</li>
  * </ul>
@@ -51,6 +53,9 @@ public class DT_Data<T> implements ObserverDataManager<T> {
 
     /** Gives the current time {@code t_now} (default: system time in seconds). */
     private DoubleSupplier clock = () -> System.currentTimeMillis() / 1000.0;
+
+    /** The characterization of the data: unit, signal type, sensor precision, calibration, ... */
+    protected DT_DataCharacterization characterization = new DT_DataCharacterization();
 
     /**
      * Constructs a data source.
@@ -184,6 +189,16 @@ public class DT_Data<T> implements ObserverDataManager<T> {
     /** @param dataType the new type of the data. */
     public void setDataType(String dataType) {
         this.dataType = dataType;
+    }
+
+    /** @return the characterization of the data (unit, signal type, sensor precision, ...); never {@code null}. */
+    public DT_DataCharacterization getCharacterization() {
+        return characterization;
+    }
+
+    /** @param characterization the new characterization of the data ({@code null} = nothing known). */
+    public void setCharacterization(DT_DataCharacterization characterization) {
+        this.characterization = characterization != null ? characterization : new DT_DataCharacterization();
     }
 
     /**

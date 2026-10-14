@@ -1,0 +1,15 @@
+<map id="Mu::ObserverModel&lt; T &gt;" name="Mu::ObserverModel&lt; T &gt;">
+<area shape="rect" id="Node000001" title="Observer of the model observer pattern: an object (typically a service s ∈ S) that wants to be told w..." alt="" coords="460,5,672,128"/>
+<area shape="rect" id="Node000002" href="$class_services_1_1_d_t___service.html" title="Abstract base class representing a generic DT service s ∈ S of DT = ⟨D, M, S, μ⟩." alt="" coords="457,176,676,1008"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="567,141,569,177,564,176,566,146"/>
+<area shape="rect" id="Node000003" href="$class_services_1_1_d_t___service___control.html" title="Class representing a Control Service (s ∈ S_cont) of the Digital Twin." alt="" coords="5,1152,207,1504"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="446,735,334,886,275,971,222,1057,174,1153,169,1151,217,1055,271,968,329,883,449,730"/>
+<area shape="rect" id="Node000004" href="$class_services_1_1_d_t___service___diagnosis.html" title="Class representing a Diagnosis Service (s ∈ S_diag) of the Digital Twin." alt="" coords="232,1187,440,1469"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="454,953,382,1188,377,1186,451,958"/>
+<area shape="rect" id="Node000005" href="$class_services_1_1_d_t___service___monitoring.html" title="Class representing a Monitoring Service (s ∈ S_moni) of the Digital Twin." alt="" coords="464,1056,668,1600"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="567,1021,569,1057,564,1055,565,1025"/>
+<area shape="rect" id="Node000006" href="$class_services_1_1_d_t___service___optimization.html" title="Class representing an Optimization Service (s ∈ S_opti) of the Digital Twin." alt="" coords="693,1163,912,1493"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="682,945,752,1163,747,1163,679,950"/>
+<area shape="rect" id="Node000007" href="$class_services_1_1_d_t___service___prediction.html" title="Class representing a Prediction Service (s ∈ S_pred) of the Digital Twin." alt="" coords="936,1232,1138,1424"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="685,725,809,879,870,966,926,1055,971,1144,1007,1233,1002,1231,966,1146,921,1057,866,969,805,882,685,730"/>
+</map>

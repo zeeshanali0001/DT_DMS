@@ -112,6 +112,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a89e1e21d829419ddde90e92e6afad955"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of the sine diagnosis service.  <br /></td></tr>
 <tr class="memitem:a2e5fd25aacdc07a96b3f310eb7ef63a7" id="r_a2e5fd25aacdc07a96b3f310eb7ef63a7"><td class="memItemLeft">Object&#160;</td><td class="memItemRight"><a class="el" href="#a2e5fd25aacdc07a96b3f310eb7ef63a7">executeService</a> ()</td></tr>
 <tr class="memdesc:a2e5fd25aacdc07a96b3f310eb7ef63a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the diagnosis on the latest value consumed: the automaton goes IDLE → CHECK → IDLE and an anomaly is reported if it emits the output <code class="JavaDocCode">(anomaly, residual)</code>.  <br /></td></tr>
+<tr class="memitem:ac08756d8330b8af31b74489e01a97751" id="r_ac08756d8330b8af31b74489e01a97751"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#ac08756d8330b8af31b74489e01a97751">performRandomCheck</a> (int numberOfPointsToCheck, long seed, boolean verbose)</td></tr>
+<tr class="memdesc:ac08756d8330b8af31b74489e01a97751"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks the interpolation of the sine function at random points: draws <code class="JavaDocCode">numberOfPointsToCheck</code> abscissas <code class="JavaDocCode">x</code> uniformly in the domain of the model and compares <code class="JavaDocCode">sin(x)</code> with the value of the B-spline at <code class="JavaDocCode">x</code>.  <br /></td></tr>
 <tr class="memitem:a8f1c6d37b65a98557340faf804cfeb3e" id="r_a8f1c6d37b65a98557340faf804cfeb3e"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a8f1c6d37b65a98557340faf804cfeb3e">getThreshold</a> ()</td></tr>
 <tr class="memitem:afc70396d7902f44a1462d09c7b9bc760" id="r_afc70396d7902f44a1462d09c7b9bc760"><td class="memItemLeft">List&lt; Double &gt;&#160;</td><td class="memItemRight"><a class="el" href="#afc70396d7902f44a1462d09c7b9bc760">getAnomalyTimes</a> ()</td></tr>
 <tr class="inherit_header pub_methods_class_services_1_1_d_t___service___diagnosis"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_services_1_1_d_t___service___diagnosis')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="class_services_1_1_d_t___service___diagnosis.html">Services.DT_Service_Diagnosis&lt; Double &gt;</a></td></tr>
@@ -250,6 +252,44 @@ Private Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>the threshold for anomaly detection. </dd></dl>
+
+</div>
+</div>
+<a id="ac08756d8330b8af31b74489e01a97751" name="ac08756d8330b8af31b74489e01a97751"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac08756d8330b8af31b74489e01a97751">&#9670;&#160;</a></span>performRandomCheck()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Services.DT_Service_Diagnosis_Sine.performRandomCheck </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>numberOfPointsToCheck</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long</td>          <td class="paramname"><span class="paramname"><em>seed</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boolean</td>          <td class="paramname"><span class="paramname"><em>verbose</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks the interpolation of the sine function at random points: draws <code class="JavaDocCode">numberOfPointsToCheck</code> abscissas <code class="JavaDocCode">x</code> uniformly in the domain of the model and compares <code class="JavaDocCode">sin(x)</code> with the value of the B-spline at <code class="JavaDocCode">x</code>. </p>
+<p>Unlike <code><a class="el" href="#a2e5fd25aacdc07a96b3f310eb7ef63a7">executeService()</a></code>, which checks the measured values, this check uses the exact sine function and points between the samples.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">numberOfPointsToCheck</td><td>the number of random points. </td></tr>
+    <tr><td class="paramname">seed</td><td>the seed of the random generator (the same seed gives the same points). </td></tr>
+    <tr><td class="paramname">verbose</td><td><code class="JavaDocCode">true</code> to print one line per point. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the largest deviation <code class="JavaDocCode">|sin(x) − m(x)|</code> found (<code class="JavaDocCode">NaN</code> if no Cubic B-Spline model with data is coupled to the service). </dd></dl>
 
 </div>
 </div>

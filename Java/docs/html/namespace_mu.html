@@ -104,6 +104,8 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Observer of the data observer pattern: an object that wants to be told when new data arrives.  <a href="interface_mu_1_1_observer_data.html#details">More...</a><br /></td></tr>
 <tr class="memitem:ObserverDataManager" id="r_ObserverDataManager"><td class="memItemLeft">interface &#160;</td><td class="memItemRight"><a class="el" href="interface_mu_1_1_observer_data_manager.html">ObserverDataManager</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subject of the data observer pattern: an object that produces data and manages its observers.  <a href="interface_mu_1_1_observer_data_manager.html#details">More...</a><br /></td></tr>
+<tr class="memitem:ObserverModel" id="r_ObserverModel"><td class="memItemLeft">interface &#160;</td><td class="memItemRight"><a class="el" href="interface_mu_1_1_observer_model.html">ObserverModel</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Observer of the model observer pattern: an object (typically a service <code class="JavaDocCode">s ∈ S</code>) that wants to be told when a model <code class="JavaDocCode">m ∈ M</code> has been updated by <code class="JavaDocCode">μ</code>.  <a href="interface_mu_1_1_observer_model.html#details">More...</a><br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This package contains the model inference or data assimilation function (<code class="JavaDocCode">μ</code>) of the DT-DMS framework. </p>
@@ -115,6 +117,8 @@ Classes</h2></td></tr>
 <code class="JavaDocCode">ObserverData</code>: the observer of the data observer pattern (models, services and <code class="JavaDocCode">μ</code>). </li>
 <li>
 <code class="JavaDocCode">ObserverDataManager</code>: the subject of the data observer pattern (the data sources). </li>
+<li>
+<code class="JavaDocCode">ObserverModel</code>: the observer of the model observer pattern (the services notified when the model they are coupled to is updated). </li>
 </ul>
 <dl class="section author"><dt>Author</dt><dd>[ALI Zeeshan, Mamadou Kaba TRAORÉ] </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>2.0 </dd></dl>

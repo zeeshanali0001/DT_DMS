@@ -1,17 +1,17 @@
 <map id="Models.DT_Model&lt; T &gt;" name="Models.DT_Model&lt; T &gt;">
-<area shape="rect" id="Node000001" title="Abstract base class representing a generic DT model m ∈ M of DT = ⟨D, M, S, μ⟩." alt="" coords="257,1052,457,1340"/>
-<area shape="rect" id="Node000004" href="$class_models_1_1_d_t___model___descriptive.html" title="Represents a descriptive model (m ∈ M_desc) of the Digital Twin." alt="" coords="5,1395,226,1752"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="256,1355,228,1402,223,1400,258,1350"/>
-<area shape="rect" id="Node000007" href="$class_models_1_1_d_t___model___predictive.html" title="Represents a predictive model (m ∈ M_pred) of the Digital Twin." alt="" coords="251,1411,463,1736"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="357,1352,360,1411,354,1411,357,1357"/>
-<area shape="rect" id="Node000008" href="$class_models_1_1_d_t___model___prescriptive.html" title="Represents a prescriptive model (m ∈ M_presc) of the Digital Twin." alt="" coords="488,1389,712,1757"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="457,1349,491,1399,485,1400,457,1355"/>
+<area shape="rect" id="Node000001" title="Abstract base class representing a generic DT model m ∈ M of DT = ⟨D, M, S, μ⟩." alt="" coords="244,1052,470,1532"/>
+<area shape="rect" id="Node000004" href="$class_models_1_1_d_t___model___descriptive.html" title="Represents a descriptive model (m ∈ M_desc) of the Digital Twin." alt="" coords="5,1587,226,1944"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="236,1531,209,1588,204,1586,237,1526"/>
+<area shape="rect" id="Node000007" href="$class_models_1_1_d_t___model___predictive.html" title="Represents a predictive model (m ∈ M_pred) of the Digital Twin." alt="" coords="251,1603,463,1928"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="357,1544,360,1603,354,1603,357,1550"/>
+<area shape="rect" id="Node000008" href="$class_models_1_1_d_t___model___prescriptive.html" title="Represents a prescriptive model (m ∈ M_presc) of the Digital Twin." alt="" coords="488,1581,712,1949"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="477,1524,508,1581,503,1582,477,1529"/>
 <area shape="rect" id="Node000002" href="$class_automaton_1_1_d_t___automaton.html" title="Abstract base class representing the class of automata 𝒜 of the DT&#45;DMS framework." alt="" coords="136,5,354,1003"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="328,1015,337,1052,331,1052,328,1020"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="318,1015,326,1052,320,1052,318,1020"/>
 <area shape="rect" id="Node000003" href="$interface_mu_1_1_observer_data.html" title="Observer of the data observer pattern: an object that wants to be told when new data arrives." alt="" coords="378,469,563,539"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="463,551,383,1053,378,1052,462,556"/>
-<area shape="rect" id="Node000005" href="$class_models_1_1_d_t___model___descriptive.html" title=" " alt="" coords="21,1829,210,2203"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="116,1764,118,1830,113,1829,115,1769"/>
-<area shape="rect" id="Node000006" href="$class_models_1_1_d_t___model___descr___cubic_b_spline.html" title="Cubic B&#45;Spline model of the sine example: a descriptive model (m ∈ M_desc) that represents the measur..." alt="" coords="7,2252,225,2593"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="116,2215,118,2252,113,2252,115,2220"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="464,551,394,1053,389,1052,463,556"/>
+<area shape="rect" id="Node000005" href="$class_models_1_1_d_t___model___descriptive.html" title=" " alt="" coords="21,2021,210,2395"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="116,1956,118,2022,113,2021,115,1961"/>
+<area shape="rect" id="Node000006" href="$class_models_1_1_d_t___model___descr___cubic_b_spline.html" title="Cubic B&#45;Spline model of the sine example: a descriptive model (m ∈ M_desc) that represents the measur..." alt="" coords="7,2444,225,2807"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="116,2407,118,2445,113,2444,115,2412"/>
 </map>

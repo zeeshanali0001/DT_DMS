@@ -29,6 +29,17 @@ For each sample, at the current time t_now:
 A spike of +0.5 is injected on the ToI at t = 3.0. It is detected at t = 3.0 and again at t = 3.05, because
 the spike also disturbs the spline at the next sample.
 
+At the end of the run:
+
+- the interpolation is checked at 10 random points between the samples against the exact sine function
+  (`DT_Service_Diagnosis_Sine.performRandomCheck`, from the first C++ version);
+- the validity of the Digital Twin is checked (`DT_DMS.checkConsistency`): services versus models, models
+  versus data (|ω(t) − m(t)| over the real-time data, with `DT_Model_Descr_CubicBSpline.evaluate`) and data
+  versus services;
+- the Data-Models-Services diagram of the Digital Twin is written in `docs/DT_DMS_Sine.dot`.
+
+The C++ version of this example is in `C++/DT_DMS_Sine_Example`.
+
 ## The model as an automaton ℳ = ⟨Λ, X, Y, Σ, Φ, Δ, Δ*⟩
 
 | Element | Cubic B-Spline model |

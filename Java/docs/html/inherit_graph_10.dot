@@ -6,5 +6,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="Mu.DT_Mu\< T \>.MixedPolicy",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$enum_mu_1_1_d_t___mu_1_1_mixed_policy.html",tooltip="How a mixed segment ω ∈ Ω_D^mix(t_now) is assimilated, depending on the DT requirements."];
+  Node0 [id="Node000000",label="Mu.DT_Mu\< T \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_mu_1_1_d_t___mu.html",tooltip="Class representing the model inference or data assimilation function μ : Ω_D × M → M of DT = ⟨D,..."];
 }

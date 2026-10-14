@@ -3,6 +3,7 @@ var class_d_t___d_m_s___sine_cubic_b_p =
     [ "DT_DMS_SineCubicBP", "class_d_t___d_m_s___sine_cubic_b_p.html#a75c8e67e0dc2afbe2cb50d6aeb190638", null ],
     [ "execute", "class_d_t___d_m_s___sine_cubic_b_p.html#a22d57b8a85859791438960e442a242d0", null ],
     [ "main", "class_d_t___d_m_s___sine_cubic_b_p.html#a5dfc86f4cc18c028717418a9adca2dae", null ],
+    [ "writeGraphviz", "class_d_t___d_m_s___sine_cubic_b_p.html#aac3e4ef599e4cff49e42964cb0a1e2b8", null ],
     [ "ANOMALY_THRESHOLD", "class_d_t___d_m_s___sine_cubic_b_p.html#a6ef35ca1649cb149932079615dbfeef2", null ],
     [ "assimilation", "class_d_t___d_m_s___sine_cubic_b_p.html#aa23f4763ae76bd37d092566cb00ca3c9", null ],
     [ "chart", "class_d_t___d_m_s___sine_cubic_b_p.html#aef103892cfe18363eb74bb5f1f9428cd", null ],

@@ -1,0 +1,12 @@
+<map id="Mu::ObserverDataManager&lt; T &gt;" name="Mu::ObserverDataManager&lt; T &gt;">
+<area shape="rect" id="Node000001" title="Subject of the data observer pattern: an object that produces data and manages its observers." alt="" coords="110,5,344,219"/>
+<area shape="rect" id="Node000002" href="$class_data_1_1_d_t___data.html" title="Class representing a source of data collected from the ToI, i.e., a part of D in DT = ⟨D,..." alt="" coords="5,291,217,1517"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="209,236,204,291,199,290,210,231"/>
+<area shape="rect" id="Node000005" href="$class_mu_1_1_observer_data_manager.html" title=" " alt="" coords="242,781,450,1027"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="246,231,330,781,325,781,245,236"/>
+<area shape="rect" id="Node000003" href="$class_data_1_1_d_t___data.html" title=" " alt="" coords="123,1589,335,2741"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="170,1530,178,1589,172,1589,170,1535"/>
+<area shape="rect" id="Node000004" href="$class_data_1_1_d_t___data___sine_values.html" title="Data source of the sine example: it plays the role of the ToI (the &quot;physical twin&quot;) and produces the ..." alt="" coords="143,2791,314,2972"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="230,2754,231,2792,226,2790,227,2759"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="334,1039,285,1590,280,1589,333,1044"/>
+</map>

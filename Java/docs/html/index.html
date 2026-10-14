@@ -98,7 +98,7 @@ $(function(){initNavTree('index.html','',''); });
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Symbol  </th><th class="markdownTableHeadNone">Meaning  </th><th class="markdownTableHeadNone">Package  </th><th class="markdownTableHeadNone">Main class  </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">D  </td><td class="markdownTableBodyNone">the ToI data, D = D_hist ∪ D_rt  </td><td class="markdownTableBodyNone"><span class="tt"><a class="el" href="namespace_data.html" title="This package contains the Data (D) of the DT-DMS framework.">Data</a></span>  </td><td class="markdownTableBodyNone"><span class="tt">DT_Data</span>, <span class="tt">DT_DataSegment</span>  </td></tr>
+<td class="markdownTableBodyNone">D  </td><td class="markdownTableBodyNone">the ToI data, D = D_hist ∪ D_rt  </td><td class="markdownTableBodyNone"><span class="tt"><a class="el" href="namespace_data.html" title="This package contains the Data (D) of the DT-DMS framework.">Data</a></span>  </td><td class="markdownTableBodyNone"><span class="tt">DT_Data</span>, <span class="tt">DT_DataSegment</span>, <span class="tt">DT_DataCharacterization</span>  </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">M  </td><td class="markdownTableBodyNone">the models of the ToI, M = M_desc ∪ M_pred ∪ M_presc  </td><td class="markdownTableBodyNone"><span class="tt"><a class="el" href="namespace_models.html" title="This package contains the Models (M) of the DT-DMS framework.">Models</a></span>  </td><td class="markdownTableBodyNone"><span class="tt">DT_Model</span> and its 3 child classes  </td></tr>
 <tr class="markdownTableRowOdd">
@@ -108,10 +108,10 @@ $(function(){initNavTree('index.html','',''); });
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">𝒜  </td><td class="markdownTableBodyNone">the class of automata, M ⊆ 𝒜 and S ⊆ 𝒜, 7-tuple ⟨Λ, X, Y, Σ, Φ, Δ, Δ*⟩  </td><td class="markdownTableBodyNone"><span class="tt"><a class="el" href="namespace_automaton.html" title="This package contains the class of automata (𝒜) of the DT-DMS framework.">Automaton</a></span>  </td><td class="markdownTableBodyNone"><span class="tt">DT_Automaton</span>  </td></tr>
 </table>
-<p>The general class <span class="tt"><a class="el" href="class_d_t___d_m_s.html" title="The DT_DMS class is the general class of the Digital Twin Data-Models-Services (DT-DMS) framework.">DT_DMS</a></span> holds D, M, S and μ and offers the iterator design pattern over the data, the models and the services. <span class="tt"><a class="el" href="class_d_t___d_m_s___architecture.html" title="The DT_DMS_Architecture class connects all classes of the DT-DMS framework.">DT_DMS_Architecture</a></span> connects one component of each kind; its collaboration diagram is the architecture image of the framework.</p>
+<p>The general class <span class="tt"><a class="el" href="class_d_t___d_m_s.html" title="The DT_DMS class is the general class of the Digital Twin Data-Models-Services (DT-DMS) framework.">DT_DMS</a></span> holds D, M, S and μ and offers the iterator design pattern over the data, the models and the services, the validity checks of the DT and the export of its Data-Models-Services diagram to Graphviz. <span class="tt"><a class="el" href="class_d_t___d_m_s___architecture.html" title="The DT_DMS_Architecture class connects all classes of the DT-DMS framework.">DT_DMS_Architecture</a></span> connects one component of each kind; its collaboration diagram is the architecture image of the framework.</p>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md1"></a>
 Data (D)</h1>
-<p>A datum d = ω(t) is real-time iff t ≥ t_now − δ, and historical otherwise, where t is the measurement time, t_now the current time and δ the data scope during which data is considered real-time.</p>
+<p>A datum d = ω(t) is real-time iff t ≥ t_now − δ, and historical otherwise, where t is the measurement time, t_now the current time and δ the data scope during which data is considered real-time. Each data source has a characterization (<span class="tt">DT_DataCharacterization</span>): unit, operational status, signal type (analog or digital), data flow type (event-triggered, continuous or periodic), sensor precision, sensor location, calibration status and date of the last maintenance.</p>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
 Models (M) and Services (S)</h1>
 <p>Every model and every service is an automaton (discrete, continuous or hybrid) specified with HiLLS, based on DEVS, by the 7-tuple ⟨Λ, X, Y, Σ, Φ, Δ, Δ*⟩:</p>
@@ -121,7 +121,7 @@ Models (M) and Services (S)</h1>
 <li>Δ: the phase-to-phase transitions: external Δ^in = ⟨In, Guard, Update⟩, internal Δ^time = ⟨Guard, Send, Update⟩ and confluent Δ^{in,time} = ⟨In, Guard, Send, Update⟩;</li>
 <li>Δ*: the initialization ⟨φ_0, Update_0, τ_0⟩.</li>
 </ul>
-<p>A service is parameterized by a model and/or the data segments it consumes: s : M × Ω_D → Y_s.</p>
+<p>A service is parameterized by a model and/or the data segments it consumes: s : M × Ω_D → Y_s. A service coupled to a model (<span class="tt">DT_DMS.addService(s, m)</span>) is notified each time μ updates that model (<span class="tt">DT_Service.updateWithModel</span>, model observer pattern with <span class="tt"><a class="el" href="interface_mu_1_1_observer_model.html" title="Observer of the model observer pattern: an object (typically a service s ∈ S) that wants to be told w...">Mu.ObserverModel</a></span>).</p>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md3"></a>
 Model inference (μ)</h1>
 <p>μ(ω, m) = m' is the model m updated with the segment ω; m' keeps the type of m. A measured segment ω : T_U ⇀ D has no datum in the future (sup Dom(ω) ≤ t_now) and is, at t_now:</p>
@@ -131,6 +131,16 @@ Model inference (μ)</h1>
 <li>mixed iff inf Dom(ω) &lt; t_now − δ ∧ t_now − δ ≤ sup Dom(ω) ≤ t_now: split at t_now − δ into ω = ω_hist ⊕ ω_rt and assimilated part by part, or assimilated as a whole like a real-time or like a historical segment (<span class="tt">DT_Mu.MixedPolicy</span>).</li>
 </ul>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
+Validity of the DT</h1>
+<p><span class="tt"><a class="el" href="class_d_t___d_m_s.html#a47a2d64e062ca4ea0dbbb5283c514f7e" title="Runs the three validity checks of the DT: services versus models, models versus data (with the defaul...">DT_DMS.checkConsistency</a></span> runs three checks and writes a report:</p>
+<ul>
+<li><span class="tt">checkServicesVersusModels</span>: every service is coupled to a model of <span class="tt">M</span> of a suitable type (a prediction service to a predictive model, an optimization or control service to a prescriptive model);</li>
+<li><span class="tt">checkModelsVersusData</span>: for every model that gives values in time (<span class="tt">DT_Model.evaluate</span>), the deviation δ = |ω(t) − m(t)| over the real-time data: the model fits very well if δ &lt; ε for every datum, and does not fit (it should be updated, re-parameterized or discarded) if the mean deviation is greater than M;</li>
+<li><span class="tt">checkDataVersusServices</span>: the data sources are valid and have a unit, and every monitored entity has a data source.</li>
+</ul>
+<p><span class="tt"><a class="el" href="class_d_t___d_m_s.html#ada99f65624e181031350c343aa7578cd" title="Writes the Data-Models-Services diagram of the DT in the Graphviz format (toGraphviz).">DT_DMS.dumpGraphviz</a></span> writes the Data-Models-Services diagram of the DT (the example writes <span class="tt">docs/DT_DMS_Temperature.dot</span>, rendered in <span class="tt">docs/DT_DMS_Temperature.png</span>).</p>
+<p>These features come from the first C++ version of the framework; the C++ version of this project is in <span class="tt">C++</span>.</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
 Build, run and document</h1>
 <p>From this folder (Git Bash): </p><pre class="fragment">javac -encoding UTF-8 -d out $(find src -name "*.java")
 java -cp out DT_DMS_Architecture

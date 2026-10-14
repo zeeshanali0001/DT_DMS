@@ -12,26 +12,29 @@ use strict;
 use warnings;
 
 my %keep = (
-    'DT_DMS'       => [qw(dataList modelList serviceList mu delta clock
-                          DT_DMS tNow setClock addData addModel addService runService)],
-    'DT_Data'      => [qw(source dataType observers currentData currentTime collectedData clock
+    'DT_DMS'       => [qw(name dataList modelList serviceList mu delta clock
+                          DT_DMS tNow setClock addData addModel addService runService
+                          checkConsistency dumpGraphviz)],
+    'DT_Data'      => [qw(source dataType observers currentData currentTime collectedData clock characterization
                           DT_Data registerObserver notifyObservers updateData getCurrentTime
-                          getRealTimeData getHistoricalData setClock)],
+                          getRealTimeData getHistoricalData setClock getCharacterization)],
+    'DT_DataCharacterization' => [qw(unit signalType dataFlowType setUnit setSignalType setDataFlowType)],
     'DT_Automaton' => [qw(parameters inputs outputs state phases transitions currentPhase elapsed
                           addParameter addInput addOutput addStateVariable addPhase addTransition
                           setInitialization initialize externalTransition internalTransition
                           getCurrentPhase getState)],
-    'DT_Model'     => [qw(modelName DT_Model assimilate executeModel)],
+    'DT_Model'     => [qw(modelName servicesToBeUpdated DT_Model assimilate executeModel evaluate
+                          addServiceToBeUpdated notifyServices)],
     'DT_Model_Descriptive' => [qw(dataSource dataPointCount dataSummary minimum maximum sum
                                   DT_Model_Descriptive update executeModel)],
     'DT_Model_Descr_CubicBSpline' => [qw(step leftEndpoint controlPoints DT_Model_Descr_CubicBSpline
-                                         update getSineModelValue getLastTime getStep specifyAutomaton)],
+                                         update getSineModelValue evaluate getLastTime getStep specifyAutomaton)],
     'DT_Service'   => [qw(serviceName serviceDescription model consumedData
-                          DT_Service update execute executeService setModel)],
+                          DT_Service update updateWithModel execute executeService setModel)],
     'DT_Service_Diagnosis' => [qw(normalMinimum normalMaximum diagnosisReport
                                   DT_Service_Diagnosis executeService)],
     'DT_Service_Diagnosis_Sine' => [qw(threshold anomalyTimes DT_Service_Diagnosis_Sine executeService
-                                       residualOf getAnomalyTimes specifyAutomaton)],
+                                       residualOf performRandomCheck getAnomalyTimes specifyAutomaton)],
     'DT_Mu'        => [qw(delta clock models sources pending
                           DT_Mu addModel observe mu assimilate assimilateSynchronously
                           assimilateAsynchronously flush)],

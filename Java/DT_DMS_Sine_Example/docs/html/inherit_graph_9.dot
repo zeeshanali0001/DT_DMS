@@ -6,7 +6,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="DT_DMS\< Double \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_d_t___d_m_s.html",tooltip=" "];
-  Node0 -> Node1 [id="edge15_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 [id="Node000001",label="DT_DMS_SineCubicBP",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_d_t___d_m_s___sine_cubic_b_p.html",tooltip="Main class of the Sine Wave Cubic B-Spline Digital Twin example: a minimal \"Hello World\" Digital Twin..."];
+  Node0 [id="Node000000",label="Data.DT_DataSegment\l\< T \>.Kind",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$enum_data_1_1_d_t___data_segment_1_1_kind.html",tooltip="The kind of a segment at t_now: the set of Ω_D it belongs to."];
 }

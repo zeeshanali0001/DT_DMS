@@ -2,6 +2,7 @@ var class_data_1_1_d_t___data =
 [
     [ "DT_Data", "class_data_1_1_d_t___data.html#a855fca3dc429c979ecafe915d4faec68", null ],
     [ "equals", "class_data_1_1_d_t___data.html#a54b353ed37c50e74102e30e536fe18d9", null ],
+    [ "getCharacterization", "class_data_1_1_d_t___data.html#af00e82f95e4991e8869db08bd8354ac6", null ],
     [ "getCollectedData", "class_data_1_1_d_t___data.html#a2d296b37350bec9aed04969ea5ca835a", null ],
     [ "getCurrentData", "class_data_1_1_d_t___data.html#ad56756c24eb4e4ef5a3ce3d3d6a1fb6d", null ],
     [ "getCurrentTime", "class_data_1_1_d_t___data.html#ac2d9e5d647620d8ec7e34b295f7ee3f2", null ],
@@ -13,6 +14,7 @@ var class_data_1_1_d_t___data =
     [ "notifyObservers", "class_data_1_1_d_t___data.html#ad38f5ec5ee88597cf8f126d76e0e6558", null ],
     [ "registerObserver", "class_data_1_1_d_t___data.html#a8cf90f589e6882f086869f81dc9d0cd1", null ],
     [ "removeObserver", "class_data_1_1_d_t___data.html#afe8d49fbe726ecd5b224114356bd4f16", null ],
+    [ "setCharacterization", "class_data_1_1_d_t___data.html#a9af37341c1c538696fb6367c4cccc161", null ],
     [ "setClock", "class_data_1_1_d_t___data.html#a6809f2fa8e4a8b3f3a9a664946bb2214", null ],
     [ "setDataType", "class_data_1_1_d_t___data.html#a5d47ddb50c4b3e7be84736afe45fe19e", null ],
     [ "setSource", "class_data_1_1_d_t___data.html#acd3a32e1d6409b1488132ce86c60344a", null ],
@@ -20,6 +22,7 @@ var class_data_1_1_d_t___data =
     [ "updateData", "class_data_1_1_d_t___data.html#a7106486fcc61ca4cd19ad04db1081172", null ],
     [ "updateData", "class_data_1_1_d_t___data.html#a30eb515da49f20db030ec57ffde6b533", null ],
     [ "validateData", "class_data_1_1_d_t___data.html#abbe3ba8e4d7a12ee4d8a8a9d13caa75c", null ],
+    [ "characterization", "class_data_1_1_d_t___data.html#ae04907387501944c0fc41ec14faf442d", null ],
     [ "clock", "class_data_1_1_d_t___data.html#a496f98a8af8a1dfaa4e269b01e8e2aa5", null ],
     [ "collectedData", "class_data_1_1_d_t___data.html#afda44a49dd981dfc61513e20d80d6ac2", null ],
     [ "currentData", "class_data_1_1_d_t___data.html#ae82dfeec6e28625ab805929c16b06491", null ],

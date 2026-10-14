@@ -6,5 +6,7 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="Mu.DT_Mu\< T \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_mu_1_1_d_t___mu.html",tooltip="Class representing the model inference or data assimilation function μ : Ω_D × M → M of DT = ⟨D,..."];
+  Node0 [id="Node000000",label="Models.DT_Model_Descriptive\l\< Double \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_models_1_1_d_t___model___descriptive.html",tooltip=" "];
+  Node0 -> Node1 [id="edge18_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 [id="Node000001",label="Models.DT_Model_Descr\l_CubicBSpline",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_models_1_1_d_t___model___descr___cubic_b_spline.html",tooltip="Cubic B-Spline model of the sine example: a descriptive model (m ∈ M_desc) that represents the measur..."];
 }
